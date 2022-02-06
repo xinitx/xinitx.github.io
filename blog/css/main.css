@@ -2137,22 +2137,6 @@ pre code {
   margin-left: 10px;
   opacity: 0;
 }
-.post-body h1 .header-anchor::before,
-.post-body h2 .header-anchor::before,
-.post-body h3 .header-anchor::before,
-.post-body h4 .header-anchor::before,
-.post-body h5 .header-anchor::before,
-.post-body h6 .header-anchor::before,
-.post-body h1 .headerlink::before,
-.post-body h2 .headerlink::before,
-.post-body h3 .headerlink::before,
-.post-body h4 .headerlink::before,
-.post-body h5 .headerlink::before,
-.post-body h6 .headerlink::before {
-  content: '\f0c1';
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
 .post-body h1:hover .header-anchor,
 .post-body h2:hover .header-anchor,
 .post-body h3:hover .header-anchor,
@@ -3238,7 +3222,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #6bffff;
+  background: #ff39ff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

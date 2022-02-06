@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/logo.png">
+  <link rel="mask-icon" href="/blog/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xinitx.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+<meta name="description" content="前言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++词汇约定">
+<meta property="og:url" content="http://xinitx.github.io/blog/Languages/%E6%89%8B%E6%92%95C++%E6%A0%87%E5%87%86/CPlus%E8%AF%8D%E6%B1%87%E7%BA%A6%E5%AE%9A/index.html">
+<meta property="og:site_name" content="山间残月的博客">
+<meta property="og:description" content="前言">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b585698231fd4969b2f1b94a4885c216.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/bcd7249caf6d456b82febd521f4ebb22.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaW5pdDMz,size_18,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/d5eaf870299c461b846a79909cd43ad0.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/63198671794b472487c5c61eac8f5af0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaW5pdDMz,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/00ec1326e52c4107aa0b25e13f3ba3a7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/3b9b14b79def4854a3cffaaba30ba236.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaW5pdDMz,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/f9486cc6c9ea429fa64e55e31b7bdff2.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaW5pdDMz,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8fca11a9b6d44311950e8bb495daa0ba.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/24375efa99244e0ead499b23baf5c7c7.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/84f4a30e7a854556be130b9b66e74148.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/b7ff532073db4567b8b674bce880ee55.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaW5pdDMz,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2d6774616ad9477585b294695c9c47ef.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaW5pdDMz,size_20,color_FFFFFF,t_70,g_se,x_16">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/23c7f4a1270d460d94181cf3f02f78ac.png">
+<meta property="article:published_time" content="2021-11-29T09:18:37.000Z">
+<meta property="article:modified_time" content="2022-01-26T14:50:32.334Z">
+<meta property="article:author" content="init">
+<meta property="article:tag" content="C++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/b585698231fd4969b2f1b94a4885c216.png">
+
+
+<link rel="canonical" href="http://xinitx.github.io/blog/Languages/%E6%89%8B%E6%92%95C++%E6%A0%87%E5%87%86/CPlus%E8%AF%8D%E6%B1%87%E7%BA%A6%E5%AE%9A/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://xinitx.github.io/blog/Languages/%E6%89%8B%E6%92%95C++%E6%A0%87%E5%87%86/CPlus%E8%AF%8D%E6%B1%87%E7%BA%A6%E5%AE%9A/","path":"Languages/手撕C++标准/CPlus词汇约定/","title":"C++词汇约定"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>C++词汇约定 | 山间残月的博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+  
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><script type="text/javascript"> 
+	var title=document.title; 
+	// window 失去焦点 
+		window.onblur = function() { 
+		document.title='(つ ェ ⊂)我藏好了哦~';
+	};
+	// window 获得焦点 
+		window.onfocus = function() { 
+		document.title='(*゜ロ゜)ノ被发现了~'; 
+		setTimeout("document.title=title",3000); 
+	}
+</script>
+
+<div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+    <a href="https://xinitx.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">山间残月的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/blog/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/blog/tags" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/blog/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/blog/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E8%AF%8D%E6%B1%87%E7%BA%A6%E5%AE%9A"><span class="nav-number">2.</span> <span class="nav-text">1、词汇约定</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1%E3%80%81%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="nav-number">2.1.</span> <span class="nav-text">1.1、字符集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2%E3%80%81%E9%A2%84%E5%A4%84%E7%90%86%E5%8D%95%E5%85%83"><span class="nav-number">2.2.</span> <span class="nav-text">1.2、预处理单元</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3%E3%80%81%E6%9B%BF%E6%8D%A2%E5%8D%95%E5%85%83%EF%BC%88Alternative-tokens%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">1.3、替换单元（Alternative  tokens）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4%E3%80%81%E5%8D%95%E5%85%83%EF%BC%88tokens%EF%BC%89"><span class="nav-number">2.4.</span> <span class="nav-text">1.4、单元（tokens）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-5%E3%80%81%E6%B3%A8%E9%87%8A%EF%BC%88comments%EF%BC%89"><span class="nav-number">2.5.</span> <span class="nav-text">1.5、注释（comments）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-6%E3%80%81%E5%A4%B4%E6%96%87%E4%BB%B6%E5%90%8D%EF%BC%88header-names%EF%BC%89"><span class="nav-number">2.6.</span> <span class="nav-text">1.6、头文件名（header names）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-7%E3%80%81%E9%A2%84%E5%A4%84%E7%90%86%E6%95%B0%E5%AD%97%EF%BC%88preprocessing-numbers%EF%BC%89"><span class="nav-number">2.7.</span> <span class="nav-text">1.7、预处理数字（preprocessing numbers）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="nav-number">3.</span> <span class="nav-text">2、标识符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E3%80%81%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">4.</span> <span class="nav-text">3、关键字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7"><span class="nav-number">5.</span> <span class="nav-text">4、运算符与标点符号</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5%E3%80%81%E5%AD%97%E9%9D%A2%E9%87%8F%EF%BC%88literals%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">5、字面量（literals）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">6.1.</span> <span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="init"
+      src="/blog/images/logo.png">
+  <p class="site-author-name" itemprop="name">init</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives">
+          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://xinitx.github.io/" title="Index → https:&#x2F;&#x2F;xinitx.github.io"><i class="fas fa-fan fa-fw"></i>Index</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/xinitx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xinitx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=x17152141010@163.com" title="Mail → http:&#x2F;&#x2F;mail.qq.com&#x2F;cgi-bin&#x2F;qm_share?t&#x3D;qm_mailme&amp;email&#x3D;x17152141010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Mail</a>
+      </span>
+  </div>
+
+
+
+          <p class="name">Have a <text id="changerificwordspanid"></text> day!</p>
+          
+          <!-- require APlayer -->
+          <link rel="stylesheet" href="/blog/js/APlayer.min.css">
+          <script src="/blog/js/APlayer.min.js"></script>
+          <!-- require MetingJS -->
+          <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+          <meting-js
+            server="tencent"
+            type="playlist"
+            id="8321899376"  theme = "#fff" style = "color:#000; opacity :0.3; "list-folded= "true">
+          </meting-js>
+        
+        </div>        
+      </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/typed.js"></script>
+    <script type="text/javascript">
+	  $("#changerificwordspanid").typed({
+		strings: ["good", "nice", "happy", "wonderful"],
+		typeSpeed: 100,
+		startDelay: 10,
+		showCursor: true,
+		shuffle: true,
+		loop:true
+	  });
+	</script>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://xinitx.github.io/blog/Languages/%E6%89%8B%E6%92%95C++%E6%A0%87%E5%87%86/CPlus%E8%AF%8D%E6%B1%87%E7%BA%A6%E5%AE%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo.png">
+      <meta itemprop="name" content="init">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山间残月的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          C++词汇约定
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-11-29 17:18:37" itemprop="dateCreated datePublished" datetime="2021-11-29T17:18:37+08:00">2021-11-29</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-01-26 22:50:32" itemprop="dateModified" datetime="2022-01-26T22:50:32+08:00">2022-01-26</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Languages/" itemprop="url" rel="index"><span itemprop="name">Languages</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Languages/%E6%89%8B%E6%92%95C-%E6%A0%87%E5%87%86/" itemprop="url" rel="index"><span itemprop="name">手撕C++标准</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+
+   
+  
+
+
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><span id="more"></span>
+
+<p><del>c++98和c++11的区别，c++98标准共715页，c++11标准共1336页</del><br><img src="https://img-blog.csdnimg.cn/b585698231fd4969b2f1b94a4885c216.png" alt="请添加图片描述"></p>
+<p><font color = "FF4500">红色</font>代表本标准与C89标准的区别</p>
+<h1 id="1、词汇约定"><a href="#1、词汇约定" class="headerlink" title="1、词汇约定"></a>1、词汇约定</h1><p><img src="https://img-blog.csdnimg.cn/bcd7249caf6d456b82febd521f4ebb22.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaW5pdDMz,size_18,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/d5eaf870299c461b846a79909cd43ad0.png" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdnimg.cn/63198671794b472487c5c61eac8f5af0.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaW5pdDMz,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<p><strong>黄色指与C89标准（注：不是C++标准）的区别</strong></p>
+<h2 id="1-1、字符集"><a href="#1-1、字符集" class="headerlink" title="1.1、字符集"></a>1.1、字符集</h2><p><strong>基本源字符集</strong><br>基本源字符集比C89多了一个新行控制字符，C89中其属于执行字符集</p>
+<p><strong>通用字符名（universal-character-name）</strong><br>提供了命名其他字符的方法。形式为 <strong>\u 四位十六进制数</strong> 、<strong>\U 八位十六进制数</strong>，前者对应 ISO/IEC 10646 代码为 0000四位十六进制数的字符，后者对应 ISO/IEC 10646 代码为 八位十六进制数的字符。用于链接器不支持拓展字符的系统上形成有效标识符。</p>
+<p><strong>ISO/IEC 10646</strong><br>其定义的字符集称<strong>通用字符集</strong>（Universal Character Set, UCS），包含了已知语言的所有字符，采用了与 <strong>Unicode 相同</strong>的字库和字码<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%80%9A%E7%94%A8%E5%AD%97%E7%AC%A6%E9%9B%86">字符编码上等同Unicode</a>。其范围不能在 0xD800–0xDFFF 内。而且如果通用字符名的十六进制值位于c-char序列、s-char序列或r-char序列之外，其范围不能在 0x00–0x1F 或 0x7F–0x9F 或基本源字符集范围 内</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//int \u0041 = 100;   //c-char序列、s-char序列或r-char序列之外，报错</span></span><br><span class="line">    <span class="keyword">int</span> \u4f60 = <span class="number">100</span>;   <span class="comment">//正确</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; \u4f60 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&#x27;\u0041&#x27;</span> &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">//输出A</span></span><br><span class="line">    <span class="comment">//cout &lt;&lt; &#x27;\uD800&#x27;;   //报错</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>基本执行字符集、基本执行宽字符集</strong><br>包括<strong>基本源字符集</strong>和表示<strong>警告</strong>、<strong>退格</strong>和<strong>回车</strong>的控制字符，加上一个<strong>空字符/空宽字符</strong>，每个基本执行字符集，成员的值应为非负且彼此不同。基本源、执行字符集中，上述十进制数字列表中 <strong>0</strong> 之后的每个字符的值应比前一个字符的值大 <strong>1</strong>。</p>
+<p><strong>执行字符集、执行宽字符集</strong><br>执行字符集和执行宽字符集分别是基本执行字符集和基本执行宽字符集的实现定义的超集。执行字符集和附加成员集的成员值是地域特定的。</p>
+<p><strong>三联符序列</strong><br>三联符序列与C89相同（c++17 中删除）</p>
+<h2 id="1-2、预处理单元"><a href="#1-2、预处理单元" class="headerlink" title="1.2、预处理单元"></a>1.2、预处理单元</h2><ol>
+<li>头文件名</li>
+<li>标识符</li>
+<li>预处理数字</li>
+<li>字符字面值</li>
+<li><font color = "FF4500">自定义字符字面值</font></li>
+<li>字符串字面值</li>
+<li><font color = "FF4500">自定义字符串字面值</font></li>
+<li>预处理运算符或标点符号</li>
+<li>不能为上述字符之一的每个非空白字符</li>
+<li>限制与C89标准差不多 </li>
+</ol>
+<h2 id="1-3、替换单元（Alternative-tokens）"><a href="#1-3、替换单元（Alternative-tokens）" class="headerlink" title="1.3、替换单元（Alternative  tokens）"></a>1.3、替换单元（Alternative  tokens）</h2><p>包括三联符序列，下面表格中又称双联符序列（digraphs）。为了让代码能通过非ASCII字符集编写，比如ISO 646，但是，ISO 646缺少这些字符，所以通过替换达到所求语义。<br><img src="https://img-blog.csdnimg.cn/00ec1326e52c4107aa0b25e13f3ba3a7.png" alt="在这里插入图片描述"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>&lt;%</span></span><br><span class="line"><span class="function">    <span class="built_in">cout</span> &lt;&lt; 666</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="1-4、单元（tokens）"><a href="#1-4、单元（tokens）" class="headerlink" title="1.4、单元（tokens）"></a>1.4、单元（tokens）</h2><ol>
+<li>标识符</li>
+<li>关键字</li>
+<li>字面值</li>
+<li>运算符</li>
+<li>标点符号 == 其他分隔符<br>空格、水平和垂直制表符、换行符、换页和注释 ，统称为“空白”，除非他们用于分隔单元，否则将被忽略</li>
+</ol>
+<h2 id="1-5、注释（comments）"><a href="#1-5、注释（comments）" class="headerlink" title="1.5、注释（comments）"></a>1.5、注释（comments）</h2><ol>
+<li>/* 开始一个注释，*/终止</li>
+<li>//开始以个注释，新行字符终止</li>
+<li>//、/<em>、</em>/在//注释中没有特殊含义</li>
+<li>//、/*在 /*注释中没有特殊含义</li>
+</ol>
+<h2 id="1-6、头文件名（header-names）"><a href="#1-6、头文件名（header-names）" class="headerlink" title="1.6、头文件名（header names）"></a>1.6、头文件名（header names）</h2><p>同C89</p>
+<h2 id="1-7、预处理数字（preprocessing-numbers）"><a href="#1-7、预处理数字（preprocessing-numbers）" class="headerlink" title="1.7、预处理数字（preprocessing numbers）"></a>1.7、预处理数字（preprocessing numbers）</h2><p>同C89</p>
+<h1 id="2、标识符"><a href="#2、标识符" class="headerlink" title="2、标识符"></a>2、标识符</h1><p>标识符是由非数字字符（包括下划线、大小写字母、<font color = "FF4500">通用字符名、其他实现定义的字符</font>）及数字构成的序列，其第一个字符应是非数字字符，<del>不同的标识符取决于有效字符的不同</del></p>
+<p><strong>约束</strong></p>
+<ol>
+<li>在标识符中的通用字符名需<strong>在</strong>E1范围内</li>
+<li>在标识符中第一个元素的通用字符名需<strong>不在</strong>E2范围内</li>
+<li>override、final在某些上下文有特殊含义。当在语法中显式使用这些标识符，而不是使用标识符语法含义时，都会被解析为常规标识符。</li>
+<li>一些被c++实现和标准库使用的标识符不应另作他用</li>
+<li>c++中任何标识符，大小写字母是不同的</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/3b9b14b79def4854a3cffaaba30ba236.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaW5pdDMz,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h1 id="3、关键字"><a href="#3、关键字" class="headerlink" title="3、关键字"></a>3、关键字</h1><p><strong>以下73个单元被视为关键字，除非位于属性单元中</strong><br><img src="https://img-blog.csdnimg.cn/f9486cc6c9ea429fa64e55e31b7bdff2.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaW5pdDMz,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><strong>同时替换字符序列也是保留的</strong><br><img src="https://img-blog.csdnimg.cn/8fca11a9b6d44311950e8bb495daa0ba.png" alt="在这里插入图片描述"></p>
+<h1 id="4、运算符与标点符号"><a href="#4、运算符与标点符号" class="headerlink" title="4、运算符与标点符号"></a>4、运算符与标点符号</h1><p>包括预处理运算符标点符号和普通运算符标点符号，每个预处理运算符标点符号在翻译阶段7转换为单个单元<br><img src="https://img-blog.csdnimg.cn/24375efa99244e0ead499b23baf5c7c7.png" alt="在这里插入图片描述"></p>
+<h1 id="5、字面量（literals）"><a href="#5、字面量（literals）" class="headerlink" title="5、字面量（literals）"></a>5、字面量（literals）</h1><p>在C中称为常量（constants）</p>
+<ol>
+<li>整数字面量</li>
+<li>字符字面量</li>
+<li>浮点字面量</li>
+<li>字符串字面量</li>
+<li>布尔字面量</li>
+<li>指针字面量</li>
+<li>自定义字面量</li>
+</ol>
+<p><strong>整数字面量</strong><br>相比C89整数常量多了两个后缀：ll、LL。超出后缀表示范围会自动升格，若还不能表示则可能会使用拓展整数类型表示，若存在任何类型都不能表示的整数字面量则警告</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span>).name() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(<span class="number">10000000000000l</span>).name();		<span class="comment">//此整数字面量是long long int</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>字符字面量</strong><br>相比C89字符常量多了两个前缀：u、U，字符选择多了通用字符名。</p>
+<ol>
+<li>不以u、u或L开头的字符字面量是普通字符字面量，也称为窄字符字面量。</li>
+<li>包含单个c字符的普通字符字面量具有char类型，其值等于执行字符集中c字符的编码。</li>
+<li>包含多个c字符的普通字符字面量是多字符字面量，具有int类型和实现定义的值。</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(<span class="keyword">char</span>).name() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(<span class="string">&#x27;abc&#x27;</span>).name() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&#x27;abc&#x27;</span>;<span class="comment">//警告</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/84f4a30e7a854556be130b9b66e74148.png" alt="在这里插入图片描述"></p>
+<p><strong>浮点字面量</strong><br>同C89</p>
+<p><strong>字符串字面量</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/b7ff532073db4567b8b674bce880ee55.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaW5pdDMz,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2d6774616ad9477585b294695c9c47ef.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAaW5pdDMz,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span> <span class="string">&quot;\\666&quot;</span> &lt;&lt; <span class="built_in">endl</span>;		<span class="comment">//5每个字符1个字节</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span> <span class="string">u8&quot;\\666&quot;</span>&lt;&lt;<span class="built_in">endl</span>;		<span class="comment">//5每个字符1个字节</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span> <span class="string">u&quot;\\666&quot;</span>&lt;&lt;<span class="built_in">endl</span>;		<span class="comment">//10每个字符2个字节</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span> <span class="string">U&quot;\\666&quot;</span>&lt;&lt;<span class="built_in">endl</span>;		<span class="comment">//20每个字符4个字节</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span> <span class="string">L&quot;\\666&quot;</span>&lt;&lt;<span class="built_in">endl</span>;		<span class="comment">//10每个字符2个字节</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="keyword">sizeof</span> <span class="string">R&quot;(\\666)&quot;</span>&lt;&lt;<span class="built_in">endl</span>;	<span class="comment">//6 没有发生转义</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>翻译阶段<strong>6</strong>相邻字符串字面值被连接起来</li>
+<li>相同编码前缀，则合并后前缀为该前缀</li>
+<li>若一个字符串字面值没有前缀，则合并后前缀为另一个字符串字面值前缀</li>
+<li>如果UTF-8字符串字面量与宽字符串字面量相邻，则程序的格式不正确</li>
+<li>现定义的行为有条件地支持任何其他连接</li>
+<li>此连接是一种解释，而不是转换，因为解释发生在翻译阶段6</li>
+<li>翻译阶段<strong>7</strong>    “\0”附加到每个字符串字面量，以便扫描字符串的程序可以找到其结尾</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;\\666&quot;</span> <span class="string">&quot;55\n55&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;\x66&quot;</span> <span class="string">&quot;A&quot;</span>;    		<span class="comment">//连接后保持原有语义，输出f和A</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>布尔字面量</strong><br>即两个关键字，这样的字面值是初值（prvalue）具有bool类型</p>
+<ol>
+<li>false</li>
+<li>true</li>
+</ol>
+<p><strong>指针字面量</strong><br>关键字nullptr，是具有类型std::nullptr_t的初值（prvalue）,可以转换为空指针值或空成员指针值</p>
+<p><strong>自定义字面量</strong><br>由对应字面量加标识符组成。允许整数、浮点、字符和字符串字面量通过定义用户定义的后缀生成用户定义类型的对象。</p>
+<ol>
+<li>用户定义的字面量被视为对字面量运算符或字面量运算符模板的调用</li>
+<li>若同时匹配自定义字面量和其他字面量类型，则视为后者</li>
+</ol>
+<p><img src="https://img-blog.csdnimg.cn/23c7f4a1270d460d94181cf3f02f78ac.png" alt="在这里插入图片描述"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href=""></a></li>
+<li><a href=""></a></li>
+</ul>
+</blockquote>
+
+    </div>
+
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------文章到此已结束<i class="fa fa-heart"></i>发现错误请指正-------------</div>
+    
+</div>
+      
+    </div>
+	
+    <script src="/blog/live2d-widget/autoload.js"></script>
+	  
+	  
+    
+    
+    
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/alipay.png" alt="init Alipay">
+        <span>Alipay</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/blog/tags/C/" rel="tag"># C++</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/Languages/%E6%89%8B%E6%92%95C%E6%A0%87%E5%87%86/C%E8%AF%AD%E8%A8%80%E5%A4%B4%E6%96%87%E4%BB%B6/" rel="prev" title="C语言头文件">
+                  <i class="fa fa-chevron-left"></i> C语言头文件
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/Algorithm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" rel="next" title="线性结构">
+                  线性结构 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">init</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://xinitx.github.io/blog/Languages/%E6%89%8B%E6%92%95C++%E6%A0%87%E5%87%86/CPlus%E8%AF%8D%E6%B1%87%E7%BA%A6%E5%AE%9A/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
