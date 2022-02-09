@@ -21,15 +21,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"xinitx.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
-<meta name="description" content="前言由顶点和连接顶点的边构成的离散结构，通常表示成表示成 G &#x3D; ( V , E ) ，V集元素为顶点(vertex)、E集元素为一对顶点（边edge）。">
+<meta name="description" content="前言由顶点和连接顶点的边构成的离散结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图形结构">
 <meta property="og:url" content="http://xinitx.github.io/blog/Algorithm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE%E5%BD%A2%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="山间残月的博客">
-<meta property="og:description" content="前言由顶点和连接顶点的边构成的离散结构，通常表示成表示成 G &#x3D; ( V , E ) ，V集元素为顶点(vertex)、E集元素为一对顶点（边edge）。">
+<meta property="og:description" content="前言由顶点和连接顶点的边构成的离散结构">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-02T01:36:49.000Z">
-<meta property="article:modified_time" content="2022-01-26T14:53:23.118Z">
+<meta property="article:modified_time" content="2022-02-08T00:21:28.903Z">
 <meta property="article:author" content="init">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
@@ -176,18 +176,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives">
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -294,7 +294,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-01-26 22:53:23" itemprop="dateModified" datetime="2022-01-26T22:53:23+08:00">2022-01-26</time>
+        <time title="Modified: 2022-02-08 08:21:28" itemprop="dateModified" datetime="2022-02-08T08:21:28+08:00">2022-02-08</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -325,10 +325,10 @@
 
 
     <div class="post-body" itemprop="articleBody">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由顶点和连接顶点的边构成的离散结构，通常表示成表示成 G = ( V , E ) ，V集元素为顶点(vertex)、E集元素为一对顶点（边edge）。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>由顶点和连接顶点的边构成的离散结构</strong></p>
 <span id="more"></span>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">子图：当图G&#x27;=(V&#x27;,E&#x27;)中V‘包含于V，E’包含于E时，G&#x27;为G的子图</span><br><span class="line">生成子图：顶点集相等的子图</span><br><span class="line">导出子图：G&#x27;=(V&#x27;,E&#x27;)中V&#x27;∈V且E&#x27;包含所有关于V&#x27;的V中边，称V&#x27;导出的导出子图；G&#x27;=(V&#x27;,E&#x27;)中E&#x27;∈E且V&#x27;包含所有关于E&#x27;的E中点，称E&#x27;导出的导出子图；</span><br><span class="line"></span><br><span class="line">度：所有与该顶点相关联的边的条数</span><br><span class="line">入度：指向该顶点的边的条数，以其为终点的边数</span><br><span class="line">出度：以其为起点的边数</span><br><span class="line"></span><br><span class="line">自环：一条边的两个顶点为同一顶点</span><br><span class="line">路径 ：一个顶点到另一个顶点经过的点和边的序列；</span><br><span class="line">简单路径：除起始与终止顶点外，顶点两两不相等</span><br><span class="line">闭：路径起点与终点相等</span><br><span class="line">开：路径起点与终点不相等</span><br><span class="line">行迹：路径的边各不相等，闭的行迹称回路</span><br><span class="line">轨道：路径的顶点各不相等，闭的轨道称圈</span><br><span class="line">桥：被去掉会使得整个图不连通的边</span><br><span class="line">无环性：不包含闭路</span><br><span class="line"></span><br><span class="line">阶：点集V的大小</span><br><span class="line">邻接点：存在边相连的顶点</span><br><span class="line">连通性：存在路径的顶点具有连通性</span><br><span class="line">连通分量：无向图的连通子图称为连通分量，有向图的强连通子图称为强连通分量</span><br><span class="line">生成树：没有回路的连通图</span><br><span class="line">最小生成树：权值最小的生成树</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">通常表示成表示成 G = ( V , E ) ，V集元素为顶点(vertex)、E集元素为一对顶点（边edge）</span><br><span class="line">子图：当图G&#x27;=(V&#x27;,E&#x27;)中V‘包含于V，E’包含于E时，G&#x27;为G的子图</span><br><span class="line">生成子图：顶点集相等的子图</span><br><span class="line">导出子图：G&#x27;=(V&#x27;,E&#x27;)中V&#x27;∈V且E&#x27;包含所有关于V&#x27;的V中边，称V&#x27;导出的导出子图；G&#x27;=(V&#x27;,E&#x27;)中E&#x27;∈E且V&#x27;包含所有关于E&#x27;的E中点，称E&#x27;导出的导出子图；</span><br><span class="line"></span><br><span class="line">度：所有与该顶点相关联的边的条数</span><br><span class="line">入度：指向该顶点的边的条数，以其为终点的边数</span><br><span class="line">出度：以其为起点的边数</span><br><span class="line"></span><br><span class="line">自环：一条边的两个顶点为同一顶点</span><br><span class="line">路径 ：一个顶点到另一个顶点经过的点和边的序列；</span><br><span class="line">简单路径：除起始与终止顶点外，顶点两两不相等</span><br><span class="line">闭：路径起点与终点相等</span><br><span class="line">开：路径起点与终点不相等</span><br><span class="line">行迹：路径的边各不相等，闭的行迹称回路</span><br><span class="line">轨道：路径的顶点各不相等，闭的轨道称圈</span><br><span class="line">桥：被去掉会使得整个图不连通的边</span><br><span class="line">无环性：不包含闭路</span><br><span class="line"></span><br><span class="line">阶：点集V的大小</span><br><span class="line">邻接点：存在边相连的顶点</span><br><span class="line">连通性：存在路径的顶点具有连通性</span><br><span class="line">连通分量：无向图的连通子图称为连通分量，有向图的强连通子图称为强连通分量</span><br><span class="line">生成树：没有回路的连通图</span><br><span class="line">最小生成树：权值最小的生成树</span><br></pre></td></tr></table></figure>
 
 <p><strong>分类</strong></p>
 <ol>
@@ -434,8 +434,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/blog/Algorithm/%E7%AE%97%E6%B3%95%E7%BB%BC%E8%BF%B0/" rel="prev" title="算法综述">
-                  <i class="fa fa-chevron-left"></i> 算法综述
+                <a href="/blog/Algorithm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84/" rel="prev" title="线性结构">
+                  <i class="fa fa-chevron-left"></i> 线性结构
                 </a>
             </div>
             <div class="post-nav-item">

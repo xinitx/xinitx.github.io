@@ -21,15 +21,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"xinitx.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
-<meta name="description" content="前言以GCP (Graph Coloring Problem) 为例。GCP是NP问题，给每个顶点染色、相邻顶点颜色不能相同、使用颜色数最少。本文采用的是DSJC500.5.col数据集。">
+<meta name="description" content="前言一个基于直观或经验构造的算法，在可接受的花费（指计算时间和空间）下给出待解决组合优化问题每一个实例的一个可行解，常常具有随机性。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="启发式">
 <meta property="og:url" content="http://xinitx.github.io/blog/Algorithm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%90%AF%E5%8F%91%E5%BC%8F/index.html">
 <meta property="og:site_name" content="山间残月的博客">
-<meta property="og:description" content="前言以GCP (Graph Coloring Problem) 为例。GCP是NP问题，给每个顶点染色、相邻顶点颜色不能相同、使用颜色数最少。本文采用的是DSJC500.5.col数据集。">
+<meta property="og:description" content="前言一个基于直观或经验构造的算法，在可接受的花费（指计算时间和空间）下给出待解决组合优化问题每一个实例的一个可行解，常常具有随机性。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-04T05:12:10.000Z">
-<meta property="article:modified_time" content="2022-01-26T14:44:39.839Z">
+<meta property="article:modified_time" content="2022-02-09T14:44:40.423Z">
 <meta property="article:author" content="init">
 <meta name="twitter:card" content="summary">
 
@@ -175,18 +175,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/blog/archives">
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/blog/categories">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/blog/tags">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -293,7 +293,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-01-26 22:44:39" itemprop="dateModified" datetime="2022-01-26T22:44:39+08:00">2022-01-26</time>
+        <time title="Modified: 2022-02-09 22:44:40" itemprop="dateModified" datetime="2022-02-09T22:44:40+08:00">2022-02-09</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -324,9 +324,10 @@
 
 
     <div class="post-body" itemprop="articleBody">
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>以GCP (Graph Coloring Problem) 为例。GCP是NP问题，给每个顶点染色、相邻顶点颜色不能相同、使用颜色数最少。本文采用的是DSJC500.5.col数据集。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>一个基于直观或经验构造的算法，在可接受的花费（指计算时间和空间）下给出待解决组合优化问题每一个实例的一个可行解，常常具有随机性。</strong></p>
 <span id="more"></span>
 
+<p>以GCP (Graph Coloring Problem) 为例。GCP是NP问题，给每个顶点染色、相邻顶点颜色不能相同、使用颜色数最少。本文采用的是DSJC500.5.col数据集。</p>
 <h1 id="近邻法（nearest-neighbor"><a href="#近邻法（nearest-neighbor" class="headerlink" title="近邻法（nearest neighbor)"></a>近邻法（nearest neighbor)</h1><p>每个顶点选择邻点最少的颜色。最良优先搜索，评估的是邻点颜色。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">int colornums[510][100];			//第一维代表所有点，第二维代表该点邻点的颜色，值代表该点某种颜色的邻点的和</span><br><span class="line">vector&lt;int&gt; color;					//下标代表第i个点，值代表第i个点的颜色</span><br><span class="line">vector&lt;set&lt;int&gt;&gt; neighbor;			//第一维代表第i个点，第二维代表第i个点所有邻点</span><br><span class="line">    memset(colornums, 0, sizeof colornums);</span><br><span class="line">    for(int i = 1; i &lt;= n; i++ )&#123;					//每一次遍历染一个点</span><br><span class="line">        int min_color = 1e9, c;</span><br><span class="line">        for(int j = 0; j &lt; k; j++ )					//遍历每一个颜色，找到当前邻点最少的颜色</span><br><span class="line">        &#123;</span><br><span class="line">            min_color = min(min_color, colornums[i][j]);		</span><br><span class="line">            if(min_color == colornums[i][j])</span><br><span class="line">                c = j;</span><br><span class="line">        &#125;</span><br><span class="line">        for(set&lt;int&gt;::iterator it = neighbor[i].begin(); it != neighbor[i].end(); it++ )&#123;	//更新此点所有邻点的 颜色表</span><br><span class="line">            colornums[*it][c]++;	</span><br><span class="line">        &#125;</span><br><span class="line">        color[i] = c;	//染色</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
