@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/logo.png">
+  <link rel="mask-icon" href="/blog/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xinitx.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+<meta name="description" content="数据库什么是数据库一个长期存储在计算机内的、有组织的、可共享的、统一管理的大量数据的集合。 为什么需要数据库数据库中的数据按一定的数据模型组织、描述和存储，具有较小的冗余度(redundancy)、较高的数据独立性(data independency)和易拓展性(scalability)，并且为各种用户共享。 12345678910111213141516171819202122232425262">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DataBase">
+<meta property="og:url" content="http://xinitx.github.io/blog/Computer/Software/DataBase/index.html">
+<meta property="og:site_name" content="山间残月的博客">
+<meta property="og:description" content="数据库什么是数据库一个长期存储在计算机内的、有组织的、可共享的、统一管理的大量数据的集合。 为什么需要数据库数据库中的数据按一定的数据模型组织、描述和存储，具有较小的冗余度(redundancy)、较高的数据独立性(data independency)和易拓展性(scalability)，并且为各种用户共享。 12345678910111213141516171819202122232425262">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-15T02:38:05.000Z">
+<meta property="article:modified_time" content="2022-03-15T02:41:14.034Z">
+<meta property="article:author" content="init">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://xinitx.github.io/blog/Computer/Software/DataBase/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://xinitx.github.io/blog/Computer/Software/DataBase/","path":"Computer/Software/DataBase/","title":"DataBase"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>DataBase | 山间残月的博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+  
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><script type="text/javascript"> 
+	var title=document.title; 
+	// window 失去焦点 
+		window.onblur = function() { 
+		document.title='(つ ェ ⊂)我藏好了哦~';
+	};
+	// window 获得焦点 
+		window.onfocus = function() { 
+		document.title='(*゜ロ゜)ノ被发现了~'; 
+		setTimeout("document.title=title",3000); 
+	}
+</script>
+
+<div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+    <a href="https://xinitx.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">山间残月的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/blog/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/blog/tags" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/blog/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/blog/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93-1"><span class="nav-number">2.</span> <span class="nav-text">数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E6%93%8D%E4%BD%9C%E7%9A%84%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.1.</span> <span class="nav-text">面向操作的关系型数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%9A%84%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.2.</span> <span class="nav-text">面向数据分析的关系型数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E6%93%8D%E4%BD%9C%E7%9A%84%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.3.</span> <span class="nav-text">面向操作的非关系型数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%9A%84%E9%9D%9E%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">2.4.</span> <span class="nav-text">面向数据分析的非关系型数据库</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="init"
+      src="/blog/images/logo.png">
+  <p class="site-author-name" itemprop="name">init</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://xinitx.github.io/" title="Index → https:&#x2F;&#x2F;xinitx.github.io"><i class="fas fa-fan fa-fw"></i>Index</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/xinitx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xinitx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=x17152141010@163.com" title="Mail → http:&#x2F;&#x2F;mail.qq.com&#x2F;cgi-bin&#x2F;qm_share?t&#x3D;qm_mailme&amp;email&#x3D;x17152141010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Mail</a>
+      </span>
+  </div>
+
+
+
+          <p class="name">Have a <text id="changerificwordspanid"></text> day!</p>
+          
+          <!-- require APlayer -->
+          <link rel="stylesheet" href="/blog/js/APlayer.min.css">
+          <script src="/blog/js/APlayer.min.js"></script>
+          <!-- require MetingJS -->
+          <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+          <meting-js
+            server="tencent"
+            type="playlist"
+            id="8321899376"  theme = "#fff" style = "color:#000; opacity :0.3; "list-folded= "true">
+          </meting-js>
+        
+        </div>        
+      </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/typed.js"></script>
+    <script type="text/javascript">
+	  $("#changerificwordspanid").typed({
+		strings: ["good", "nice", "happy", "wonderful"],
+		typeSpeed: 100,
+		startDelay: 10,
+		showCursor: true,
+		shuffle: true,
+		loop:true
+	  });
+	</script>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://xinitx.github.io/blog/Computer/Software/DataBase/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo.png">
+      <meta itemprop="name" content="init">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山间残月的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          DataBase
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-03-15 10:38:05 / Modified: 10:41:14" itemprop="dateCreated datePublished" datetime="2022-03-15T10:38:05+08:00">2022-03-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Computer/Software/" itemprop="url" rel="index"><span itemprop="name">Software</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+
+   
+  
+
+
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><p><strong>什么是数据库</strong><br>一个长期存储在计算机内的、有组织的、可共享的、统一管理的大量数据的集合。</p>
+<p><strong>为什么需要数据库</strong><br>数据库中的数据按一定的数据模型组织、描述和存储，具有较小的冗余度(redundancy)、较高的数据独立性(data independency)和易拓展性(scalability)，并且为各种用户共享。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#python 通过MSSQL连接数据库并访问数据</span><br><span class="line">from MSSQL import MSSQL</span><br><span class="line">from tkinter.constants import BOTTOM, END</span><br><span class="line">import tkinter as tk</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ms = MSSQL(host=&quot;DESKTOP-VN36SHJ&quot;,user=&quot;sa&quot;,pwd=&quot;xiao0.6181314&quot;,db=&quot;FilmManage&quot;)			#连接数据库</span><br><span class="line">window = tk.Tk()</span><br><span class="line">window.title(&#x27;Film Ticket Search.&#x27;)															#简单界面</span><br><span class="line">window.geometry(&#x27;500x500&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def read():</span><br><span class="line">    option = e1.get()</span><br><span class="line">    e1.delete(0, END)</span><br><span class="line">    str = &quot;SELECT * FROM 票面信息 where 票面信息.票号 = \&#x27;&quot; + option + &quot;\&#x27;&quot; </span><br><span class="line">    resList = ms.ExecQuery(str)</span><br><span class="line">    var.set(resList)</span><br><span class="line"></span><br><span class="line">var = tk.StringVar()</span><br><span class="line">var.set(&quot;Please input the ticket number.&quot;)													#输入电影票编号</span><br><span class="line">l1 = tk.Label(window, textvariable=var)</span><br><span class="line"></span><br><span class="line">e1 = tk.Entry(window, show = None)</span><br><span class="line"></span><br><span class="line">b1 = tk.Button(window, text = &#x27;Comfirm&#x27;, width=10, height=2, command=read)					#点击确认键即显示相关信息</span><br><span class="line"></span><br><span class="line">e1.pack()</span><br><span class="line">b1.pack()</span><br><span class="line">l1.pack()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">window.mainloop()</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>什么是数据库管理系统</strong><br>操纵和管理数据库的大型软件，用于建立、使用和维护数据库</p>
+<h2 id="数据库-1"><a href="#数据库-1" class="headerlink" title="数据库"></a>数据库</h2><h3 id="面向操作的关系型数据库"><a href="#面向操作的关系型数据库" class="headerlink" title="面向操作的关系型数据库"></a>面向操作的关系型数据库</h3><ol>
+<li>典型性应用领域：ERP、CRM、信用卡交易、中小型电商</li>
+<li>数据储存方法：表格</li>
+<li>流行厂商：Oracle Database,Microsoft SQLServer,IBM DB2,EnterpriseDB(PostgreSQL),MySQL</li>
+<li>优点：完善的生态环境保护，事务保证/数据一致性</li>
+<li>缺点：严苛的数据模型界定，数据库拓展限制，和非结构型的结合应用较难。</li>
+</ol>
+<h3 id="面向数据分析的关系型数据库"><a href="#面向数据分析的关系型数据库" class="headerlink" title="面向数据分析的关系型数据库"></a>面向数据分析的关系型数据库</h3><ol>
+<li>典型性应用领域：数据仓库，商务智能，数据科学研究</li>
+<li>数据储存方法：表格</li>
+<li>流行厂商：Oracle Exadata、Oracle Hyperion、Teradata、IBM Netezza、Google BigQuery</li>
+<li>优点：信息内容和计算的一致性</li>
+<li>缺点：必须由数据库技术专业的IT工作人员维护保养，数据相应通常是分钟级</li>
+</ol>
+<h3 id="面向操作的非关系型数据库"><a href="#面向操作的非关系型数据库" class="headerlink" title="面向操作的非关系型数据库"></a>面向操作的非关系型数据库</h3><ol>
+<li>典型性应用领域：Web、mobile、and IoT applications、social networking、user recommendations、shopping carts</li>
+<li>数据储存方法：很多存储结构(document、graph、column、key-value、time series)</li>
+<li>流行厂商：MongoDB、Amazon DynamoDB、Amazon、Redis</li>
+<li>优点：便捷性，协调能力(不用预定义的方式)，水平伸缩(适应大规模数据量)，成本低(开源系统)</li>
+<li>缺点：欠缺事务保证</li>
+</ol>
+<h3 id="面向数据分析的非关系型数据库"><a href="#面向数据分析的非关系型数据库" class="headerlink" title="面向数据分析的非关系型数据库"></a>面向数据分析的非关系型数据库</h3><ol>
+<li>典型性应用领域：索引数以百万计的数据点、预测分析、诈骗检验</li>
+<li>数据储存方法：Hadoop不用原有的数据构造，数据能够跨好几个服务器存储</li>
+<li>流行厂商：Cloudera、Hortonworks、MapR、MarkLogic、Snowflake、DataBricks、ElasticSearch</li>
+<li>优点：适用批量处理,并行处理文件;主要是开源的，资金投入较低</li>
+<li>缺点：迟缓的响应速度，不宜迅速检索或高速更新</li>
+</ol>
+
+    </div>
+
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------文章到此已结束<i class="fa fa-heart"></i>发现错误请指正-------------</div>
+    
+</div>
+      
+    </div>
+	
+    <script src="/blog/live2d-widget/autoload.js"></script>
+	  
+	  
+    
+    
+    
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/alipay.png" alt="init Alipay">
+        <span>Alipay</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/Computer/Software/OS/" rel="prev" title="OS">
+                  <i class="fa fa-chevron-left"></i> OS
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/Computer/Software/Network/" rel="next" title="Network">
+                  Network <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">init</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://xinitx.github.io/blog/Computer/Software/DataBase/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

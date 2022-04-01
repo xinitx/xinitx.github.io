@@ -30,12 +30,14 @@
 <script src="js/Meting.min.js"></script>
 <script src="other/javascript"></script>
 <script src="js/jquery.min.js"></script>
+<!--
 <script src="js/live2dcubismcore.min.js"></script>
 <script src="js/pixi.min.js"></script>
 <script src="js/live2dcubismframework.js"></script>
 <script src="js/live2dcubismpixi.js"></script>
 <script src="js/l2d.js"></script>
 <script src="js/main.js"></script>
+-->
 <script src="js/typed.js"></script>
 
 </head>
@@ -64,8 +66,8 @@
 <!--展示台-->	                                                                                                         
 <div id="stage">
 
-	<div id="inner">
-			<div id="cover" style="bottom: 0%">
+	<div id="inner" >
+			<div id="cover" style="bottom: 0%;" >
 				<div id="text">
 					<span style="color: cyan;">Hello</span><span style="color: white;">World!</span>
 				</div>
@@ -73,14 +75,17 @@
 				<div id="detail"><div id="handle"></div></div>
 				
 			</div>
-		<div class="Canvas left" align="center" style="border-radius: 50% 50% 50% 50%;" ></div>
+		<!--
+			<div class="Canvas left" align="center" style="border-radius: 50% 50% 50% 50%;" ></div>
+		-->
+		<a href="https://space.bilibili.com/672328094" target="_blank"><img style="  border-radius: 50% 50% 50% 50%;" src="assets/Diana.jpg"></a>
 	</div>
 	
 	<div id = "icon">
-		<a href="http://github.com/xinitx" target="_blank"><i class="fab fa-github" id = "github" ></i></a>
-		<a href="http://xinitx.github.io/blog/" target="_blank"> <i class="fab fa-wikipedia-w" id = "wiki"></i></a>
+		<a href="https://github.com/xinitx" target="_blank"><i class="fab fa-github" id = "github" ></i></a>
+		<a href="https://xinitx.github.io/blog/" target="_blank"> <i class="fab fa-wikipedia-w" id = "wiki"></i></a>
 		
-		<a href="Collection.html" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" class="bi bi-collection" viewBox="0 0 16 16" id="collection">
+		<a href="Collection.html" target="_blank"><svg xmlns="https://www.w3.org/2000/svg" class="bi bi-collection" viewBox="0 0 16 16" id="collection">
 		  <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
 		</svg></a>
 	</div>
@@ -100,7 +105,7 @@
 	const player_btn = document.getElementById("playerBtn");
 	const player = document.getElementById("player");
 	player_btn.style.display = "none";
-	the_timeout = setTimeout(decay, 16000);
+	the_timeout = setTimeout(decay, 3000);
 	function decay(){
 		player.style.width = "0px";
 		player_btn.style.display = "block";
@@ -130,7 +135,7 @@
 	var buf = 5;
 	var time = 2000;
 	var interval;
-	setTimeout(starcover, 16000)
+	setTimeout(starcover, 3000)
 	function coverPosition() {
 	if(buf < 95)
 		buf += 15;
@@ -147,15 +152,15 @@ const loadpic = document.querySelector('.loadpic');
 const bar = document.querySelector('.bar');
 const hander = document.querySelector('.hander');
 let len = window.innerWidth / 2;
-Velocity(loadpic, { opacity:1 }, { duration: '12000' });
+Velocity(loadpic, { opacity:1 }, { duration: '3000' });
 Velocity(loadpic, { opacity:0 }, { duration: '3000', display: "none" });
-Velocity(bar, { translateY: '135px', backgroundColor: ['#666', '#fff']}, {easing: [1000, 15],duration: '4000'});
-Velocity(bar, { backgroundColor: ['#666', '#fff'] }, { duration: '9000', display: "none" });
-Velocity(hander,{translateY:'135px',backgroundColor:['#fff','#fff']},{easing:[1000,15],duration: '4000'});
-Velocity(hander, {width:len,backgroundColor: ['#fff', '#ffffe5'],}, {easing: "ease-in-out",display: "none",duration: '9000',});
+Velocity(bar, { translateY: '135px', backgroundColor: ['#666', '#fff']}, {easing: [1000, 15],duration: '1000'});
+Velocity(bar, { backgroundColor: ['#666', '#fff'] }, { duration: '2000', display: "none" });
+Velocity(hander,{translateY:'135px',backgroundColor:['#fff','#fff']},{easing:[1000,15],duration: '1000'});
+Velocity(hander, {width:len,backgroundColor: ['#fff', '#ffffe5'],}, {easing: "ease-in-out",display: "none",duration: '2000',});
 setTimeout(() =>{
 	Velocity(document.querySelector('.content'), {opacity:1}, {duration: '3000',});
-}, 12000)
+}, 4000)
 
 </script>
 </html>

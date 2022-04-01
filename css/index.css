@@ -33,15 +33,19 @@ body{
 	position: absolute;
 }
 #inner {
+	display: flex;
+	justify-content: center;
 	position: relative;
 	background-color: #999;
-	clip-path: circle(45% at center)
+	align-items: center;
+	color: #66ccff;
+	clip-path: circle(33% at center)
 }
 #cover {
 	position: absolute;
 	background-color: #CB3837;
 	width: 100%;
-	height: 120%;
+	height: 160%;
 	text-align: center;
 	transition: all 1s;
 	box-shadow: 0 0 0 5px rgba(0, 0, 0, .1);
@@ -49,9 +53,9 @@ body{
 }
 #text {
 	position: absolute;
-	font-size: 28;
+	font-size: 14;
 	bottom: 30%;
-	font-size: 2em;
+	font-size: 1.5em;
 	left: 50%;
 	transform: translateX(-50%);
 	opacity: 0.4;

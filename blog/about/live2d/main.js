@@ -17,7 +17,7 @@ class Viewer {
         this.messageArray = "";
 
         if (screen.width >= 768) {
-            this.l2d.load("lafei_4", this);
+            this.l2d.load("Diana", this);
         }
         this.app = new PIXI.Application(1280, 720, {  backgroundColor: 0x282828 });
         this.canvas.html(this.app.view);
