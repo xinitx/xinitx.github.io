@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/logo.png">
+  <link rel="mask-icon" href="/blog/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xinitx.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+<meta name="description" content="前言">
+<meta property="og:type" content="article">
+<meta property="og:title" content="排序">
+<meta property="og:url" content="http://xinitx.github.io/blog/Algorithm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:site_name" content="山间残月的博客">
+<meta property="og:description" content="前言">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://xinitx.github.io/blog/Algorithm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/8.png">
+<meta property="article:published_time" content="2021-12-02T09:16:32.000Z">
+<meta property="article:modified_time" content="2022-02-09T14:42:28.419Z">
+<meta property="article:author" content="init">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xinitx.github.io/blog/Algorithm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/8.png">
+
+
+<link rel="canonical" href="http://xinitx.github.io/blog/Algorithm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://xinitx.github.io/blog/Algorithm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/","path":"Algorithm/基础算法/排序/","title":"排序"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>排序 | 山间残月的博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+  
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><script type="text/javascript"> 
+	var title=document.title; 
+	// window 失去焦点 
+		window.onblur = function() { 
+		document.title='(つ ェ ⊂)我藏好了哦~';
+	};
+	// window 获得焦点 
+		window.onfocus = function() { 
+		document.title='(*゜ロ゜)ノ被发现了~'; 
+		setTimeout("document.title=title",3000); 
+	}
+</script>
+
+<div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+    <a href="https://xinitx.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">山间残月的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/blog/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/blog/tags" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/blog/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/blog/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E6%8E%92%E5%BA%8F"><span class="nav-number">2.</span> <span class="nav-text">比较排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F"><span class="nav-number">2.1.</span> <span class="nav-text">交换排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F-Bubble-Sort"><span class="nav-number">2.1.1.</span> <span class="nav-text">冒泡排序(Bubble Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%B8%A1%E5%B0%BE%E9%85%92%E6%8E%92%E5%BA%8F-Cocktail-Sort"><span class="nav-number">2.1.2.</span> <span class="nav-text">鸡尾酒排序(Cocktail Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%B3%E6%8E%92%E5%BA%8F-Comb-Sort"><span class="nav-number">2.1.3.</span> <span class="nav-text">梳排序(Comb Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8F%E5%84%92%E6%8E%92%E5%BA%8F-Stupid-Sort"><span class="nav-number">2.1.4.</span> <span class="nav-text">侏儒排序(Stupid Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F-Quick-Sort"><span class="nav-number">2.1.5.</span> <span class="nav-text">快速排序(Quick Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%9C%81%E6%8E%92%E5%BA%8F-Intro-Sort"><span class="nav-number">2.1.6.</span> <span class="nav-text">内省排序(Intro Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A5%87%E5%81%B6%E6%8E%92%E5%BA%8F-Parity-Sort"><span class="nav-number">2.1.7.</span> <span class="nav-text">奇偶排序(Parity Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%85%A2%E9%80%9F%E6%8E%92%E5%BA%8F-Slow-Sort"><span class="nav-number">2.1.8.</span> <span class="nav-text">慢速排序(Slow Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AD%E7%9A%AE%E5%8C%A0%E6%8E%92%E5%BA%8F-Stooge-Sort"><span class="nav-number">2.1.9.</span> <span class="nav-text">臭皮匠排序(Stooge Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bogo%E6%8E%92%E5%BA%8F-Bogo-Sort"><span class="nav-number">2.1.10.</span> <span class="nav-text">Bogo排序(Bogo Sort)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="nav-number">2.2.</span> <span class="nav-text">选择排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F-Selection-Sort"><span class="nav-number">2.2.1.</span> <span class="nav-text">选择排序(Selection Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A0%86%E6%8E%92%E5%BA%8F-Heap-Sort"><span class="nav-number">2.2.2.</span> <span class="nav-text">堆排序(Heap Sort)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="nav-number">2.3.</span> <span class="nav-text">插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-Insertion-Sort"><span class="nav-number">2.3.1.</span> <span class="nav-text">插入排序(Insertion Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%91%E6%B4%9B%E5%BC%97%E6%8E%92%E5%BA%8F-Clover-Sort"><span class="nav-number">2.3.2.</span> <span class="nav-text">科洛弗排序(Clover Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F-Shell-Sort"><span class="nav-number">2.3.3.</span> <span class="nav-text">希尔排序(Shell Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%8E%92%E5%BA%8F-Library-Sort"><span class="nav-number">2.3.4.</span> <span class="nav-text">图书馆排序(Library Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%90%E5%BF%83%E6%8E%92%E5%BA%8F-Patience-Sort"><span class="nav-number">2.3.5.</span> <span class="nav-text">耐心排序(Patience Sort)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="nav-number">2.4.</span> <span class="nav-text">归并排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F-Merge-Sort"><span class="nav-number">2.4.1.</span> <span class="nav-text">归并排序(Merge Sort)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%97%B6%E9%97%B4%E6%8E%92%E5%BA%8F"><span class="nav-number">3.</span> <span class="nav-text">线性时间排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E6%8E%92%E5%BA%8F"><span class="nav-number">3.1.</span> <span class="nav-text">分布排序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F-Counting-Sort"><span class="nav-number">3.1.1.</span> <span class="nav-text">计数排序(Counting Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A1%B6%E6%8E%92%E5%BA%8F-Bucket-Sort"><span class="nav-number">3.1.2.</span> <span class="nav-text">桶排序(Bucket Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%B8%BD%E5%B7%A2%E6%8E%92%E5%BA%8F-Pigeonhole-Sort"><span class="nav-number">3.1.3.</span> <span class="nav-text">鸽巢排序(Pigeonhole Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F-Base-Sort"><span class="nav-number">3.1.4.</span> <span class="nav-text">基数排序(Base Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8F%A0%E6%8E%92%E5%BA%8F-Bead-Sort"><span class="nav-number">3.1.5.</span> <span class="nav-text">珠排序(Bead Sort)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%AF%E5%8F%91%E5%BC%8F%E6%8E%92%E5%BA%8F"><span class="nav-number">4.</span> <span class="nav-text">启发式排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%85%8E%E9%A5%BC%E6%8E%92%E5%BA%8F"><span class="nav-number">4.1.</span> <span class="nav-text">煎饼排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F"><span class="nav-number">4.2.</span> <span class="nav-text">拓扑排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91"><span class="nav-number">4.3.</span> <span class="nav-text">哈夫曼树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="init"
+      src="/blog/images/logo.png">
+  <p class="site-author-name" itemprop="name">init</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://xinitx.github.io/" title="Index → https:&#x2F;&#x2F;xinitx.github.io"><i class="fas fa-fan fa-fw"></i>Index</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/xinitx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xinitx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=x17152141010@163.com" title="Mail → http:&#x2F;&#x2F;mail.qq.com&#x2F;cgi-bin&#x2F;qm_share?t&#x3D;qm_mailme&amp;email&#x3D;x17152141010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Mail</a>
+      </span>
+  </div>
+
+
+
+          <p class="name">Have a <text id="changerificwordspanid"></text> day!</p>
+          
+          <!-- require APlayer -->
+          <link rel="stylesheet" href="/blog/js/APlayer.min.css">
+          <script src="/blog/js/APlayer.min.js"></script>
+          <!-- require MetingJS -->
+          <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+          <meting-js
+            server="tencent"
+            type="playlist"
+            id="8321899376"  theme = "#fff" style = "color:#000; opacity :0.3; "list-folded= "true">
+          </meting-js>
+        
+        </div>        
+      </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/typed.js"></script>
+    <script type="text/javascript">
+	  $("#changerificwordspanid").typed({
+		strings: ["good", "nice", "happy", "wonderful"],
+		typeSpeed: 100,
+		startDelay: 10,
+		showCursor: true,
+		shuffle: true,
+		loop:true
+	  });
+	</script>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://xinitx.github.io/blog/Algorithm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo.png">
+      <meta itemprop="name" content="init">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山间残月的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          排序
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-12-02 17:16:32" itemprop="dateCreated datePublished" datetime="2021-12-02T17:16:32+08:00">2021-12-02</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-02-09 22:42:28" itemprop="dateModified" datetime="2022-02-09T22:42:28+08:00">2022-02-09</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Algorithm/" itemprop="url" rel="index"><span itemprop="name">Algorithm</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Algorithm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+
+   
+  
+
+
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><span id="more"></span>
+
+
+<p>原地排序：不需要额外的空间<br>稳定性：相等元素排序前后相对位置不发生改变，稳定性可以通过使数据转换成二元组或者原数组映射解决。</p>
+<p>100000规模的int型随机非负整数测试，使用C++标准库函数sort验证</p>
+<table>
+<thead>
+<tr>
+<th>名词</th>
+<th>思想</th>
+<th>最好</th>
+<th>最坏</th>
+<th>平均</th>
+<th>测试</th>
+<th>空间</th>
+<th>稳定性</th>
+<th>限制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>冒泡排序</td>
+<td>每次遍历排好一个元素</td>
+<td>O(n)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>35.849s</td>
+<td>O(1)</td>
+<td>稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>鸡尾酒排序</td>
+<td>双向冒泡排序</td>
+<td>O(n)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>37.192s</td>
+<td>O(1)</td>
+<td>稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>梳排序</td>
+<td>分组思想</td>
+<td>O(n\log n)</td>
+<td>Ω(n<sup>2</sup>)</td>
+<td>Ω(n<sup>2</sup> / 2<sup>p</sup>)p = 增量</td>
+<td>26.346s</td>
+<td>O(1)</td>
+<td>不稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>侏儒排序</td>
+<td>遇到逆序序列就退步</td>
+<td>Ω(n)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>27.348s</td>
+<td>O(1)</td>
+<td>稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>快速排序</td>
+<td>分治，先排再分</td>
+<td>Θ(nlogn)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>Θ(nlogn)</td>
+<td>0.167s</td>
+<td>O(nlogn)</td>
+<td>不稳定</td>
+<td>不定</td>
+</tr>
+<tr>
+<td>内省排序</td>
+<td>混合快速和堆</td>
+<td>Θ(nlogn)</td>
+<td>Θ(nlogn))</td>
+<td>Θ(nlogn)</td>
+<td>0.168s</td>
+<td>O(nlogn)</td>
+<td>不稳定</td>
+<td>不定</td>
+</tr>
+<tr>
+<td>奇偶排序</td>
+<td>奇数、偶数遍历</td>
+<td>O(n)</td>
+<td>Θ(n<sup>2</sup></td>
+<td>O(n<sup>2</sup>)</td>
+<td>31.899s</td>
+<td>O(1)</td>
+<td>稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>慢速排序</td>
+<td>分治 + 递归</td>
+<td>Ω(n<sup>logn / (2 + c)</sup>)c &gt; 0</td>
+<td>Ω(n<sup>logn / (2 + c)</sup>)c &gt; 0</td>
+<td>Ω(n<sup>logn / (2 + c)</sup>)c &gt; 0</td>
+<td>…</td>
+<td>O(1)</td>
+<td>稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>臭皮匠排序</td>
+<td>三等分思想</td>
+<td>O(n<sup>log 3 /log 1.5</sup>)</td>
+<td>O(n<sup>log 3 /log 1.5</sup>)</td>
+<td>O(n<sup>log 3 /log 1.5</sup>)</td>
+<td>…</td>
+<td>O(1)</td>
+<td>不稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>Bogo排序</td>
+<td>全排列</td>
+<td>O(n)</td>
+<td>∞</td>
+<td>O(n * n!)</td>
+<td>…</td>
+<td>O(n)</td>
+<td>不稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>每次选择一个最值</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>15.384s</td>
+<td>O(1)</td>
+<td>不稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>利用树形结构</td>
+<td>O(nlogn)</td>
+<td>O(nlogn)</td>
+<td>Θ(nlogn)</td>
+<td>0.235s</td>
+<td>O(n)</td>
+<td>不稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>插入排序</td>
+<td>递归维护排序好的序列</td>
+<td>O(n)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>23.653s</td>
+<td>O(1)</td>
+<td>稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>科洛弗排序</td>
+<td>双向插入排序</td>
+<td>O(n)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>42.281s</td>
+<td>O(1)</td>
+<td>稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>分组思想</td>
+<td>O(n)</td>
+<td>O(nlog<sup>2</sup>n)</td>
+<td>Θ(nlogn)</td>
+<td>26.827s</td>
+<td>O(1)</td>
+<td>稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>图书馆排序</td>
+<td>优化</td>
+<td>O(n)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(nlogn)</td>
+<td>35.823s</td>
+<td>O(n)</td>
+<td>稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>耐心排序</td>
+<td>先优化为基本有序</td>
+<td>O(n)</td>
+<td>O(n<sup>2</sup>)</td>
+<td>O(nlogn)</td>
+<td>24.375s</td>
+<td>O(n)</td>
+<td>稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>分治，先分再排</td>
+<td>Θ(nlogn)</td>
+<td>Θ(nlogn)</td>
+<td>Θ(nlogn)</td>
+<td>0.243s</td>
+<td>Θ(n)</td>
+<td>稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>计数排序</td>
+<td>遍历计数</td>
+<td>O(n + k)</td>
+<td>O(n + k)</td>
+<td>O(n + k)</td>
+<td>…</td>
+<td>O(n + k)</td>
+<td>稳定</td>
+<td>正整数</td>
+</tr>
+<tr>
+<td>桶排序</td>
+<td>不完全计数排序</td>
+<td>O(n)</td>
+<td>O(nlogn)</td>
+<td>O(n + k)k = N * (logN-logM)</td>
+<td>0.6s</td>
+<td>O(n + k)</td>
+<td>稳定</td>
+<td>数组</td>
+</tr>
+<tr>
+<td>鸽巢排序</td>
+<td>没优化额外空间的计数排序</td>
+<td>O(n + k)</td>
+<td>O(n + k)</td>
+<td>O(n + k)</td>
+<td>…</td>
+<td>O(n + k)</td>
+<td>稳定</td>
+<td>正整数</td>
+</tr>
+<tr>
+<td>基数排序</td>
+<td>特殊的桶排序</td>
+<td>O(nlog<sub>10</sub>n)</td>
+<td>O(nlog<sub>10</sub>n)</td>
+<td>O(nlog<sub>10</sub>n)</td>
+<td>0.176s</td>
+<td>O(n + k)</td>
+<td>稳定</td>
+<td>整型</td>
+</tr>
+<tr>
+<td>珠排序</td>
+<td>特殊的计数排序</td>
+<td>O(S)s为所有数据和</td>
+<td>O(S)s为所有数据和</td>
+<td>O(S)s为所有数据和</td>
+<td>2.524s</td>
+<td>O(k)k为最大值</td>
+<td>不稳定</td>
+<td>正整数</td>
+</tr>
+</tbody></table>
+<h1 id="比较排序"><a href="#比较排序" class="headerlink" title="比较排序"></a>比较排序</h1><h2 id="交换排序"><a href="#交换排序" class="headerlink" title="交换排序"></a>交换排序</h2><h3 id="冒泡排序-Bubble-Sort"><a href="#冒泡排序-Bubble-Sort" class="headerlink" title="冒泡排序(Bubble Sort)"></a>冒泡排序(Bubble Sort)</h3><p>每次比较相邻元素，每次遍历排序好一个元素</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(int i = 0; i &lt; len - 1; i++ )&#123;</span><br><span class="line">        for(int j = 0; j &lt; len - 1 - i; j++ )&#123;</span><br><span class="line">            if(qus[j] &gt; qus[j + 1]) swap(qus[j], qus[j + 1]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="鸡尾酒排序-Cocktail-Sort"><a href="#鸡尾酒排序-Cocktail-Sort" class="headerlink" title="鸡尾酒排序(Cocktail Sort)"></a>鸡尾酒排序(Cocktail Sort)</h3><p>双向冒泡排序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for(int i = 0; i &lt; len / 2; i ++ )&#123;</span><br><span class="line">    for(int j = 0; j &lt; len - 1 - i; j++ )&#123;</span><br><span class="line">        if(qus[j] &gt; qus[j + 1]) swap(qus[j], qus[j + 1]);</span><br><span class="line">    &#125;</span><br><span class="line">    for(int j = len - 2 - i; j &gt; i; j--)&#123;</span><br><span class="line">        if(qus[j] &lt; qus[j - 1]) swap(qus[j], qus[j - 1]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="梳排序-Comb-Sort"><a href="#梳排序-Comb-Sort" class="headerlink" title="梳排序(Comb Sort)"></a>梳排序(Comb Sort)</h3><p>改良冒泡排序，分组思想</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void Shell_sort()&#123;</span><br><span class="line">    for(int i = len / 2; i &gt; 0; i /= 2)</span><br><span class="line">        for(int j = 0 ; j &lt; i; j++)</span><br><span class="line">            for(int k = j; k &lt; len - i; k += i )</span><br><span class="line">                for(int l = j; l &lt;  len - k - i; l += i)</span><br><span class="line">                    if(qus[l] &gt; qus[l + i]) swap(qus[l + i], qus[l]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="侏儒排序-Stupid-Sort"><a href="#侏儒排序-Stupid-Sort" class="headerlink" title="侏儒排序(Stupid Sort)"></a>侏儒排序(Stupid Sort)</h3><p>遇到逆序序列就退步，不用嵌套</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void gnome_sort()&#123;</span><br><span class="line">    int pos = 0;</span><br><span class="line">    while (pos &lt; len)</span><br><span class="line">    &#123;</span><br><span class="line">        if(pos == 0 || qus[pos] &gt;= qus[pos - 1])</span><br><span class="line">            pos++;</span><br><span class="line">        else</span><br><span class="line">            swap(qus[pos], qus[pos - 1]), pos --;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="快速排序-Quick-Sort"><a href="#快速排序-Quick-Sort" class="headerlink" title="快速排序(Quick Sort)"></a>快速排序(Quick Sort)</h3><p>分支，先分再排</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void quick_sort(int l, int r)&#123;</span><br><span class="line">    if(l &gt;= r) return;</span><br><span class="line">    int mid = (qus[l] + qus[r]) &gt;&gt; 1;</span><br><span class="line">    int i = l - 1, j = r + 1;</span><br><span class="line">    while (i &lt; j)</span><br><span class="line">    &#123;</span><br><span class="line">        while(qus[++i] &lt; mid);</span><br><span class="line">        while(qus[--j] &gt; mid);</span><br><span class="line">        if(i &lt; j) swap(qus[i], qus[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; i &lt;&lt; endl &lt;&lt; j;</span><br><span class="line">    quick_sort(l, j), quick_sort(j + 1, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="内省排序-Intro-Sort"><a href="#内省排序-Intro-Sort" class="headerlink" title="内省排序(Intro Sort)"></a>内省排序(Intro Sort)</h3><p>快速排序 + 堆排序，先使用快速排序当递归深度过深则在对应区间使用堆排序，STL sort</p>
+<h3 id="奇偶排序-Parity-Sort"><a href="#奇偶排序-Parity-Sort" class="headerlink" title="奇偶排序(Parity Sort)"></a>奇偶排序(Parity Sort)</h3><p>适用多处理器环境，反复奇数和偶数遍历元素对排序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">void Parity_sort()&#123;</span><br><span class="line">    bool jud = false;</span><br><span class="line">    while (!jud)</span><br><span class="line">    &#123;</span><br><span class="line">        jud = true;</span><br><span class="line">        for(int i = 1; i &lt; len - 1; i += 2)&#123;</span><br><span class="line">            if(qus[i] &gt; qus[i + 1]) swap(qus[i], qus[i + 1]), jud = false;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = 0; i &lt; len - 1; i += 2)&#123;</span><br><span class="line">            if(qus[i] &gt; qus[i + 1]) swap(qus[i], qus[i + 1]), jud = false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="慢速排序-Slow-Sort"><a href="#慢速排序-Slow-Sort" class="headerlink" title="慢速排序(Slow Sort)"></a>慢速排序(Slow Sort)</h3><p>分治 + 递归</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void slow_sort(int l, int r)&#123;</span><br><span class="line">    if(l &gt;= r) return;</span><br><span class="line">    int mid = (l + r) / 2;</span><br><span class="line">    slow_sort(l, mid), slow_sort(mid + 1, r);</span><br><span class="line">    if(qus[r] &lt; qus[mid])   swap(qus[r], qus[mid]);</span><br><span class="line">    slow_sort(l, r - 1); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="臭皮匠排序-Stooge-Sort"><a href="#臭皮匠排序-Stooge-Sort" class="headerlink" title="臭皮匠排序(Stooge Sort)"></a>臭皮匠排序(Stooge Sort)</h3><p>三等分思想，可见<strong>称球问题</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void stoogeSort(int low, int high)&#123;</span><br><span class="line">    if(qus[low] &gt; qus[high]) swap(qus[low], qus[high]);</span><br><span class="line">    if(low + 1 &gt;= high ) return;</span><br><span class="line">    int split = (high - low + 1) / 3;</span><br><span class="line">    stoogeSort(low, high - split);</span><br><span class="line">    stoogeSort(low + split, high);</span><br><span class="line">    stoogeSort(low, high - split);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Bogo排序-Bogo-Sort"><a href="#Bogo排序-Bogo-Sort" class="headerlink" title="Bogo排序(Bogo Sort)"></a>Bogo排序(Bogo Sort)</h3><p>教育用排序，随机生成或枚举所有元素的排列，直到为排好序的序列</p>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><h3 id="选择排序-Selection-Sort"><a href="#选择排序-Selection-Sort" class="headerlink" title="选择排序(Selection Sort)"></a>选择排序(Selection Sort)</h3><p>直观，每次选择一个最值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(int i = 0; i &lt; len - 1; i++ )&#123;</span><br><span class="line">    int min_idx = i;</span><br><span class="line">    for(int j = i + 1; j &lt; len; j++ )&#123;</span><br><span class="line">        if(qus[j] &lt; qus[min_idx]) min_idx = j;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(qus[i], qus[min_idx]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="堆排序-Heap-Sort"><a href="#堆排序-Heap-Sort" class="headerlink" title="堆排序(Heap Sort)"></a>堆排序(Heap Sort)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">for(int i = 0; i &lt; len ; i++ )&#123;</span><br><span class="line">        h[++h_size] = qus[i];</span><br><span class="line">        heap_sort(h_size);</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 0; i &lt; len; i++ )&#123;</span><br><span class="line">        qus[i] = h[1];</span><br><span class="line">        h[1] = h[h_size];</span><br><span class="line">        h_size--;</span><br><span class="line">        down(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">void heap_sort(int pos)&#123;</span><br><span class="line">    while(pos / 2 &amp;&amp; h[pos/2] &gt; h[pos])   // 和父节点递归比较</span><br><span class="line">    &#123;</span><br><span class="line">        swap(h[pos/2] , h[pos]);</span><br><span class="line">        pos /= 2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void down(int pos)&#123;</span><br><span class="line">    int f = pos;</span><br><span class="line">    if(pos * 2 &lt;= h_size &amp;&amp; h[pos * 2] &lt; h[f]) f = 2 * pos;</span><br><span class="line">    if(pos * 2 + 1 &lt;= h_size &amp;&amp; h[pos * 2 + 1] &lt; h[f]) f = 2 * pos + 1;</span><br><span class="line">    if( f != pos )&#123;</span><br><span class="line">        swap(h[pos], h[f]);</span><br><span class="line">        down(f);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><h3 id="插入排序-Insertion-Sort"><a href="#插入排序-Insertion-Sort" class="headerlink" title="插入排序(Insertion Sort)"></a>插入排序(Insertion Sort)</h3><p>递归维护排序好的序列</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(int i = 1; i &lt; len; i++ )&#123;</span><br><span class="line">        for(int j = 0; j &lt; i; j++ )&#123;</span><br><span class="line">            if(qus[j] &gt; qus[i]) swap(qus[i], qus[j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="科洛弗排序-Clover-Sort"><a href="#科洛弗排序-Clover-Sort" class="headerlink" title="科洛弗排序(Clover Sort)"></a>科洛弗排序(Clover Sort)</h3><p>双向插入排序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void clover_sort()&#123;</span><br><span class="line">    for(int i = 1; i &lt; len; i++ )&#123;</span><br><span class="line">        for(int j = 0; j &lt; i; j++ )&#123;</span><br><span class="line">            if(qus[j] &gt; qus[i]) swap(qus[i], qus[j]);</span><br><span class="line">            if(qus[len - 1 - j] &lt; qus[len - 1 - i]) swap(qus[len - 1 - j], qus[len - 1 - i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="希尔排序-Shell-Sort"><a href="#希尔排序-Shell-Sort" class="headerlink" title="希尔排序(Shell Sort)"></a>希尔排序(Shell Sort)</h3><p>分组思想</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//简单版</span><br><span class="line">void Shell_sort()&#123;</span><br><span class="line">    for(int i = len / 2; i &gt; 0; i /= 2)</span><br><span class="line">        for(int j = 0 ; j &lt; i; j++)</span><br><span class="line">            for(int k = j + i; k &lt; len; k += i )</span><br><span class="line">                for(int l = j; l &lt; k ; l += i)</span><br><span class="line">                    if(qus[l] &gt; qus[k]) swap(qus[k], qus[l]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//简化版</span><br><span class="line">void Shell_sort()&#123;</span><br><span class="line">    for(int i = len / 2; i &gt; 0; i /= 2)&#123;</span><br><span class="line">        for(int j = i ; j &lt; len; j++)&#123;</span><br><span class="line">            for(int k = j; k &gt;= i; k -= i)</span><br><span class="line">            if(qus[k] &lt; qus[k - i]) swap(qus[k], qus[k - i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="图书馆排序-Library-Sort"><a href="#图书馆排序-Library-Sort" class="headerlink" title="图书馆排序(Library Sort)"></a>图书馆排序(Library Sort)</h3><p>插入排序的变体，在每个元素间添加空位，可以直接插入，此处未用二分查找</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">void library_sort()&#123;</span><br><span class="line">    int nul = 0x3f3f3f3f;</span><br><span class="line">    </span><br><span class="line">    vector&lt;int&gt; buf(3 * len, nul);</span><br><span class="line">    for (int i = 0; i &lt; len; i ++)&#123;</span><br><span class="line">        buf[i * 3] = qus[i];</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 1; i &lt; len * 3; i ++ )&#123;</span><br><span class="line">        for(int j = i - 1; j &gt;= 0; j-- )&#123;</span><br><span class="line">            if(buf[i] == nul) break;</span><br><span class="line">            if(buf[j] == nul) continue;</span><br><span class="line">            if(buf[i] &gt; buf[j])&#123;</span><br><span class="line">                if(j == i - 1) break;</span><br><span class="line">                for(int k = j + 1; k &lt; i - 1; k ++ )&#123;</span><br><span class="line">                    swap(buf[k], buf[i]);</span><br><span class="line">                    if(buf[i] == nul) break;</span><br><span class="line">                &#125;</span><br><span class="line">                break;</span><br><span class="line">            &#125; </span><br><span class="line">            if(j == 0)&#123;</span><br><span class="line">                for(int k = 0; k &lt; i; k ++ )&#123;</span><br><span class="line">                    swap(buf[k], buf[i]);</span><br><span class="line">                    if(buf[i] == nul) break;</span><br><span class="line">                &#125;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 0, j = 0; i &lt; len * 3; i ++ )&#123;</span><br><span class="line">        if(buf[i] != nul)</span><br><span class="line">            qus[j++] = buf[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="耐心排序-Patience-Sort"><a href="#耐心排序-Patience-Sort" class="headerlink" title="耐心排序(Patience Sort)"></a>耐心排序(Patience Sort)</h3><p>先调整为基本有序再进行排序，受纸牌游戏耐心的启发</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">void patience_sort()&#123;</span><br><span class="line">    vector&lt;stack&lt;int&gt;&gt; buf; </span><br><span class="line">    for(int i = 0; i &lt; len; i ++ )&#123;</span><br><span class="line">        bool jud = false;</span><br><span class="line">        for(int j = 0; j &lt; buf.size(); j++ )&#123;</span><br><span class="line">            if(qus[i] &lt; buf[j].top())&#123;</span><br><span class="line">                buf[j].push(qus[i]);</span><br><span class="line">                jud = true;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(!jud)</span><br><span class="line">        &#123;</span><br><span class="line">            stack&lt;int&gt; tmp;</span><br><span class="line">            tmp.push(qus[i]);</span><br><span class="line">            buf.push_back(tmp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int j = 0, i = 0; j &lt; buf.size(); j++ )&#123;</span><br><span class="line">        while (buf[j].size())</span><br><span class="line">        &#123;</span><br><span class="line">            qus[i] = buf[j].top();</span><br><span class="line">            buf[j].pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 1; i &lt; len; i++ )&#123;</span><br><span class="line">        for(int j = 0; j &lt; i; j++ )&#123;</span><br><span class="line">            if(qus[j] &gt; qus[i]) swap(qus[i], qus[j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><h3 id="归并排序-Merge-Sort"><a href="#归并排序-Merge-Sort" class="headerlink" title="归并排序(Merge Sort)"></a>归并排序(Merge Sort)</h3><p>分治的思想</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">void sort_define(int l, int r)&#123;</span><br><span class="line">    if(l &gt;= r) return;</span><br><span class="line">    int mid = (l + r) / 2;</span><br><span class="line">    sort_define(l, mid), sort_define(mid + 1, r);</span><br><span class="line">    int i = l, j = mid + 1, k = 0;</span><br><span class="line">    for(; i != mid + 1 &amp;&amp; j != r + 1 ;)&#123;</span><br><span class="line">        if(qus[i] &lt;= qus[j]) buf[k++] = qus[i++];</span><br><span class="line">        else    buf[k++] = qus[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    while(i != mid + 1)    buf[k++] = qus[i++];</span><br><span class="line">    while(j != r + 1)   buf[k++] = qus[j++];</span><br><span class="line">    for(i = l, k = 0;i &lt;= r; i++ )&#123;</span><br><span class="line">        qus[i] = buf[k++];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="线性时间排序"><a href="#线性时间排序" class="headerlink" title="线性时间排序"></a>线性时间排序</h1><h2 id="分布排序"><a href="#分布排序" class="headerlink" title="分布排序"></a>分布排序</h2><h3 id="计数排序-Counting-Sort"><a href="#计数排序-Counting-Sort" class="headerlink" title="计数排序(Counting Sort)"></a>计数排序(Counting Sort)</h3><p>知道小于x值的值个数，就能判断出x的位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">//不稳定</span><br><span class="line">void count_sort()&#123;</span><br><span class="line">    int max = qus[0], min = qus[0];</span><br><span class="line">    for(auto x : qus)&#123;</span><br><span class="line">        if(x &gt; max)</span><br><span class="line">            max = x;</span><br><span class="line">        if(x &lt; min)</span><br><span class="line">            min = x;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;int&gt; count(max - min + 1, 0); //额外空间</span><br><span class="line">    for(int i = 0; i &lt; len; i ++ )&#123;</span><br><span class="line">        count[qus[i] - min]++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int index = 0;</span><br><span class="line">    for(int i = 0; i &lt; count.size(); i ++ )</span><br><span class="line">        for(int cnt = 0; cnt &lt; count[i]; cnt ++)</span><br><span class="line">            qus[index++] = i + min;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//稳定</span><br><span class="line">vector&lt;int&gt; count_sort()&#123;</span><br><span class="line">    int max = qus[0], min = qus[0];</span><br><span class="line">    for(auto x : qus)&#123;</span><br><span class="line">        if(x &gt; max)</span><br><span class="line">            max = x;</span><br><span class="line">        if(x &lt; min)</span><br><span class="line">            min = x;</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;int&gt; count(max - min + 1, 0); //额外空间</span><br><span class="line">    for(int i = 0; i &lt; len; i ++ )&#123;</span><br><span class="line">        count[qus[i] - min]++;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 1; i &lt; len; i ++ )&#123;</span><br><span class="line">        count[i] += count[i - 1];</span><br><span class="line">    &#125;</span><br><span class="line">    vector&lt;int&gt; buf(len, 0);    //额外空间</span><br><span class="line">    for(int i = len - 1; i &gt;= 0; i--)&#123;</span><br><span class="line">        buf[count[qus[i] - min]-1] = qus[i];</span><br><span class="line">        count[qus[i] - min] --;</span><br><span class="line">    &#125;</span><br><span class="line">    return buf;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="桶排序-Bucket-Sort"><a href="#桶排序-Bucket-Sort" class="headerlink" title="桶排序(Bucket Sort)"></a>桶排序(Bucket Sort)</h3><p>元素分到有限的桶，每个桶再分别排序，计数排序 + 分治</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//按范围分桶，稳定</span><br><span class="line">void bucketsort(int range) &#123;</span><br><span class="line">    vector&lt;int&gt; buckets[range];</span><br><span class="line">    for(int elem : qus)</span><br><span class="line">        buckets[elem / range].push_back(elem);</span><br><span class="line">    for(int i = 0; i &lt; range; i++ )</span><br><span class="line">        for(int j = 0; j &lt; buckets[i].size() - 1; j++ )</span><br><span class="line">            for(int k = 0; k &lt; buckets[i].size() - 1 - j; k++ )</span><br><span class="line">                if(buckets[i][k] &gt; buckets[i][k + 1]) swap(buckets[i][k], buckets[i][k + 1]);</span><br><span class="line">    int index = 0;</span><br><span class="line">    for(int i = 0; i &lt; range; i++ )&#123;</span><br><span class="line">        for(int j = 0; j &lt; buckets[i].size(); j++ )&#123;</span><br><span class="line">            qus[index++] = buckets[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="鸽巢排序-Pigeonhole-Sort"><a href="#鸽巢排序-Pigeonhole-Sort" class="headerlink" title="鸽巢排序(Pigeonhole Sort)"></a>鸽巢排序(Pigeonhole Sort)</h3><p>实际上就等于计数排序，只是辅助数组范围0 ~ max</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//不稳定</span><br><span class="line">void pigeonhole_sort() &#123;</span><br><span class="line">vector&lt;int&gt; auxiliary(max, 0);</span><br><span class="line"></span><br><span class="line">for(int i = 0; i &lt; len; ++i)</span><br><span class="line">    auxiliary[qus[i]]++;</span><br><span class="line">for(int i = 0, j = 0; i &lt; NUM; ++i)</span><br><span class="line">    for(int k = 0; k &lt; auxiliary[i]; ++k)</span><br><span class="line">        array[j++] = i;</span><br><span class="line">&#125;</span><br><span class="line">//稳定见计数排序</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="基数排序-Base-Sort"><a href="#基数排序-Base-Sort" class="headerlink" title="基数排序(Base Sort)"></a>基数排序(Base Sort)</h3><p>相当于特殊的桶排序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//按基数分桶</span><br><span class="line">void bucketsort(vector&lt;int&gt;&amp; arr) &#123;</span><br><span class="line">    queue&lt;int&gt; buckets[10];			//额外空间</span><br><span class="line">    for (int digit = 1; digit &lt;= 1e9; digit *= 10) &#123;</span><br><span class="line">        for (int elem : arr) &#123;</span><br><span class="line">            buckets[(elem / digit) % 10].push(elem);</span><br><span class="line">        &#125;</span><br><span class="line">        int idx = 0;</span><br><span class="line">        for (queue&lt;int&gt;&amp; bucket : buckets) &#123;</span><br><span class="line">            while (!bucket.empty()) &#123;</span><br><span class="line">                arr[idx++] = bucket.front();</span><br><span class="line">                bucket.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="珠排序-Bead-Sort"><a href="#珠排序-Bead-Sort" class="headerlink" title="珠排序(Bead Sort)"></a>珠排序(Bead Sort)</h3><p>对应算盘，难以在计算机中实现。共N（最大的数）个竖直杆，每一个数对应本数值个珠子。<br><img src = "/2.png"></img><br><img src = "/3.png"></img></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">void bead_sort()&#123;</span><br><span class="line">    int max = qus[0];</span><br><span class="line">    for(int i  = 0; i &lt; len; i ++)  if(qus[i] &gt; max) max = qus[i];</span><br><span class="line"></span><br><span class="line">    vector&lt;int&gt; buf(max, 0);</span><br><span class="line">    for(int i = 0; i &lt; len; i ++)&#123;</span><br><span class="line">        for(int j = 0; j &lt; qus[i]; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            buf[j]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 0; i &lt; len; i++ )&#123;</span><br><span class="line">        int tmp = 0;</span><br><span class="line">        for(int j = 0; j &lt; max; j++ )&#123;</span><br><span class="line">            if(buf[j])&#123;</span><br><span class="line">                tmp++;</span><br><span class="line">                buf[j]--;</span><br><span class="line">            &#125;</span><br><span class="line">            else&#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        qus[len - 1- i] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="启发式排序"><a href="#启发式排序" class="headerlink" title="启发式排序"></a>启发式排序</h1><h2 id="煎饼排序"><a href="#煎饼排序" class="headerlink" title="煎饼排序"></a>煎饼排序</h2><p>蛮力法：每一次将最小值或最大值翻到顶，再翻到底</p>
+<h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>位于右边的节点没有指向左边节点的路径，用于各节点间的依赖关系。</p>
+<p><strong>DFS</strong><br>每次到叶节点时，将其记录并排除。</p>
+<p><strong>减治</strong><br>每次将入度为零的节点排除</p>
+<h2 id="哈夫曼树"><a href="#哈夫曼树" class="headerlink" title="哈夫曼树"></a>哈夫曼树</h2><p>最优二叉树，带权路径长度最短的树，权值较大的结点离根较近，常用于最佳编码(Huffman Coding 哈夫曼编码)<br><img src="8.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">priority_queue&lt;pair&lt;int, string&gt;, vector&lt;pair&lt;int, string&gt;&gt; , greater&lt;pair&lt;int, string&gt;&gt;&gt; qus;</span><br><span class="line">map&lt;char, string&gt; path;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    int n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    for(int i = 0; i &lt; n; i++ )&#123;</span><br><span class="line">        char buf1;</span><br><span class="line">        int buf2;</span><br><span class="line">        cin &gt;&gt; buf1 &gt;&gt; buf2;</span><br><span class="line">        string buf3 = &quot;&quot;;</span><br><span class="line">        buf3.push_back(buf1);</span><br><span class="line">        qus.push(&#123;buf2, buf3&#125;);</span><br><span class="line">        path[buf1] = &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    while (qus.size() &gt; 1)</span><br><span class="line">    &#123;</span><br><span class="line">        auto buf1 = qus.top();</span><br><span class="line">        qus.pop();</span><br><span class="line">        for(int i = 0; i &lt; buf1.second.size(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            path[buf1.second[i]].push_back(&#x27;0&#x27;);</span><br><span class="line">        &#125;</span><br><span class="line">        auto buf2 = qus.top();</span><br><span class="line">        qus.pop();</span><br><span class="line">        for(int i = 0; i &lt; buf2.second.size(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            path[buf2.second[i]].push_back(&#x27;1&#x27;);</span><br><span class="line">        &#125;</span><br><span class="line">        qus.push(&#123;buf1.first + buf2.first, buf1.second + buf2.second&#125;);</span><br><span class="line">        //cout &lt;&lt; buf1.second &lt;&lt; &quot;   &quot; &lt;&lt; buf2.second &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    for(map&lt;char, string&gt;::iterator it = path.begin(); it != path.end(); it ++)&#123;</span><br><span class="line">        cout &lt;&lt; it-&gt;first &lt;&lt; &quot;:&quot; &lt;&lt; it-&gt;second &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>&emsp;&emsp;许多算法还可以优化，还是STL的sort函数最快</p>
+
+    </div>
+
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------文章到此已结束<i class="fa fa-heart"></i>发现错误请指正-------------</div>
+    
+</div>
+      
+    </div>
+	
+	
+    
+    
+    
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/alipay.png" alt="init Alipay">
+        <span>Alipay</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/Computer/Hardware/Keyboard/" rel="prev" title="Keyboard">
+                  <i class="fa fa-chevron-left"></i> Keyboard
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/Algorithm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%80%9D%E6%83%B3/" rel="next" title="思想">
+                  思想 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">init</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://xinitx.github.io/blog/Algorithm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

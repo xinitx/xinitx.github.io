@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/logo.png">
+  <link rel="mask-icon" href="/blog/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xinitx.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+<meta name="description" content="什么是图形学&amp;emsp;&amp;emsp;计算机图形学(Computer Graphics，简称CG)是一种使用数学算法将二维或三维图形转化为计算机显示器的栅格形式的科学（百度百科）。包括建模(Modeling)、渲染(Rendering)、动画(Animation)和人机交互(Human–computer Interaction, HCI)等主要领域。 渲染管线（Graphics （Real-time">
+<meta property="og:type" content="article">
+<meta property="og:title" content="graphics">
+<meta property="og:url" content="http://xinitx.github.io/blog/Game/graphics/index.html">
+<meta property="og:site_name" content="山间残月的博客">
+<meta property="og:description" content="什么是图形学&amp;emsp;&amp;emsp;计算机图形学(Computer Graphics，简称CG)是一种使用数学算法将二维或三维图形转化为计算机显示器的栅格形式的科学（百度百科）。包括建模(Modeling)、渲染(Rendering)、动画(Animation)和人机交互(Human–computer Interaction, HCI)等主要领域。 渲染管线（Graphics （Real-time">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/point.jpg">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/cross.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/蒙特卡罗.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/newp.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/oldp.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/cmull.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/线性变换.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/Scale.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/reflect.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/Shear.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/rotate.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/平移.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/齐次坐标.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/D31.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/D32.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/Rodrigues.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/罗.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/View.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/ratio.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/正交.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/Ortho1.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/Ortho2.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/Screen.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/双线性插值">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/KDtree.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/BVH.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/渲染方程.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/路径追踪.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/RR.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Game/graphics/光照.png">
+<meta property="article:published_time" content="2022-03-18T05:20:25.000Z">
+<meta property="article:modified_time" content="2022-03-22T10:43:48.578Z">
+<meta property="article:author" content="init">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xinitx.github.io/blog/Game/graphics/point.jpg">
+
+
+<link rel="canonical" href="http://xinitx.github.io/blog/Game/graphics/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://xinitx.github.io/blog/Game/graphics/","path":"Game/graphics/","title":"graphics"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>graphics | 山间残月的博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+  
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><script type="text/javascript"> 
+	var title=document.title; 
+	// window 失去焦点 
+		window.onblur = function() { 
+		document.title='(つ ェ ⊂)我藏好了哦~';
+	};
+	// window 获得焦点 
+		window.onfocus = function() { 
+		document.title='(*゜ロ゜)ノ被发现了~'; 
+		setTimeout("document.title=title",3000); 
+	}
+</script>
+
+<div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+    <a href="https://xinitx.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">山间残月的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/blog/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/blog/tags" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/blog/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/blog/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%BD%A2%E5%AD%A6"><span class="nav-number">1.</span> <span class="nav-text">什么是图形学</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="nav-number">2.</span> <span class="nav-text">数学基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">线性代数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E9%87%8F"><span class="nav-number">2.1.1.</span> <span class="nav-text">向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5"><span class="nav-number">2.1.2.</span> <span class="nav-text">矩阵</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA"><span class="nav-number">2.2.</span> <span class="nav-text">概率论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E7%BD%97%E7%A7%AF%E5%88%86"><span class="nav-number">2.2.1.</span> <span class="nav-text">蒙特卡罗积分</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%A0%E4%BD%95%EF%BC%88Geometry%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">几何（Geometry）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">表示方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%BA%BF%E5%92%8C%E6%9B%B2%E9%9D%A2"><span class="nav-number">3.2.</span> <span class="nav-text">曲线和曲面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.2.1.</span> <span class="nav-text">贝塞尔曲线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%90%E6%AE%B5%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF"><span class="nav-number">3.2.2.</span> <span class="nav-text">逐段贝塞尔曲线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B7%E6%9D%A1"><span class="nav-number">3.2.3.</span> <span class="nav-text">样条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E9%9D%A2"><span class="nav-number">3.2.4.</span> <span class="nav-text">贝塞尔曲面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%A0%E4%BD%95%E5%A4%84%E7%90%86"><span class="nav-number">3.3.</span> <span class="nav-text">几何处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E7%BB%86%E5%88%86"><span class="nav-number">3.3.1.</span> <span class="nav-text">曲面细分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E7%AE%80%E5%8C%96"><span class="nav-number">3.3.2.</span> <span class="nav-text">曲面简化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E6%8D%A2%EF%BC%88Transformation%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">变换（Transformation）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2"><span class="nav-number">4.1.</span> <span class="nav-text">线性变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BF%E5%B0%84%E5%8F%98%E6%8D%A2"><span class="nav-number">4.2.</span> <span class="nav-text">仿射变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%86%E5%9B%BE%E5%8F%98%E6%8D%A2"><span class="nav-number">4.3.</span> <span class="nav-text">视图变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%95%E5%BD%B1%E5%8F%98%E6%8D%A2"><span class="nav-number">4.4.</span> <span class="nav-text">投影变换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E6%8A%95%E5%BD%B1%EF%BC%88orthographic%EF%BC%89"><span class="nav-number">4.4.1.</span> <span class="nav-text">正交投影（orthographic）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%8F%E8%A7%86%E6%8A%95%E5%BD%B1%EF%BC%88perspective%EF%BC%89"><span class="nav-number">4.4.2.</span> <span class="nav-text">透视投影（perspective）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%89%E6%A0%85%E5%8C%96%EF%BC%88Rasterization%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">光栅化（Rasterization）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%87%E6%A0%B7%EF%BC%88sampling%EF%BC%89"><span class="nav-number">5.1.</span> <span class="nav-text">采样（sampling）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%B0%E6%A0%B7%EF%BC%88Aliasing%EF%BC%89"><span class="nav-number">5.2.</span> <span class="nav-text">走样（Aliasing）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E8%B5%B0%E6%A0%B7"><span class="nav-number">5.3.</span> <span class="nav-text">反走样</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pre-Filter"><span class="nav-number">5.3.1.</span> <span class="nav-text">Pre-Filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MSAA%EF%BC%88Antiliasing-By-Supersampling%EF%BC%89"><span class="nav-number">5.3.2.</span> <span class="nav-text">MSAA（Antiliasing By Supersampling）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FXAA%EF%BC%88Fast-Approximate-AA%EF%BC%89"><span class="nav-number">5.3.3.</span> <span class="nav-text">FXAA（Fast Approximate AA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TAA%EF%BC%88Temporal-AA%EF%BC%89"><span class="nav-number">5.3.4.</span> <span class="nav-text">TAA（Temporal AA）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Super-resolution%EF%BC%88%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%EF%BC%89"><span class="nav-number">5.3.5.</span> <span class="nav-text">Super resolution（超分辨率）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6%E7%BC%93%E5%AD%98"><span class="nav-number">5.4.</span> <span class="nav-text">深度缓存</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9D%80%E8%89%B2%EF%BC%88Shading%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">着色（Shading）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Blinn-Phong-Reflectance-Model"><span class="nav-number">6.1.</span> <span class="nav-text">Blinn-Phong Reflectance Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%B9%E7%90%86%EF%BC%88texture%EF%BC%89"><span class="nav-number">6.2.</span> <span class="nav-text">纹理（texture）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%80%BC%EF%BC%88Interpolation%EF%BC%89"><span class="nav-number">6.3.</span> <span class="nav-text">插值（Interpolation）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%B9%E7%90%86%E6%94%BE%E5%A4%A7"><span class="nav-number">6.4.</span> <span class="nav-text">纹理放大</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%B9%E7%90%86%E7%BC%A9%E5%B0%8F"><span class="nav-number">6.5.</span> <span class="nav-text">纹理缩小</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%85%89"><span class="nav-number">6.6.</span> <span class="nav-text">环境光</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%B9%E5%87%B8%E8%B4%B4%E5%9B%BE"><span class="nav-number">6.7.</span> <span class="nav-text">凹凸贴图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%8D%E7%A7%BB%E8%B4%B4%E5%9B%BE"><span class="nav-number">6.8.</span> <span class="nav-text">位移贴图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Shadow-Mapping"><span class="nav-number">6.8.1.</span> <span class="nav-text">Shadow Mapping</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%89%E7%BA%BF%E8%BF%BD%E8%B8%AA"><span class="nav-number">7.</span> <span class="nav-text">光线追踪</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E4%BA%A4%E7%82%B9"><span class="nav-number">7.1.</span> <span class="nav-text">求交点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Bounding-Volumes"><span class="nav-number">7.1.1.</span> <span class="nav-text">Bounding Volumes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%88%92%E5%88%86"><span class="nav-number">7.1.2.</span> <span class="nav-text">空间划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BVH%EF%BC%88Bounding-Volume-Hierarchy%EF%BC%89"><span class="nav-number">7.1.3.</span> <span class="nav-text">BVH（Bounding Volume Hierarchy）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%82%E5%8F%8D%E5%B0%84%E7%8E%87"><span class="nav-number">7.2.</span> <span class="nav-text">求反射率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BRDF"><span class="nav-number">7.3.</span> <span class="nav-text">BRDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E6%96%B9%E7%A8%8B"><span class="nav-number">7.4.</span> <span class="nav-text">渲染方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E5%BE%84%E8%BF%BD%E8%B8%AA"><span class="nav-number">7.5.</span> <span class="nav-text">路径追踪</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%84%E7%BD%97%E6%96%AF%E8%BD%AE%E7%9B%98%E8%B5%8C%EF%BC%88Russian-Roulette%EF%BC%89"><span class="nav-number">7.6.</span> <span class="nav-text">俄罗斯轮盘赌（Russian Roulette）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%90%E8%B4%A8%E5%92%8C%E5%A4%96%E8%A7%82"><span class="nav-number">8.</span> <span class="nav-text">材质和外观</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">9.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="init"
+      src="/blog/images/logo.png">
+  <p class="site-author-name" itemprop="name">init</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives">
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://xinitx.github.io/" title="Index → https:&#x2F;&#x2F;xinitx.github.io"><i class="fas fa-fan fa-fw"></i>Index</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/xinitx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xinitx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=x17152141010@163.com" title="Mail → http:&#x2F;&#x2F;mail.qq.com&#x2F;cgi-bin&#x2F;qm_share?t&#x3D;qm_mailme&amp;email&#x3D;x17152141010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Mail</a>
+      </span>
+  </div>
+
+
+
+          <p class="name">Have a <text id="changerificwordspanid"></text> day!</p>
+          
+          <!-- require APlayer -->
+          <link rel="stylesheet" href="/blog/js/APlayer.min.css">
+          <script src="/blog/js/APlayer.min.js"></script>
+          <!-- require MetingJS -->
+          <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+          <meting-js
+            server="tencent"
+            type="playlist"
+            id="8321899376"  theme = "#fff" style = "color:#000; opacity :0.3; "list-folded= "true">
+          </meting-js>
+        
+        </div>        
+      </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/typed.js"></script>
+    <script type="text/javascript">
+	  $("#changerificwordspanid").typed({
+		strings: ["good", "nice", "happy", "wonderful"],
+		typeSpeed: 100,
+		startDelay: 10,
+		showCursor: true,
+		shuffle: true,
+		loop:true
+	  });
+	</script>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://xinitx.github.io/blog/Game/graphics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo.png">
+      <meta itemprop="name" content="init">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山间残月的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          graphics
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-03-18 13:20:25" itemprop="dateCreated datePublished" datetime="2022-03-18T13:20:25+08:00">2022-03-18</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-03-22 18:43:48" itemprop="dateModified" datetime="2022-03-22T18:43:48+08:00">2022-03-22</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Game/" itemprop="url" rel="index"><span itemprop="name">Game</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+
+   
+  
+
+
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="什么是图形学"><a href="#什么是图形学" class="headerlink" title="什么是图形学"></a>什么是图形学</h1><p>&emsp;&emsp;计算机图形学(Computer Graphics，简称CG)是一种使用数学算法将二维或三维图形转化为计算机显示器的栅格形式的科学（百度百科）。包括建模(Modeling)、渲染(Rendering)、动画(Animation)和人机交互(Human–computer Interaction, HCI)等主要领域。</p>
+<p><strong>渲染管线（Graphics （Real-time Rendering） Pipeline）</strong></p>
+<img src = "渲染管线阶段.png">
+<center>《Real Time Rendering》</center>
+
+<img src = "渲染.png">
+
+<h1 id="数学基础"><a href="#数学基础" class="headerlink" title="数学基础"></a>数学基础</h1><h2 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h2><h3 id="向量"><a href="#向量" class="headerlink" title="向量"></a>向量</h3><p><strong>定义</strong><br>指具有大小（magnitude）和方向的量。</p>
+<p><strong>表示</strong></p>
+<ol>
+<li>代数表示，<b>a</b>粗体或a上面加箭头</li>
+<li>几何表示，有向线段</li>
+<li>坐标表示，直角坐标系中，取各坐标轴方向相同的单位向量为基底</li>
+<li>矩阵表示</li>
+</ol>
+<p><strong>用法</strong></p>
+<ol>
+<li>确定终点和起点就能确定向量</li>
+<li>向量的长度，用于求单位向量</li>
+<li>加法和减法，运用平行四边形法则和三角形法则，在直角坐标系中相当于坐标直接相加</li>
+<li>点乘，<b>a</b> . <b>b</b> = ||<b>a</b>|| ||<b>b</b>||cosθ = x<sub>a</sub> * x<sub>b</sub> + y<sub>a</sub> * y<sub>b</sub> ….，||<b>a</b><sub>投影</sub>|| = ||<b>a</b>||cosθ，用于求向量间的夹角、<b>a</b>在<b>b</b>上的投影、<b>a</b>分解成沿<b>b</b>和垂直<b>b</b>的向量、计算两个向量是否接近。</li>
+<li>叉乘，<b>a</b> X <b>b</b> = - <b>b</b> X <b>a</b>，||<b>a</b> X <b>b</b>|| = ||<b>a</b>|| ||<b>b</b>|| sinθ，得到垂直于<b>a</b>、<b>b</b>方向的向量，右手系或左手系，用于判断左右（<b>a</b> X <b>b</b>为正，a在b右）和内外（AP X AB、AP X BC、 AP X CA 的正负相同）。</li>
+</ol>
+<img src="point.jpg">
+<center>点乘</center>
+
+<img src="cross.png">
+<center>叉乘</center>
+
+<h3 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h3><p><strong>定义</strong><br>矩阵（Matrix）是一个按照长方阵列排列的复数或实数集合，n X m。</p>
+<p><strong>用法</strong></p>
+<ol>
+<li>数乘，矩阵内每个数同时乘x</li>
+<li>矩阵的乘积，（M X N）（N X P） = （M X P），列数和行数必须相等，结果矩阵的（i，j）就等于矩阵a的i行和矩阵b的j列的点乘。</li>
+<li>矩阵转置，行变成列，列变成行，（AB）<sup>T</sup> = B<sup>T</sup>A<sup>T</sup>，<b>a</b> . <b>b</b> = a<sup>T</sup>b</li>
+<li>单位矩阵（对角全为1的矩阵）和矩阵的逆，AA<sup>-1</sup> = A<sup>-1</sup>A = I，（AB）<sup>-1</sup> = B<sup>-1</sup>A<sup>-1</sup></li>
+</ol>
+<h2 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h2><p><strong>随机变量</strong><br>可能取很多值的变量</p>
+<p><strong>概率分布</strong><br>取某些值的概率</p>
+<p><strong>期望</strong><br>每一个值乘概率的和，E(x) = p(x)f(x)的积分</p>
+<p><strong>概率密度函数</strong><br>probability density function，面积 = 概率</p>
+<h3 id="蒙特卡罗积分"><a href="#蒙特卡罗积分" class="headerlink" title="蒙特卡罗积分"></a>蒙特卡罗积分</h3><p>Monte Carlo Integration，求定积分，采样求平均。</p>
+<img src="蒙特卡罗.png">
+
+<h1 id="几何（Geometry）"><a href="#几何（Geometry）" class="headerlink" title="几何（Geometry）"></a>几何（Geometry）</h1><p>渲染管线处理的多边形，一是来源于一开始传入的顶点数据，二是来源于后期处理</p>
+<h2 id="表示方法"><a href="#表示方法" class="headerlink" title="表示方法"></a>表示方法</h2><p><strong>Implicit Representations of Geometry（隐式表示）</strong><br>满足特定关系的点集，比如给一个函数式，只要满足此函数式就属于此几何。易于判断点在不在物体内、外、上，不易于判断图形</p>
+<ol>
+<li>Constructive Solid Geometry（Implicit）：通过几何间的运算表示几何，交、并、差</li>
+<li>Distance Functions（implicit）：距离函数，空间任何一个点到几何的最小距离</li>
+</ol>
+<p><strong>Explicit Representations of Geometry（显式表示）</strong><br>要么直接给出坐标，要么通过参数映射给出坐标</p>
+<ol>
+<li>point cloud（Explicit）：list of points（x, y, z）</li>
+<li>polygon mesh（Explicit）：比如一堆三角形表示几何</li>
+</ol>
+<h2 id="曲线和曲面"><a href="#曲线和曲面" class="headerlink" title="曲线和曲面"></a>曲线和曲面</h2><h3 id="贝塞尔曲线"><a href="#贝塞尔曲线" class="headerlink" title="贝塞尔曲线"></a>贝塞尔曲线</h3><p>Bezier Curves，de Casteljau Algorithm（德卡斯特里奥算法），Bernstein（伯恩斯坦多项式），用一系列控制点定义一个曲线。</p>
+<ol>
+<li>Interpolates endpoint，时间0时起点，时间1时终点</li>
+<li>Tangent to end segments，3维切线长度等于3 * （b<sub>i+1</sub> - b<sub>i</sub>）</li>
+<li>Affine transformation property，贝塞尔曲线仿射变换等于控制点仿射变换再画曲线</li>
+<li>convex hull property，曲线在控制点形成的凸包内</li>
+</ol>
+<img src = "贝塞尔.png">
+<img src = "伯恩斯坦.png">
+
+
+<h3 id="逐段贝塞尔曲线"><a href="#逐段贝塞尔曲线" class="headerlink" title="逐段贝塞尔曲线"></a>逐段贝塞尔曲线</h3><p>piecewise Bezier Curves，每四个点形成一段贝塞尔曲线</p>
+<ol>
+<li>C0连续：上一段终点等于下一段起点</li>
+<li>C1连续：切线方向相反，大小相等</li>
+</ol>
+<h3 id="样条"><a href="#样条" class="headerlink" title="样条"></a>样条</h3><p>splines，可控的曲线（给一定固定点，局部改变）</p>
+<p><strong>B-splines</strong><br>局部性，可只改变局部曲线</p>
+<p><strong>NURBS</strong><br>非均匀有理B样条</p>
+<h3 id="贝塞尔曲面"><a href="#贝塞尔曲面" class="headerlink" title="贝塞尔曲面"></a>贝塞尔曲面</h3><p>Bezier surface，水平一次Bezier Curves，把每个曲线的点当成控制点再做一次Bezier Curves</p>
+<h2 id="几何处理"><a href="#几何处理" class="headerlink" title="几何处理"></a>几何处理</h2><h3 id="曲面细分"><a href="#曲面细分" class="headerlink" title="曲面细分"></a>曲面细分</h3><p><strong>Loop Subdivision</strong></p>
+<ol>
+<li>增加三角形</li>
+<li>调整顶点位置</li>
+</ol>
+<img src="newp.png">
+<img src="oldp.png">
+
+<p><strong>Catmull-Clark Subdivision(General Mesh)</strong><br>奇异点（extraordinary vertices）：度不为4的点</p>
+<img src="cmull.png">
+
+
+<h3 id="曲面简化"><a href="#曲面简化" class="headerlink" title="曲面简化"></a>曲面简化</h3><p><strong>边坍缩</strong><br>Edge Collapsing，删除一些边，把两个顶点合成一个顶点</p>
+<ol>
+<li>Quadric Error Metrics（二次误差度量）：新顶点找到最优位置，此点到原本面的距离的平方和最小。</li>
+<li>堆或优先队列存储</li>
+</ol>
+<h1 id="变换（Transformation）"><a href="#变换（Transformation）" class="headerlink" title="变换（Transformation）"></a>变换（Transformation）</h1><p>Model、View、Projection Transformation</p>
+<h2 id="线性变换"><a href="#线性变换" class="headerlink" title="线性变换"></a>线性变换</h2><p>绕原点旋转，R<sub>-θ</sub> = R<sup>T</sup> = R<sup>-1</sup></p>
+<img src="线性变换.png">
+
+
+<img src="Scale.png">
+<center>缩放（Scale）</center>
+
+
+<img src="reflect.png">
+<center>反射（Reflection）</center>
+
+
+<img src="Shear.png">
+<center>切变（Shear）</center>
+
+<img src="rotate.png">
+<center>旋转（Rotation）</center>
+
+
+<h2 id="仿射变换"><a href="#仿射变换" class="headerlink" title="仿射变换"></a>仿射变换</h2><img src="平移.png">
+
+<p><strong>齐次坐标</strong></p>
+<ol>
+<li>vector + vector = vector</li>
+<li>point + vector = point</li>
+<li>point - point = vector</li>
+<li>point + point = 中点</li>
+</ol>
+<img src="齐次坐标.png">
+
+<p><strong>逆变换</strong><br>MA的逆变换 = M<sup>-1</sup>MA</p>
+<p><strong>3D变换</strong></p>
+<img src="D31.png">
+<img src="D32.png">
+
+<p><strong>罗德里格斯旋转公式</strong><br>Rodrigues，向量分解</p>
+<img src="Rodrigues.png">
+<img src="罗.png">
+
+<h2 id="视图变换"><a href="#视图变换" class="headerlink" title="视图变换"></a>视图变换</h2><p><strong>相机定义</strong><br>利用相对运动，对物体进行变换</p>
+<ol>
+<li>Position e <strong>to</strong> origin</li>
+<li>Look-at/gaze direction <b>g</b> <strong>to</strong> -Z</li>
+<li>Up direction <b>t</b> <strong>to</strong> Y</li>
+</ol>
+<img src="View.png">
+
+<p><strong>视图定义</strong></p>
+<ol>
+<li>Aspect ratio = width / height 宽高比</li>
+<li>Vertical Field of View（fovY） 视锥<img src="ratio.png"></li>
+</ol>
+<h2 id="投影变换"><a href="#投影变换" class="headerlink" title="投影变换"></a>投影变换</h2><h3 id="正交投影（orthographic）"><a href="#正交投影（orthographic）" class="headerlink" title="正交投影（orthographic）"></a>正交投影（orthographic）</h3><img src="正交.png">
+
+<h3 id="透视投影（perspective）"><a href="#透视投影（perspective）" class="headerlink" title="透视投影（perspective）"></a>透视投影（perspective）</h3><img src="Ortho1.png">
+
+<img src="Ortho2.png">
+
+
+
+<h1 id="光栅化（Rasterization）"><a href="#光栅化（Rasterization）" class="headerlink" title="光栅化（Rasterization）"></a>光栅化（Rasterization）</h1><p>MVP变换后在屏幕（像素（RGB改变颜色）数组）上显示的过程，将物体坐标变换到窗口坐标的过程。</p>
+<p><strong>视口变换</strong><br><img src="Screen.png"></p>
+<p><strong>三角形</strong></p>
+<ol>
+<li>最基本的多边形，任何多边形都可以转换成三角形</li>
+<li>确定一个平面，内外定义清晰</li>
+<li>插值，确定顶点可以做内部的渐变</li>
+</ol>
+<h2 id="采样（sampling）"><a href="#采样（sampling）" class="headerlink" title="采样（sampling）"></a>采样（sampling）</h2><p>把连续信号转换成离散信号的过程</p>
+<p><strong>包围盒</strong><br>用体积稍大且特性简单的几何体（称为包围盒）来近似地代替复杂的几何对象。</p>
+<ol>
+<li>AABB包围盒：包含该对象，且边平行于坐标轴的最小六面体。紧密性较差，相交测试简单。</li>
+<li>包围球：包含该对象的最小球体。紧密性较差，相交测试简单，同时当对象发生旋转运动时，包围球不需做任何更新。</li>
+<li>OBB包围盒：包含该对象且相对于坐标轴方向任意的最小的长方体。紧密性较好，可以大大减少参与相交测试的包围盒的数目，因此总体性能要优于AABB和包围球，但是不能用于软体对象的碰撞检测。</li>
+<li>FDH（k-DOP）：包含该对象且它的所有面的法向量都取自一个固定的方向集合的凸包。紧密性是最好的，同时其相交测试算法比OBB要简单的多。可以用于软体对象的碰撞检测。</li>
+</ol>
+<h2 id="走样（Aliasing）"><a href="#走样（Aliasing）" class="headerlink" title="走样（Aliasing）"></a>走样（Aliasing）</h2><p>用同样的方法采样不同频率的信号却无法区分开，采样过程中发生了频谱信号的混叠。</p>
+<ol>
+<li>锯齿（jaggies）</li>
+<li>摩尔纹</li>
+<li>车轮效应</li>
+</ol>
+<h2 id="反走样"><a href="#反走样" class="headerlink" title="反走样"></a>反走样</h2><h3 id="Pre-Filter"><a href="#Pre-Filter" class="headerlink" title="Pre-Filter"></a>Pre-Filter</h3><p>时域上卷积等于频域上乘积。对每一个像素求三角形覆盖面积的比值对相应颜色做平均</p>
+<p><strong>傅里叶级数展开</strong><br>任何周期函数可以转换正弦和余弦函数的和，引出傅里叶变换（时域变换成频域），图像的频率是表征图像中灰度变化剧烈程度的指标，是灰度在平面空间上的梯度。</p>
+<p><strong>滤波</strong><br>去掉一些频率，等于Convolution</p>
+<h3 id="MSAA（Antiliasing-By-Supersampling）"><a href="#MSAA（Antiliasing-By-Supersampling）" class="headerlink" title="MSAA（Antiliasing By Supersampling）"></a>MSAA（Antiliasing By Supersampling）</h3><p>将一个像素划分成更多的部分，根据三角形占据了多少部分确定颜色。增加采样点</p>
+<h3 id="FXAA（Fast-Approximate-AA）"><a href="#FXAA（Fast-Approximate-AA）" class="headerlink" title="FXAA（Fast Approximate AA）"></a>FXAA（Fast Approximate AA）</h3><p>匹配边界，把边界换掉</p>
+<h3 id="TAA（Temporal-AA）"><a href="#TAA（Temporal-AA）" class="headerlink" title="TAA（Temporal AA）"></a>TAA（Temporal AA）</h3><p>复用上一帧的信息</p>
+<h3 id="Super-resolution（超分辨率）"><a href="#Super-resolution（超分辨率）" class="headerlink" title="Super resolution（超分辨率）"></a>Super resolution（超分辨率）</h3><p>图片拉大，DLSS（Deep learning Super resolution）</p>
+<h2 id="深度缓存"><a href="#深度缓存" class="headerlink" title="深度缓存"></a>深度缓存</h2><p>Z-buffering，对每一个像素都存一个深度<br><img src = "zbuffer.png"></p>
+<h1 id="着色（Shading）"><a href="#着色（Shading）" class="headerlink" title="着色（Shading）"></a>着色（Shading）</h1><p>决定屏幕上像素的最终颜色，进行光照计算以及阴影处理。</p>
+<p><strong>着色频率</strong><br>着色应用在多大的对象上</p>
+<ol>
+<li>Flat Shading 对一个个平面进行着色</li>
+<li>Gouraud Shading 对每一个顶点进行着色，三角形内部进行插值（重心坐标），如何求顶点的法线（相邻三角形的法线求平均，还可以根据面积大小确定权值）</li>
+<li>Phong Shading 对每一个像素进行着色</li>
+</ol>
+<p>Specular highlights（高光） + Diffuse reflection（漫反射） + Ambient lighting（环境光）<br><img src = "shadingpoint.png"></p>
+<h2 id="Blinn-Phong-Reflectance-Model"><a href="#Blinn-Phong-Reflectance-Model" class="headerlink" title="Blinn-Phong Reflectance Model"></a>Blinn-Phong Reflectance Model</h2><ol>
+<li>漫反射:光线与平面夹角不同，对应面积光通量不同。I / r<sup>2</sup></li>
+<li>高光：视线方向和镜面方向接近 = 法向量和（视线方向、光线方向）的半程向量（（V + l）/ ||V + l||）方向接近</li>
+<li>环境光：假设所有点的环境光相等为一个常数</li>
+<li>K<sub>d</sub>表示对光的反射率或吸收率，表示为RGB值时就能表示颜色、指数p控制高光的大小</li>
+</ol>
+<img src = "漫反射.png">
+
+<img src = "高光.png">
+
+<img src = "环境光.png">
+
+
+<h2 id="纹理（texture）"><a href="#纹理（texture）" class="headerlink" title="纹理（texture）"></a>纹理（texture）</h2><p>一张图，纹理映射就是把图贴到物体上</p>
+<p><strong>纹理坐标系</strong><br>（u，v），三角形每一个顶点对应一个（u，v）</p>
+<h2 id="插值（Interpolation）"><a href="#插值（Interpolation）" class="headerlink" title="插值（Interpolation）"></a>插值（Interpolation）</h2><p>三角形内部得到一个平滑的过渡</p>
+<p><strong>Barycentric Coordinates（重心坐标）</strong><br>三角形每一个点都有一个重心坐标（x, y） = αA + βB + γC，α + β + γ = 1，α &gt;= 0 + β &gt;= 0 + γ &gt;= 0，则(x, y)的属性 = αA + βB + γC。在三维空间做插值再投影到二维空间去。<br><img src = "重心坐标.png"></p>
+<h2 id="纹理放大"><a href="#纹理放大" class="headerlink" title="纹理放大"></a>纹理放大</h2><p>Texture Magnification，多个像素查找到同一个纹理像素（纹理太小了）。</p>
+<ol>
+<li>Nearest</li>
+<li>Bilinear interpolation 双线性插值：当像素映射的不是整数时，找周围四个点进行插值。</li>
+<li>Bicubic 取周围16个点，双立方插值。</li>
+</ol>
+<h2 id="纹理缩小"><a href="#纹理缩小" class="headerlink" title="纹理缩小"></a>纹理缩小</h2><p>Mipmap,允许范围查询（近似的、方形的）。Trilinear Interpolation，三线性插值求像素到上、右点的距离近似求出其占据纹理的区域，然后查询mipmap第几层找区域，层与层之间进行插值。</p>
+<p>Anisotropic Filtering 各项异性过滤，即压缩时增加了x或y方向上的压缩，可以解决长方形的纹理覆盖问题。</p>
+<p>EWA Filtering，将区域拆成各种圆形<br><img src="双线性插值"></p>
+<h2 id="环境光"><a href="#环境光" class="headerlink" title="环境光"></a>环境光</h2><p>用纹理表示环境光</p>
+<p>Spherical Map，把环境光记录在球上，把环境光记录在立方体上</p>
+<h2 id="凹凸贴图"><a href="#凹凸贴图" class="headerlink" title="凹凸贴图"></a>凹凸贴图</h2><p>定义每一个点的相对高度</p>
+<h2 id="位移贴图"><a href="#位移贴图" class="headerlink" title="位移贴图"></a>位移贴图</h2><p>实际改变三角形位置</p>
+<h3 id="Shadow-Mapping"><a href="#Shadow-Mapping" class="headerlink" title="Shadow Mapping"></a>Shadow Mapping</h3><p>点光源<br>点在阴影里即不能被光源“看到”</p>
+<ol>
+<li>记录光源各个方向看到的点的深度</li>
+<li>从摄像机看到的点向光源计算深度，对比map的深度</li>
+</ol>
+<p>软阴影即只能看到部分光源的阴影</p>
+<h1 id="光线追踪"><a href="#光线追踪" class="headerlink" title="光线追踪"></a>光线追踪</h1><p>Ray Tracing，光栅化不好做全局的阴影和透明、反射材质，间接光照。</p>
+<ol>
+<li>光线沿直线传播</li>
+<li>光线之间不会发生碰撞</li>
+<li>光线是从光源出发到达“眼睛”</li>
+<li>假设从“眼睛”发出“感知的光线”，把所有光路光源可见的点的着色值都加到此像素</li>
+</ol>
+<p><strong>Whitted-Style Ray Tracing</strong><br>把所有光路光源可见的点的着色值都加到此像素</p>
+<h2 id="求交点"><a href="#求交点" class="headerlink" title="求交点"></a>求交点</h2><p>求交点，联立方程，如果是三角形物体（一个一个三角形求交，求t最小的值）</p>
+<img src = "ray1.png">
+<img src = "ray2.png">
+三角形求交，转换成平面求交
+<img src = "MT.png">
+MT算法
+
+<h3 id="Bounding-Volumes"><a href="#Bounding-Volumes" class="headerlink" title="Bounding Volumes"></a>Bounding Volumes</h3><p>光线与包围盒求交</p>
+<ol>
+<li>Axis-Aligned Bounding Box（AABB），轴对齐包围盒。三组对面各计算一个tmin和tmax，保留tmin的max和tmax的min。tenter &lt; texit才可能有交点，texit &lt; 0（盒子在光线后），tenter &lt; 0（光线在盒子里）</li>
+<li>空间划分：把空间划分成一个个格子</li>
+</ol>
+<img src = "AABB.png">
+
+<h3 id="空间划分"><a href="#空间划分" class="headerlink" title="空间划分"></a>空间划分</h3><ol>
+<li>八叉树，x、y、z方向上二分，当格子内物体足够少时停止，但是自由度低，根据维度n为2<sup>n</sup>树</li>
+<li>KD-tree，x、y、z方向上划分，划分和维度无关，每次只划分一个轴方向。逐步对节点判定。</li>
+<li>BSP-tree，不是横平竖直的划分</li>
+</ol>
+<img src="KDtree.png">
+
+<h3 id="BVH（Bounding-Volume-Hierarchy）"><a href="#BVH（Bounding-Volume-Hierarchy）" class="headerlink" title="BVH（Bounding Volume Hierarchy）"></a>BVH（Bounding Volume Hierarchy）</h3><p>根据物体划分空间，把物体分成几个部分。</p>
+<ol>
+<li>找中间的三角形</li>
+</ol>
+<img src="BVH.png">
+
+<h2 id="求反射率"><a href="#求反射率" class="headerlink" title="求反射率"></a>求反射率</h2><p>辐射度量学Basic radiometry，如何描述光照</p>
+<ol>
+<li>Radiant flux，单位时间光的能量，流明lm，辐射通量</li>
+<li>intensity，单位立体角的辐射通量，lm / 立体角，球体 = lm / 4Π，立体角 = 面积 / r<sup>2</sup></li>
+<li>irradiance，单位面积接受的能量，lm / 面积，lux</li>
+<li>radiance，单位立体角单位面积的能量，对应irradiance只有一个方向</li>
+</ol>
+<h2 id="BRDF"><a href="#BRDF" class="headerlink" title="BRDF"></a>BRDF</h2><p>Bidirectional Reflectance Distribution Function，双向反射分布函数，定义某一个方向进入的能量如何分配到四面八方去</p>
+<h2 id="渲染方程"><a href="#渲染方程" class="headerlink" title="渲染方程"></a>渲染方程</h2><img src="渲染方程.png">
+
+
+
+
+<h2 id="路径追踪"><a href="#路径追踪" class="headerlink" title="路径追踪"></a>路径追踪</h2><p>采用渲染方程做采样，所有路径做平均<br>whitted-style ray tracing</p>
+<ol>
+<li>光打在光滑物体，折射或反射</li>
+<li>漫反射停止</li>
+</ol>
+<img src="路径追踪.png">
+
+<h2 id="俄罗斯轮盘赌（Russian-Roulette）"><a href="#俄罗斯轮盘赌（Russian-Roulette）" class="headerlink" title="俄罗斯轮盘赌（Russian Roulette）"></a>俄罗斯轮盘赌（Russian Roulette）</h2><p>解决光线弹射次数</p>
+<img src="RR.png">
+
+<img src="光照.png">
+
+<h1 id="材质和外观"><a href="#材质和外观" class="headerlink" title="材质和外观"></a>材质和外观</h1><p>Material == BRDF</p>
+<p>反射、折射、全反射</p>
+<p>菲涅尔项：反射的能量和入射角度有关</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
+<li>GAMES101.闫令琪</li>
+</ol>
+
+    </div>
+
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------文章到此已结束<i class="fa fa-heart"></i>发现错误请指正-------------</div>
+    
+</div>
+      
+    </div>
+	
+	
+    
+    
+    
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/alipay.png" alt="init Alipay">
+        <span>Alipay</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/Languages/Cpp/Cpp%E7%BB%BC%E8%BF%B0/" rel="prev" title="Cpp综述">
+                  <i class="fa fa-chevron-left"></i> Cpp综述
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/Algorithm/%E5%85%B6%E4%BB%96/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="next" title="深度学习">
+                  深度学习 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">init</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://xinitx.github.io/blog/Game/graphics/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

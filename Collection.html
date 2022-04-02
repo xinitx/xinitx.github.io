@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>init的收藏夹</title>
+<link rel="icon" type="image/x-icon" href="assets/logo.png" />
+<style>
+	body{
+		overflow: hidden;
+		animation-duration: 3s;
+		animation-name: slidein;
+		background-color: #666;
+	}
+	@keyframes slidein {
+		from {
+		  opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	  }
+	img{
+		position:fixed;
+		opacity: 1;
+		top: 0;
+		left: 0;
+		width:100%;
+		height:100%;
+		z-index:-1;
+		background-repeat: no-repeat;
+		background-position: center 0;
+		background-size: cover;
+		position: absolute;
+	}
+	a{
+		color: aqua;
+		text-decoration:none;
+		
+	}
+	.text{
+		opacity: 0;
+		float: left;
+		margin: auto;
+		padding: 50px;
+		color: pink;
+		
+	}
+</style>
+</head>
+<body>
+<img src="assets/collect.webp">
+
+<div class = "text">
+<h1>Coder</h1>
+<ul>
+<li><a target="_blank" href="https://www.saikr.com/">赛氪</a></li>
+<li><a target="_blank" href="https://www.luogu.com.cn/">洛谷</a></li>
+<li><a target="_blank" href="https://www.nowcoder.com/">牛客</a></li>
+<li><a target="_blank" href="https://leetcode-cn.com/">力扣</a></li>
+<li><a target="_blank" href="https://codeforces.com/">CF</a></li>
+<li><a target="_blank" href="https://atcoder.jp/">AC</a></li>
+<li><a target="_blank" href="https://www.acwing.com/about/">Acwing</a></li>
+</ul>
+</div>
+
+<div class = "text">
+<h1>Answer</h1>
+<ul>
+<li><a target="_blank" href="https://stackoverflow.com/">StackOverflow</a></li>
+<li><a target="_blank" href="https://www.kuangstudy.com/">狂神说</a></li>
+<li><a target="_blank" href="https://www.yuque.com/explore/headlines">语雀</a></li>
+<li><a target="_blank" href="https://www.csdn.net/">CSDN</a></li>
+<li><a target="_blank" href="https://www.cnki.net/">知网</a></li>
+<li><a target="_blank" href="https://www.zhihu.com/">知乎</a></li>
+<li><a target="_blank" href="https://www.bilibili.com/">Bilibili</a></li>
+<li><a target="_blank" href="https://www.youtube.com/">Youtube</a></li>
+</ul>
+</div>
+
+<div class = "text">
+<h1>Contest</h1>
+<ul>
+<li><a target="_blank" href="https://www.ccf.org.cn/">CSP</a></li>
+<li><a target="_blank" href="https://icpc.global/">ICPC</a></li>
+<li><a target="_blank" href="https://dasai.lanqiao.cn/">蓝桥杯</a></li>
+<li><a target="_blank" href="https://www.patest.cn/reg">PAT</a></li>
+</ul>
+</div>	
+
+<div class = "text">
+<h1>Source</h1>
+<ul>
+<li><a target="_blank" href="https://m.dm530p.net/">Animation</a></li>
+<li><a target="_blank" href="https://gitee.com/">Gitee</a></li>
+<li><a target="_blank" href="https://github.com/">GitHub</a></li>
+<li><a target="_blank" href="https://itch.io/">Assets</a></li>
+<li><a target="_blank" href="https://www.pixiv.net/">Pictures(
+Personal use)</a></li>
+<li><a target="_blank" href="https://unsplash.com/">Pictures(
+Free use)</a></li>
+<li><a target="_blank" href="https://pixabay.com/">Pictures(
+Free use)</a></li>
+<li><a target="_blank" href="https://www.mihuashi.com/dashboard/projects">Pictures(
+Purchase)</a></li>
+<li><a target="_blank" href="https://workshop.bilibili.com/homepage">Live2d(
+Purchase)</a></li>
+</ul>
+	
+</div >	
+
+<div class = "text">
+<h1>Tools</h1>
+<ul>
+<li><a target="_blank" href="https://www.zhixin66.com/">VPN</a></li>
+<li><a target="_blank" href="https://www.w3cschool.cn/tools/index?name=cpicker">拾色器</a></li>
+<li><a target="_blank" href="https://www.luogu.com.cn/auth/login">IDE</a></li>
+<li><a target="_blank" href="https://www.sojson.com/image/format.html">Pic转换</a></li>
+<li><a target="_blank" href="https://www.aconvert.com/cn/">File转换</a></li>
+<li><a target="_blank" href="https://picwish.cn/">抠图</a></li>
+</ul>
+</div>	
+
+
+
+<script type="text/javascript">
+	var x = document.getElementsByClassName("text");
+	setTimeout(()=>{
+		for(var i = 0; i < x.length; i ++ ){
+		x[i].style.opacity = 1;
+		}	   
+	}, 2000);
+	
+</script>
+</body>
+</html>
