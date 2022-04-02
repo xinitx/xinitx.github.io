@@ -157,7 +157,7 @@ const initConfig = {
 function 加载圣·嘉然() {
   pio_reference = new Paul_Pio(initConfig)
 
-  pio_alignment = "left"
+  pio_alignment = "right"
 
   // Then apply style
   pio_refresh_style()
