@@ -167,7 +167,7 @@ function reSizeLive2d() {
   const defaultWidth = 280; // 默认宽度280px , zoom = 1
   const container = document.getElementById("pio-container");
   if (container)
-    container.style.zoom = Math.round(window.innerWidth / defaultWidth * 100) / 100;
+    container.style.zoom = Math.round(window.innerWidth / defaultWidth * 100) / 1000;
 }
 
 window.addEventListener("resize", reSizeLive2d);
