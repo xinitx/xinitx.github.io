@@ -437,6 +437,185 @@
       </categories>
   </entry>
   <entry>
+    <title>编程语言综述</title>
+    <url>/blog/Languages/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%BB%BC%E8%BF%B0/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>编程语言由整套的词汇和语法规范组成，具有核心编程思想和设计理念。</strong></p>
+<span id="more"></span>
+
+<p><font color="FF0000">红色（官方文档）</font>，<font color="66ccff">蓝色（权威摘录）</font>，<font color="99FFFF">绿色（个人理解）</font></p>
+<h1 id="主要语言"><a href="#主要语言" class="headerlink" title="主要语言"></a>主要语言</h1><p><font color="99FFFF">语言通过自然选择，最流行的语言就是最适合当下的语言，但也是有一定滞后性的。</font></p>
+<ol>
+<li>机器语言：以二进制代码表示的指令集合，是计算机唯一能直接识别和执行的语言</li>
+<li>汇编语言：汇编语言是将机器语言的二进制代码指令用简单符号(助记符)表示的一种语言</li>
+<li>高级语言：高级语言是将计算机内部的许多相关机器操作指令，合并成一条高级程序指令，并且屏蔽具体操作细节的语言</li>
+<li>语言的抽象化程度越高，程序员的工作越少，随之而来的是语言运行效率降低</li>
+</ol>
+<p><a href="https://spectrum.ieee.org/search/?q=languages">流行语言</a></p>
+<img src="语言.PNG">
+
+<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p><strong>起源</strong>：1969年至1973年，为了移植与开发UNIX操作系统，由丹尼斯·里奇与肯·汤普逊，以B语言为基础，在贝尔实验室设计、开发出来。<br><strong>特性</strong>：面向过程的程序设计语言，简单易懂、接近底层，增加了程序员的工作量</p>
+<h2 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h2><p><strong>起源</strong>：比雅尼·斯特劳斯特鲁普博士在贝尔实验室工作期间在20世纪80年代发明并实现了C++。<br><strong>特性</strong>：C++不是C的超集，兼容C并具有其他多种特性<br><strong>设计</strong>：</p>
+<ol>
+<li>C++设计成直接的和广泛的支持多种程序设计风格（过程化程序设计、数据抽象、面向对象编程、泛型程序设计）。</li>
+<li>C++设计成给程序设计者更多的选择，即使可能导致程序设计者选择错误。</li>
+<li>C++设计成尽可能与C兼容，借此提供一个从C到C++的平滑过渡。</li>
+<li>C++避免平台限定或没有普遍用途的特性。</li>
+<li>C++不使用会带来额外开销的特性。</li>
+<li>C++设计成无需复杂的程序设计环境。</li>
+</ol>
+<h2 id="C-2"><a href="#C-2" class="headerlink" title="C#"></a>C#</h2><p><strong>起源</strong>：微软2000年发布，安德斯·海尔斯伯格主持开发，希望取代Java<br><strong>特性</strong>：基于.NET框架的、面向对象的高级编程语言，相对于C和C++在许多方面进行了限制和增强，与java类似的编译方式<br><strong>设计</strong>：简单、现代、通用，面向对象的程序设计语言</p>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><p><strong>起源</strong>：Sun计算机公司在1990年12月开始研究的一个内部项目，帕特里克·诺顿用以弥补C、C++某些问题。1995年5月23日，Java语言诞生<br><strong>特性</strong>：风格十分接近C++语言，相对于C++的限制和增强<br><strong>设计</strong>：</p>
+<ol>
+<li>应当使用面向对象程序设计方法学</li>
+<li>应当允许同一程序在不同的计算机平台执行</li>
+<li>应当包括内建的对计算机网络的支持</li>
+<li>应当被设计成安全地执行远端代码</li>
+<li>应当易于使用，并借鉴以前那些面向对象语言（如C++）的长处。</li>
+</ol>
+<p><strong>框架软件</strong>：</p>
+<ol>
+<li>集成开发工具（IDE）：Eclipse、MyEclipse、Spring Tool Suite（STS）、Intellij IDEA、NetBeans、JBuilder、JCreator</li>
+<li>JAVA服务器：tomcat、jboss、websphere、weblogic、resin、jetty、apusic、apache</li>
+<li>负载均衡：nginx、lvs</li>
+<li>web层框架：Spring MVC、Struts2、Struts1、Google Web Toolkit（GWT）、JQWEB</li>
+<li>服务层框架：Spring、EJB</li>
+<li>持久层框架：Hibernate、MyBatis、JPA、TopLink</li>
+<li>数据库：Oracle、MySql、MSSQL、Redis</li>
+<li>项目构建：maven、ant</li>
+<li>持续集成：Jenkins</li>
+<li>版本控制：SVN、CVS、VSS、GIT</li>
+<li>私服：Nexus</li>
+<li>消息组件：IBM MQ、RabbitMQ、ActiveMQ、RocketMq</li>
+<li>日志框架：Commons Logging、log4j 、slf4j、IOC</li>
+<li>缓存框架：memcache、redis、ehcache、jboss cache</li>
+<li>RPC框架：Hessian、Dubbo</li>
+<li>规则引擎：Drools工作流：Activiti</li>
+<li>批处理：Spring Batch</li>
+<li>通用查询框架：Query DSL</li>
+<li>JAVA安全框架：shiro、Spring Security</li>
+<li>代码静态检查工具：FindBugs、PMD</li>
+<li>Linux操作系统：CentOS、Ubuntu、SUSE Linux</li>
+<li>常用工具：PLSQL Developer（Oracle）、Navicat（MySql）、FileZilla（FTP）、Xshell（SSH）、putty（SSH）、SecureCRT（SSH）、jd-gui（反编译）</li>
+</ol>
+<p>JDK<br>&emsp;&emsp;Java Development Kit，称为Java开发包或Java开发工具，是一个编写Java的Applet小程序和应用程序的程序开发环境。包括了Java运行环境（Java Runtime Environment），一些Java工具和Java的核心类库（Java API）。</p>
+<p>JRE<br>&emsp;&emsp;运行JAVA程序所必须的环境的集合，包含JVM标准实现及Java核心类库。</p>
+<h2 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h2><p><strong>起源</strong>：Google公司，罗伯特·格瑞史莫、罗勃·派克及肯·汤普逊于2007年9月开始设计Go，于2009年11月正式宣布推出<br><strong>特性</strong>：目的在于提高在多核、网络机器、大型代码库的情况下的开发效率，语法接近C语言<br><strong>设计</strong>：</p>
+<ol>
+<li>静态类型和运行时效率。（如：C++）</li>
+<li>可读性和易用性。（如：Python 和 JavaScript）</li>
+<li>高性能的网络和多进程。</li>
+</ol>
+<h2 id="S"><a href="#S" class="headerlink" title="S"></a>S</h2><p><strong>起源</strong>：由里克·贝克尔、约翰·钱伯斯、道格·邓恩、琼·麦克雷、以及朱迪·席林于1976年前后于贝尔实验室发明。<br><strong>特性</strong>：用于数据分析的解释型语言</p>
+<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><p><strong>起源</strong>：1991年，新西兰奥克兰大学的统计学家罗斯·伊哈卡和罗伯特·杰特曼开始对S语言的一个新版本进行开发。<br><strong>特性</strong>：S语言的增强，主要用于统计分析、绘图以及数据挖掘</p>
+<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><p><strong>起源</strong>：吉多·范罗苏姆于1980年代后期开始研发Python，它是作为ABC语言的后继者，也可以视之为一种使用传统中缀表达式的LISP方言，1991年首次发布 Python 0.9.0<br><strong>特性</strong>：一种广泛使用的解释型、高级和通用的编程语言<br><strong>设计</strong>：</p>
+<ol>
+<li>用一种方法，最好是只有一种方法来做一件事</li>
+<li>优美优于丑陋。明了优于隐晦。</li>
+<li>简单优于复杂。复杂优于凌乱。</li>
+<li>扁平优于嵌套。稀疏优于稠密。</li>
+<li>可读性很重要。</li>
+</ol>
+<p><strong>框架软件</strong>：</p>
+<ol>
+<li>Pycharm：Scientific模式，运行和调试具有数据可视化的Python代码，Angular CLI：用于简单，快速构建Angular2项目。</li>
+<li>Django：Django是一个开放源代码的Web应用框架，由Python写成。采用了MTV的框架模式。</li>
+<li>Flask：Flask是一个轻量级的可定制框架，使用Python语言编写，较其他同类型框架更为灵活、轻便、安全且容易上手。</li>
+<li>Google App Engine：允许本地使用Google基础设施构建Web应用，待其完工之后再将其部署到Google基础设施之上。</li>
+<li>Pyramid：一个小型，快速的Python web framework.，是Pylons Project的一部分，采用的授权协议是BSD-like license。</li>
+<li>web2py ：一个为Python语言提供的全功能Web应用框架，旨在敏捷快速的开发Web应用，具有快速、安全以及可移植的数据库驱动的应用，兼容 Google App Engine。</li>
+</ol>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p><strong>起源</strong>：网景公司的创始人马克·安德森认为HTML需要一种胶水语言，让网页设计师和兼职程序员可以很容易地使用它来组装图片和插件之类的组件，且代码可以直接编写在网页标记中。布兰登·艾克在1995年5月仅花了十天时间就把原型设计出来了。最初命名为Mocha，1995年9月在Netscape Navigator 2.0的Beta版中改名为LiveScript，同年12月，Netscape Navigator 2.0 Beta 3中部署时被重命名为JavaScript。<br><strong>特性</strong>：不同于服务器端脚本语言，例如PHP与ASP，JavaScript主要被作为客户端脚本语言在用户的浏览器上运行。</p>
+<p><strong>框架软件</strong>：</p>
+<ol>
+<li>AngularJS：一款构建用户界面的前端框架，后为Google所收购。</li>
+<li>Bootstrap：基于HTML、CSS、JavaScript 开发的简洁、直观、强悍的前端开发框架，使得 Web 开发更加快捷。</li>
+<li>HTML5 Boilerplate：一套具有非常多先进特性的框架，前端开发模板</li>
+<li>React：React是用于构建用户界面的JavaScript库集成的web框架</li>
+<li>React Native：React Native (简称RN)是Facebook于2015年4月开源的跨平台移动应用开发框架，是Facebook早先开源的JS框架 React </li>
+<li>node.js：一个基于Chrome V8引擎的JavaScript运行环境，使得js可以胜任后端工作</li>
+</ol>
+<h2 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a>Swift</h2><p><strong>起源</strong>：2010年7月，苹果开发者工具部门总监克里斯·拉特纳开始着手Swift编程语言的设计工作，以一年时间，完成基本架构后，他领导了一个设计团队参与其中。Swift大约历经4年的开发期，2014年6月发表。<br><strong>特性</strong>：没有C的Objective-C，Objective-C的限制和增强<br><strong>设计</strong>：快速、现代、安全、互动</p>
+<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><p><strong>起源</strong>：1980年，物理学家蒂姆·伯纳斯-李提出并创建原型系统ENQUIRE，1989年，他在一份备忘录中提出一个基于互联网的超文本系统，1995年完成”HTML 2.0”，第一个HTML规范<br><strong>特性</strong>：一种用于创建网页的标准标记语言</p>
+<h1 id="其他语言"><a href="#其他语言" class="headerlink" title="其他语言"></a>其他语言</h1><h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p>&emsp;&emsp;超文本是一种组织信息的方式，它通过超级链接方法将文本中的文字、图表与其他信息媒体相关联。这些相互关联的信息媒体可能在同一文本中，也可能是其他文件，或是地理位置相距遥远的某台计算机上的文件。这种组织信息方式将分布在不同位置的信息资源用随机方式进行连接，为人们查找，检索信息提供方便。可扩展标记语言，标准通用标记语言的子集。</p>
+<ol>
+<li>XML可以从HTML中分离数据</li>
+<li>XML可用于交换数据</li>
+<li>XML可应用于B2B中</li>
+<li>利用XML可以共享数据</li>
+<li>XML可以充分利用数据</li>
+<li> XML可以用于创建新的语言，如WAP、WML</li>
+</ol>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>&emsp;&emsp;层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</p>
+<ol>
+<li>Bootstrap</li>
+<li>Tailwind</li>
+<li>Bulma</li>
+<li>UI Kit</li>
+<li>Semantic UI</li>
+<li>Spectre</li>
+</ol>
+<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><p>&emsp;&emsp;PHP（PHP: Hypertext Preprocessor）即“超文本预处理器”，是在服务器端执行的脚本语言，尤其适用于Web开发并可嵌入HTML中。支持面向对象和面向过程的开发。</p>
+<ol>
+<li>Laravel</li>
+<li>Phalcon</li>
+<li>Symfony2</li>
+<li>Yii</li>
+<li>Zend</li>
+<li>Workerman</li>
+</ol>
+<h2 id="VBscript"><a href="#VBscript" class="headerlink" title="VBscript"></a>VBscript</h2><p>&emsp;&emsp;一种微软环境下的轻量级的解释型语言，它使用COM组件、WMI、WSH、ADSI访问系统中的元素，对系统进行管理。同时它又是asp动态网页默认的编程语言，配合asp内建对象和ADO对象，用户很快就能掌握访问数据库的asp动态网页开发技术。</p>
+<h2 id="Perl"><a href="#Perl" class="headerlink" title="Perl"></a>Perl</h2><p>&emsp;&emsp;Perl一种功能丰富的计算机程序语言，运行在超过100种计算机平台上，适用广泛，从最初是为文本处理而开发的，现在用于各种任务，包括系统管理，Web开发，网络编程，GUI开发等。</p>
+<h2 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h2><p>&emsp;&emsp;Ruby，一种简单快捷的面向对象（面向对象程序设计）脚本语言</p>
+<h2 id="MATLAB"><a href="#MATLAB" class="headerlink" title="MATLAB"></a>MATLAB</h2><p>&emsp;&emsp;MATLAB语言是一种高级的基于矩阵/数组的语言，它有程序流控制、函数、数据结构、输入/输出和面向对象编程等特色。用这种语言能够方便快捷建立起简单运行快的程序，也能建立复杂的程序。</p>
+<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h2><p>&emsp;&emsp;TypeScript是微软开发的一个开源的编程语言，通过在JavaScript的基础上添加静态类型定义构建而成。TypeScript通过TypeScript编译器或Babel转译为JavaScript代码，可运行在任何浏览器，任何操作系统。</p>
+<h1 id="语言组件"><a href="#语言组件" class="headerlink" title="语言组件"></a>语言组件</h1><h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><p>如果所使用的翻译的机制是将所要翻译的程序代码作为一个整体翻译，并之后运行内部格式，那么这个翻译过程就被称为编译。如果程序代码是在运行时才即时翻译，那么这种翻译机制就被称作解释。</p>
+<ol>
+<li>编译：词法分析、语法分析、语义检查和中间代码生成、代码优化、目标代码生成。源代码整体进行翻译，产生目标程序。</li>
+<li>解释：解释、运行。逐条语句进行翻译，不产生目标程序，通常需要虚拟机执行中间代码。</li>
+<li>实际上界限是不明确的，python、lua既可以编译执行也可以解释执行，java需要先编译成虚拟机中的中间代码。</li>
+</ol>
+<h2 id="类型系统"><a href="#类型系统" class="headerlink" title="类型系统"></a>类型系统</h2><p>类型检查所进行的检验处理以及实行类型的约束，可发生在编译时期（静态检查）或运行时期（动态检查）。静态类型检查是在编译器所进行语义分析中进行的。如果一个语言强制实行类型规则（即通常只允许以不丢失信息为前提的自动类型转换）就称此处理为强类型，反之称为弱类型。</p>
+<ol>
+<li>如果一个编程语言的类型检查，可在不测试运行时期表达式的等价性的情况下进行，该语言即为静态类型的。<font color="99FFFF">运行时类型不会改变。</font></li>
+<li>如果一个编程语言支持运行时期（动态）调度已标记的资料，该语言即为动态类型的。</li>
+<li>如果一个编程语言破坏了阶段的区别，因而类型检查需要测试运行时期的表达式的等价性，该语言即为依存类型的。</li>
+</ol>
+<h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><p>C、JavaScript、html、R、S无自动垃圾回收，C++可通过智能指针显式垃圾回收，java、python、swift、Go、C#有隐式垃圾回收</p>
+<h2 id="框架软件"><a href="#框架软件" class="headerlink" title="框架软件"></a>框架软件</h2><p><strong>移动端</strong></p>
+<ol>
+<li>Android：Android Studio + Kotlin / Java</li>
+<li>IOS：Xcode + Objective-C / Swift</li>
+</ol>
+<p><strong>机器学习</strong></p>
+<ol>
+<li>TensorFlow</li>
+<li>MXNet</li>
+<li>PyTorch</li>
+<li>CNTK</li>
+</ol>
+<p><strong>游戏开发</strong></p>
+<p>引擎</p>
+<ol>
+<li>unity</li>
+<li>cocos2d</li>
+<li>UE4</li>
+</ol>
+<p>图形库</p>
+<ol>
+<li>DirectX</li>
+<li>OpenGL</li>
+</ol>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><font color="99FFFF">语言是达成目标的工具，自然要选择最“优”路径。</font></p>
+<img src="4.png">
+
+
+
+]]></content>
+      <categories>
+        <category>Languages</category>
+      </categories>
+  </entry>
+  <entry>
     <title>graphics</title>
     <url>/blog/Game/graphics/</url>
     <content><![CDATA[<h1 id="什么是图形学"><a href="#什么是图形学" class="headerlink" title="什么是图形学"></a>什么是图形学</h1><p>&emsp;&emsp;计算机图形学(Computer Graphics，简称CG)是一种使用数学算法将二维或三维图形转化为计算机显示器的栅格形式的科学（百度百科）。包括建模(Modeling)、渲染(Rendering)、动画(Animation)和人机交互(Human–computer Interaction, HCI)等主要领域。</p>
@@ -738,185 +917,6 @@ MT算法
       </categories>
   </entry>
   <entry>
-    <title>编程语言综述</title>
-    <url>/blog/Languages/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%BB%BC%E8%BF%B0/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>编程语言由整套的词汇和语法规范组成，具有核心编程思想和设计理念。</strong></p>
-<span id="more"></span>
-
-<p><font color="FF0000">红色（官方文档）</font>，<font color="66ccff">蓝色（权威摘录）</font>，<font color="99FFFF">绿色（个人理解）</font></p>
-<h1 id="主要语言"><a href="#主要语言" class="headerlink" title="主要语言"></a>主要语言</h1><p><font color="99FFFF">语言通过自然选择，最流行的语言就是最适合当下的语言，但也是有一定滞后性的。</font></p>
-<ol>
-<li>机器语言：以二进制代码表示的指令集合，是计算机唯一能直接识别和执行的语言</li>
-<li>汇编语言：汇编语言是将机器语言的二进制代码指令用简单符号(助记符)表示的一种语言</li>
-<li>高级语言：高级语言是将计算机内部的许多相关机器操作指令，合并成一条高级程序指令，并且屏蔽具体操作细节的语言</li>
-<li>语言的抽象化程度越高，程序员的工作越少，随之而来的是语言运行效率降低</li>
-</ol>
-<p><a href="https://spectrum.ieee.org/search/?q=languages">流行语言</a></p>
-<img src="语言.PNG">
-
-<h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><p><strong>起源</strong>：1969年至1973年，为了移植与开发UNIX操作系统，由丹尼斯·里奇与肯·汤普逊，以B语言为基础，在贝尔实验室设计、开发出来。<br><strong>特性</strong>：面向过程的程序设计语言，简单易懂、接近底层，增加了程序员的工作量</p>
-<h2 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h2><p><strong>起源</strong>：比雅尼·斯特劳斯特鲁普博士在贝尔实验室工作期间在20世纪80年代发明并实现了C++。<br><strong>特性</strong>：C++不是C的超集，兼容C并具有其他多种特性<br><strong>设计</strong>：</p>
-<ol>
-<li>C++设计成直接的和广泛的支持多种程序设计风格（过程化程序设计、数据抽象、面向对象编程、泛型程序设计）。</li>
-<li>C++设计成给程序设计者更多的选择，即使可能导致程序设计者选择错误。</li>
-<li>C++设计成尽可能与C兼容，借此提供一个从C到C++的平滑过渡。</li>
-<li>C++避免平台限定或没有普遍用途的特性。</li>
-<li>C++不使用会带来额外开销的特性。</li>
-<li>C++设计成无需复杂的程序设计环境。</li>
-</ol>
-<h2 id="C-2"><a href="#C-2" class="headerlink" title="C#"></a>C#</h2><p><strong>起源</strong>：微软2000年发布，安德斯·海尔斯伯格主持开发，希望取代Java<br><strong>特性</strong>：基于.NET框架的、面向对象的高级编程语言，相对于C和C++在许多方面进行了限制和增强，与java类似的编译方式<br><strong>设计</strong>：简单、现代、通用，面向对象的程序设计语言</p>
-<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><p><strong>起源</strong>：Sun计算机公司在1990年12月开始研究的一个内部项目，帕特里克·诺顿用以弥补C、C++某些问题。1995年5月23日，Java语言诞生<br><strong>特性</strong>：风格十分接近C++语言，相对于C++的限制和增强<br><strong>设计</strong>：</p>
-<ol>
-<li>应当使用面向对象程序设计方法学</li>
-<li>应当允许同一程序在不同的计算机平台执行</li>
-<li>应当包括内建的对计算机网络的支持</li>
-<li>应当被设计成安全地执行远端代码</li>
-<li>应当易于使用，并借鉴以前那些面向对象语言（如C++）的长处。</li>
-</ol>
-<p><strong>框架软件</strong>：</p>
-<ol>
-<li>集成开发工具（IDE）：Eclipse、MyEclipse、Spring Tool Suite（STS）、Intellij IDEA、NetBeans、JBuilder、JCreator</li>
-<li>JAVA服务器：tomcat、jboss、websphere、weblogic、resin、jetty、apusic、apache</li>
-<li>负载均衡：nginx、lvs</li>
-<li>web层框架：Spring MVC、Struts2、Struts1、Google Web Toolkit（GWT）、JQWEB</li>
-<li>服务层框架：Spring、EJB</li>
-<li>持久层框架：Hibernate、MyBatis、JPA、TopLink</li>
-<li>数据库：Oracle、MySql、MSSQL、Redis</li>
-<li>项目构建：maven、ant</li>
-<li>持续集成：Jenkins</li>
-<li>版本控制：SVN、CVS、VSS、GIT</li>
-<li>私服：Nexus</li>
-<li>消息组件：IBM MQ、RabbitMQ、ActiveMQ、RocketMq</li>
-<li>日志框架：Commons Logging、log4j 、slf4j、IOC</li>
-<li>缓存框架：memcache、redis、ehcache、jboss cache</li>
-<li>RPC框架：Hessian、Dubbo</li>
-<li>规则引擎：Drools工作流：Activiti</li>
-<li>批处理：Spring Batch</li>
-<li>通用查询框架：Query DSL</li>
-<li>JAVA安全框架：shiro、Spring Security</li>
-<li>代码静态检查工具：FindBugs、PMD</li>
-<li>Linux操作系统：CentOS、Ubuntu、SUSE Linux</li>
-<li>常用工具：PLSQL Developer（Oracle）、Navicat（MySql）、FileZilla（FTP）、Xshell（SSH）、putty（SSH）、SecureCRT（SSH）、jd-gui（反编译）</li>
-</ol>
-<p>JDK<br>&emsp;&emsp;Java Development Kit，称为Java开发包或Java开发工具，是一个编写Java的Applet小程序和应用程序的程序开发环境。包括了Java运行环境（Java Runtime Environment），一些Java工具和Java的核心类库（Java API）。</p>
-<p>JRE<br>&emsp;&emsp;运行JAVA程序所必须的环境的集合，包含JVM标准实现及Java核心类库。</p>
-<h2 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h2><p><strong>起源</strong>：Google公司，罗伯特·格瑞史莫、罗勃·派克及肯·汤普逊于2007年9月开始设计Go，于2009年11月正式宣布推出<br><strong>特性</strong>：目的在于提高在多核、网络机器、大型代码库的情况下的开发效率，语法接近C语言<br><strong>设计</strong>：</p>
-<ol>
-<li>静态类型和运行时效率。（如：C++）</li>
-<li>可读性和易用性。（如：Python 和 JavaScript）</li>
-<li>高性能的网络和多进程。</li>
-</ol>
-<h2 id="S"><a href="#S" class="headerlink" title="S"></a>S</h2><p><strong>起源</strong>：由里克·贝克尔、约翰·钱伯斯、道格·邓恩、琼·麦克雷、以及朱迪·席林于1976年前后于贝尔实验室发明。<br><strong>特性</strong>：用于数据分析的解释型语言</p>
-<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><p><strong>起源</strong>：1991年，新西兰奥克兰大学的统计学家罗斯·伊哈卡和罗伯特·杰特曼开始对S语言的一个新版本进行开发。<br><strong>特性</strong>：S语言的增强，主要用于统计分析、绘图以及数据挖掘</p>
-<h2 id="python"><a href="#python" class="headerlink" title="python"></a>python</h2><p><strong>起源</strong>：吉多·范罗苏姆于1980年代后期开始研发Python，它是作为ABC语言的后继者，也可以视之为一种使用传统中缀表达式的LISP方言，1991年首次发布 Python 0.9.0<br><strong>特性</strong>：一种广泛使用的解释型、高级和通用的编程语言<br><strong>设计</strong>：</p>
-<ol>
-<li>用一种方法，最好是只有一种方法来做一件事</li>
-<li>优美优于丑陋。明了优于隐晦。</li>
-<li>简单优于复杂。复杂优于凌乱。</li>
-<li>扁平优于嵌套。稀疏优于稠密。</li>
-<li>可读性很重要。</li>
-</ol>
-<p><strong>框架软件</strong>：</p>
-<ol>
-<li>Pycharm：Scientific模式，运行和调试具有数据可视化的Python代码，Angular CLI：用于简单，快速构建Angular2项目。</li>
-<li>Django：Django是一个开放源代码的Web应用框架，由Python写成。采用了MTV的框架模式。</li>
-<li>Flask：Flask是一个轻量级的可定制框架，使用Python语言编写，较其他同类型框架更为灵活、轻便、安全且容易上手。</li>
-<li>Google App Engine：允许本地使用Google基础设施构建Web应用，待其完工之后再将其部署到Google基础设施之上。</li>
-<li>Pyramid：一个小型，快速的Python web framework.，是Pylons Project的一部分，采用的授权协议是BSD-like license。</li>
-<li>web2py ：一个为Python语言提供的全功能Web应用框架，旨在敏捷快速的开发Web应用，具有快速、安全以及可移植的数据库驱动的应用，兼容 Google App Engine。</li>
-</ol>
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p><strong>起源</strong>：网景公司的创始人马克·安德森认为HTML需要一种胶水语言，让网页设计师和兼职程序员可以很容易地使用它来组装图片和插件之类的组件，且代码可以直接编写在网页标记中。布兰登·艾克在1995年5月仅花了十天时间就把原型设计出来了。最初命名为Mocha，1995年9月在Netscape Navigator 2.0的Beta版中改名为LiveScript，同年12月，Netscape Navigator 2.0 Beta 3中部署时被重命名为JavaScript。<br><strong>特性</strong>：不同于服务器端脚本语言，例如PHP与ASP，JavaScript主要被作为客户端脚本语言在用户的浏览器上运行。</p>
-<p><strong>框架软件</strong>：</p>
-<ol>
-<li>AngularJS：一款构建用户界面的前端框架，后为Google所收购。</li>
-<li>Bootstrap：基于HTML、CSS、JavaScript 开发的简洁、直观、强悍的前端开发框架，使得 Web 开发更加快捷。</li>
-<li>HTML5 Boilerplate：一套具有非常多先进特性的框架，前端开发模板</li>
-<li>React：React是用于构建用户界面的JavaScript库集成的web框架</li>
-<li>React Native：React Native (简称RN)是Facebook于2015年4月开源的跨平台移动应用开发框架，是Facebook早先开源的JS框架 React </li>
-<li>node.js：一个基于Chrome V8引擎的JavaScript运行环境，使得js可以胜任后端工作</li>
-</ol>
-<h2 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a>Swift</h2><p><strong>起源</strong>：2010年7月，苹果开发者工具部门总监克里斯·拉特纳开始着手Swift编程语言的设计工作，以一年时间，完成基本架构后，他领导了一个设计团队参与其中。Swift大约历经4年的开发期，2014年6月发表。<br><strong>特性</strong>：没有C的Objective-C，Objective-C的限制和增强<br><strong>设计</strong>：快速、现代、安全、互动</p>
-<h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><p><strong>起源</strong>：1980年，物理学家蒂姆·伯纳斯-李提出并创建原型系统ENQUIRE，1989年，他在一份备忘录中提出一个基于互联网的超文本系统，1995年完成”HTML 2.0”，第一个HTML规范<br><strong>特性</strong>：一种用于创建网页的标准标记语言</p>
-<h1 id="其他语言"><a href="#其他语言" class="headerlink" title="其他语言"></a>其他语言</h1><h2 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h2><p>&emsp;&emsp;超文本是一种组织信息的方式，它通过超级链接方法将文本中的文字、图表与其他信息媒体相关联。这些相互关联的信息媒体可能在同一文本中，也可能是其他文件，或是地理位置相距遥远的某台计算机上的文件。这种组织信息方式将分布在不同位置的信息资源用随机方式进行连接，为人们查找，检索信息提供方便。可扩展标记语言，标准通用标记语言的子集。</p>
-<ol>
-<li>XML可以从HTML中分离数据</li>
-<li>XML可用于交换数据</li>
-<li>XML可应用于B2B中</li>
-<li>利用XML可以共享数据</li>
-<li>XML可以充分利用数据</li>
-<li> XML可以用于创建新的语言，如WAP、WML</li>
-</ol>
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>&emsp;&emsp;层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</p>
-<ol>
-<li>Bootstrap</li>
-<li>Tailwind</li>
-<li>Bulma</li>
-<li>UI Kit</li>
-<li>Semantic UI</li>
-<li>Spectre</li>
-</ol>
-<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><p>&emsp;&emsp;PHP（PHP: Hypertext Preprocessor）即“超文本预处理器”，是在服务器端执行的脚本语言，尤其适用于Web开发并可嵌入HTML中。支持面向对象和面向过程的开发。</p>
-<ol>
-<li>Laravel</li>
-<li>Phalcon</li>
-<li>Symfony2</li>
-<li>Yii</li>
-<li>Zend</li>
-<li>Workerman</li>
-</ol>
-<h2 id="VBscript"><a href="#VBscript" class="headerlink" title="VBscript"></a>VBscript</h2><p>&emsp;&emsp;一种微软环境下的轻量级的解释型语言，它使用COM组件、WMI、WSH、ADSI访问系统中的元素，对系统进行管理。同时它又是asp动态网页默认的编程语言，配合asp内建对象和ADO对象，用户很快就能掌握访问数据库的asp动态网页开发技术。</p>
-<h2 id="Perl"><a href="#Perl" class="headerlink" title="Perl"></a>Perl</h2><p>&emsp;&emsp;Perl一种功能丰富的计算机程序语言，运行在超过100种计算机平台上，适用广泛，从最初是为文本处理而开发的，现在用于各种任务，包括系统管理，Web开发，网络编程，GUI开发等。</p>
-<h2 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h2><p>&emsp;&emsp;Ruby，一种简单快捷的面向对象（面向对象程序设计）脚本语言</p>
-<h2 id="MATLAB"><a href="#MATLAB" class="headerlink" title="MATLAB"></a>MATLAB</h2><p>&emsp;&emsp;MATLAB语言是一种高级的基于矩阵/数组的语言，它有程序流控制、函数、数据结构、输入/输出和面向对象编程等特色。用这种语言能够方便快捷建立起简单运行快的程序，也能建立复杂的程序。</p>
-<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h2><p>&emsp;&emsp;TypeScript是微软开发的一个开源的编程语言，通过在JavaScript的基础上添加静态类型定义构建而成。TypeScript通过TypeScript编译器或Babel转译为JavaScript代码，可运行在任何浏览器，任何操作系统。</p>
-<h1 id="语言组件"><a href="#语言组件" class="headerlink" title="语言组件"></a>语言组件</h1><h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><p>如果所使用的翻译的机制是将所要翻译的程序代码作为一个整体翻译，并之后运行内部格式，那么这个翻译过程就被称为编译。如果程序代码是在运行时才即时翻译，那么这种翻译机制就被称作解释。</p>
-<ol>
-<li>编译：词法分析、语法分析、语义检查和中间代码生成、代码优化、目标代码生成。源代码整体进行翻译，产生目标程序。</li>
-<li>解释：解释、运行。逐条语句进行翻译，不产生目标程序，通常需要虚拟机执行中间代码。</li>
-<li>实际上界限是不明确的，python、lua既可以编译执行也可以解释执行，java需要先编译成虚拟机中的中间代码。</li>
-</ol>
-<h2 id="类型系统"><a href="#类型系统" class="headerlink" title="类型系统"></a>类型系统</h2><p>类型检查所进行的检验处理以及实行类型的约束，可发生在编译时期（静态检查）或运行时期（动态检查）。静态类型检查是在编译器所进行语义分析中进行的。如果一个语言强制实行类型规则（即通常只允许以不丢失信息为前提的自动类型转换）就称此处理为强类型，反之称为弱类型。</p>
-<ol>
-<li>如果一个编程语言的类型检查，可在不测试运行时期表达式的等价性的情况下进行，该语言即为静态类型的。<font color="99FFFF">运行时类型不会改变。</font></li>
-<li>如果一个编程语言支持运行时期（动态）调度已标记的资料，该语言即为动态类型的。</li>
-<li>如果一个编程语言破坏了阶段的区别，因而类型检查需要测试运行时期的表达式的等价性，该语言即为依存类型的。</li>
-</ol>
-<h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><p>C、JavaScript、html、R、S无自动垃圾回收，C++可通过智能指针显式垃圾回收，java、python、swift、Go、C#有隐式垃圾回收</p>
-<h2 id="框架软件"><a href="#框架软件" class="headerlink" title="框架软件"></a>框架软件</h2><p><strong>移动端</strong></p>
-<ol>
-<li>Android：Android Studio + Kotlin / Java</li>
-<li>IOS：Xcode + Objective-C / Swift</li>
-</ol>
-<p><strong>机器学习</strong></p>
-<ol>
-<li>TensorFlow</li>
-<li>MXNet</li>
-<li>PyTorch</li>
-<li>CNTK</li>
-</ol>
-<p><strong>游戏开发</strong></p>
-<p>引擎</p>
-<ol>
-<li>unity</li>
-<li>cocos2d</li>
-<li>UE4</li>
-</ol>
-<p>图形库</p>
-<ol>
-<li>DirectX</li>
-<li>OpenGL</li>
-</ol>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p><font color="99FFFF">语言是达成目标的工具，自然要选择最“优”路径。</font></p>
-<img src="4.png">
-
-
-
-]]></content>
-      <categories>
-        <category>Languages</category>
-      </categories>
-  </entry>
-  <entry>
     <title>HelloWorld</title>
     <url>/blog/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/HelloWorld/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>怎么样才是相对成功的人生？</strong></p>
@@ -1002,16 +1002,6 @@ MT算法
       </categories>
   </entry>
   <entry>
-    <title>深度学习</title>
-    <url>/blog/Algorithm/%E5%85%B6%E4%BB%96/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="人工神经网络"><a href="#人工神经网络" class="headerlink" title="人工神经网络"></a>人工神经网络</h1><p>Artificial Neural Networks，模仿动物神经网络行为特征，进行分布式并行信息处理的算法数学模型。</p>
-]]></content>
-      <categories>
-        <category>Algorithm</category>
-        <category>其他</category>
-      </categories>
-  </entry>
-  <entry>
     <title>启发式</title>
     <url>/blog/Algorithm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E5%90%AF%E5%8F%91%E5%BC%8F/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>一个基于直观或经验构造的算法，在可接受的花费（指计算时间和空间）下给出待解决组合优化问题每一个实例的一个可行解，常常具有随机性。</strong></p>
@@ -1036,6 +1026,16 @@ MT算法
       <categories>
         <category>Algorithm</category>
         <category>基础算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>深度学习</title>
+    <url>/blog/Algorithm/%E5%85%B6%E4%BB%96/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="人工神经网络"><a href="#人工神经网络" class="headerlink" title="人工神经网络"></a>人工神经网络</h1><p>Artificial Neural Networks，模仿动物神经网络行为特征，进行分布式并行信息处理的算法数学模型。</p>
+]]></content>
+      <categories>
+        <category>Algorithm</category>
+        <category>其他</category>
       </categories>
   </entry>
   <entry>
@@ -2007,105 +2007,6 @@ MT算法
       </categories>
   </entry>
   <entry>
-    <title>Monitor</title>
-    <url>/blog/Computer/Hardware/Monitor/</url>
-    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>用于显示影像及色彩的输出设备。</strong></p>
-<span id="more"></span>
-
-<p><strong>分类</strong></p>
-<ol>
-<li>投影式显示器，投影仪</li>
-<li>立体成像显示器，折射或电机高速转动</li>
-<li>有机发光二极管显示器，OLED</li>
-<li>电子纸，电子墨水屏</li>
-<li>液晶显示器，LCD，按背光源分CCFL显示器(色彩好功耗高)和LED显示器(色彩较差功耗低)两种</li>
-<li>发光二极管显示器，LED常用于室外显示屏</li>
-<li>映象管显示器，CRT靠电子束激发屏幕内表面的荧光粉</li>
-<li>段显示器，七段数码管只能显示字母或数字符号</li>
-<li>触摸屏，可以接收触头（包括手指或者胶笔头等）等输入信号的感应式显示设备，基于上述显示器</li>
-</ol>
-<h2 id="LCD"><a href="#LCD" class="headerlink" title="LCD"></a>LCD</h2><p><strong>原理</strong></p>
-<ol>
-<li>由于光是一种波，具有偏振，波的振动方向位某一固定方向的光叫做“偏振光”，其振动方向叫做“偏振方向”。正常的光波是全方向的，偏振是一个圆形，经过CPL或PL后就只剩下能通过的偏振方向。</li>
-<li>LCD由悬浮于两个透明电极（氧化铟锡）间的一列液晶分子层，两边外侧两个偏振方向互相垂直的偏振过滤片组成。</li>
-<li>如果没有电极间的液晶，光通过其中一个偏振过滤片其偏振方向将和第二个偏振片完全垂直，但是如果通过一个偏振过滤片的光线偏振方向被液晶旋转，那么它就可以通过另一个偏振过滤</li>
-</ol>
-<p><strong>分类</strong></p>
-<ol>
-<li>透射型液晶显示器：屏幕背后的光源照亮，而观看则在屏幕另一边（前面），如电脑显示器、PDA和手机</li>
-<li>反射型液晶显示器：由后面的散射的反射面将外部的光反射回来照亮屏幕，功耗非常低，如电子钟表和计算器</li>
-<li>半穿透反射式液晶显示器：当外部光线很足的时候，该液晶显示器按照反射型工作，而当外部光线不足的时候，它又能当作透射型使用。</li>
-</ol>
-<p><strong>分类</strong></p>
-<ol>
-<li>被动矩阵式：TN-LCD、STN-LCD、DSTN-LCD，</li>
-<li>主动矩阵式：TFT-LCD</li>
-</ol>
-<h2 id="OLED"><a href="#OLED" class="headerlink" title="OLED"></a>OLED</h2><p>常用于现在的手机上。有机发光二极管，是一种有机电致发光器件，由比较特殊的有机材料构成，分小分子OLED和高分子OLED（也可称为PLED）比LCD更轻薄、亮度高、功耗低、响应快、清晰度高、柔性好、发光效率高。</p>
-<p><strong>原理</strong></p>
-<ol>
-<li>电子和空穴的注入。</li>
-<li>电子和空穴的传输。</li>
-<li>电子和空穴的再结合。</li>
-<li>激子的退激发光。</li>
-</ol>
-<p><strong>分类</strong></p>
-<ol>
-<li>单层器件也就是在器件的正、负极之间接入一层可以发光的有机层，其结构为衬底/ITO/发光层/阴极。在这种结构中由于电子、空穴注入、传输不平衡，导致器件效率、亮度都较低，器件稳定性差。</li>
-<li>双层器件是在单层器件的基础上,在发光层两侧加入空穴传输层（HTL）或电子传输层（ETL），克服了单层器件载流子注入不平衡的问题，改善了器件的电压-电流特性，提高了器件的发光效率。</li>
-<li>三层器件结构是应用最广泛的一种结构，其结构为衬底/ITO/HTL/发光层/ETL/阴极。这种结构的优点是使激子被局限在发光层中，进而提高器件的效率。</li>
-<li>多层结构的性能是比较好的一种结构，其能够很好的发挥各个层面的作用。发光层也可以由多层结构组成，由于各发机层之间相互独立，可以分别优化。</li>
-</ol>
-<ol>
-<li>被动式(无源驱动passive matrix，即PM-OLED)：其瞬间亮度与阴极扫瞄列数成正比，需要在高脉冲电流下操作。分辨率较低、成本低廉、制程简单。</li>
-<li>主动式(有源驱动active matrix，即AM—OLED)：每一个像素皆可连续与独立驱动，并可记忆驱动信号，不需在高脉冲电流下操作。效率较高、寿命延长、成本较昂贵、制程较复杂(仍比TFT-LCD容易)</li>
-</ol>
-<h1 id="材料"><a href="#材料" class="headerlink" title="材料"></a>材料</h1><p>用手指轻触面板，显现梅花纹的是VA面板，出现水波纹的则是TN面板，若无水纹现象则是硬屏</p>
-<p><strong>硬屏</strong><br>IPS，遇到外力时，硬屏液晶分子结构坚固性和稳定性优于软屏。不会画面失真，影响画面色彩，最大程度地保护画面的效果。S-IPS面板，属于IPS的改良型。</p>
-<p><strong>软屏</strong></p>
-<ol>
-<li>VA(vertical alignment)：分为MVA(multi-domain vertical alignment)与PVA(patterned vertical alignment),动态画面时，色彩衔接不太好</li>
-<li>TN(Twisted Nematic)：生产成本低</li>
-</ol>
-<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><ol>
-<li>HDMI(High Definition Multimedia，高清多媒体接口):不仅能传输高清数字视频信号，还可以同时传输高质量的音频信号。HDMI 2.1</li>
-<li>VGA(Video Graphic Array，即显示绘图阵列):传输的是红、绿、蓝模拟信号以及同步信号，不能同时传输音频信号，支持热插拔。</li>
-<li>DP(DisplayPort):同时传输视频和音频信号,带宽更高，成本更低。可与传统接口（如HDMI和DVI）向后兼容。DP 2.0</li>
-<li>DVI(Digital Visual Interface)：速度快、画面清晰,传输的是数字信号。但是没有发展</li>
-<li>FPD-Link（LVDS）：高速、低噪声和低功耗</li>
-</ol>
-<h1 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h1><ol>
-<li>对比度(Contrast ratio)：一幅图像中明暗区域最亮的白和最暗的黑之间不同亮度层级的测量，差异范围越大代表对比越大，差异范围越小代表对比越小。</li>
-<li>亮度(Luminance)：发光体光强与光源面积之比</li>
-<li>分辨率(Screen resolution)：纵横向上的像素点数px</li>
-</ol>
-<h1 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h1><p><strong>颜色是眼、脑和我们的生活经验对光的颜色类别描述的视觉感知特征，但人对颜色的感觉不仅仅由光的物理性质所决定，还包含心理等许多因素。</strong></p>
-<ol>
-<li>饱和度(saturation)：色彩的鲜艳程度，也称作纯度，</li>
-<li>色相(hue)：即各类色彩的相貌称谓，决定哪一种颜色被使用，如大红、普蓝</li>
-<li>明度(value):眼睛对光源和物体表面的明暗程度的感觉</li>
-</ol>
-<p><strong>用法</strong></p>
-<ol>
-<li>红绿蓝三原色 (RGB)：多用于发光的媒体，比如电视机</li>
-<li>青、洋红、黄、黑四元色 (CMYK)：主要用于印刷</li>
-<li>RGBA：主要用于图像的Alpha合成。RGBA是代表Red（红色）Green（绿色）Blue（蓝色）和Alpha。</li>
-</ol>
-<h2 id="配色"><a href="#配色" class="headerlink" title="配色"></a>配色</h2><p>人与计算机的互动主要基于与图形用户界面元素的交互，而色彩在该交互中起着关键作用。</p>
-<h3 id="基于色环的配色"><a href="#基于色环的配色" class="headerlink" title="基于色环的配色"></a>基于色环的配色</h3><p>色环（Color Wheel），又称色轮、色圈，是将可见光区域的颜色以圆环来表示，为色彩学的一个工具，一个基本色环通常包括12种不同的颜色。</p>
-<img src="1.png">
-
-<p><strong>单色配色</strong><br>每种色彩取自相同的基色,在色彩的深浅、明暗或饱和度上有所调整而形成明暗的层次关系</p>
-<p><strong>相近色配色</strong><br>相互不冲突的的相关色彩(临近色)，一种色彩用作主色，而其它色彩用于丰富该方案。6：3：1规则能更好地平衡颜色。</p>
-<p><strong>互补色配色</strong><br>互补色是色环上两个正对立的颜色。对比强烈，可以用来吸引观众的注意力。</p>
-<p><strong>自定义配色</strong><br>最简单的方法是将明亮的主色添加到一堆中性色中</p>
-]]></content>
-      <categories>
-        <category>Computer</category>
-        <category>Hardware</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Keyboard</title>
     <url>/blog/Computer/Hardware/Keyboard/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>键盘是程序员的主要生产工具之一</strong></p>
@@ -2224,6 +2125,105 @@ MT算法
       </categories>
   </entry>
   <entry>
+    <title>Monitor</title>
+    <url>/blog/Computer/Hardware/Monitor/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>用于显示影像及色彩的输出设备。</strong></p>
+<span id="more"></span>
+
+<p><strong>分类</strong></p>
+<ol>
+<li>投影式显示器，投影仪</li>
+<li>立体成像显示器，折射或电机高速转动</li>
+<li>有机发光二极管显示器，OLED</li>
+<li>电子纸，电子墨水屏</li>
+<li>液晶显示器，LCD，按背光源分CCFL显示器(色彩好功耗高)和LED显示器(色彩较差功耗低)两种</li>
+<li>发光二极管显示器，LED常用于室外显示屏</li>
+<li>映象管显示器，CRT靠电子束激发屏幕内表面的荧光粉</li>
+<li>段显示器，七段数码管只能显示字母或数字符号</li>
+<li>触摸屏，可以接收触头（包括手指或者胶笔头等）等输入信号的感应式显示设备，基于上述显示器</li>
+</ol>
+<h2 id="LCD"><a href="#LCD" class="headerlink" title="LCD"></a>LCD</h2><p><strong>原理</strong></p>
+<ol>
+<li>由于光是一种波，具有偏振，波的振动方向位某一固定方向的光叫做“偏振光”，其振动方向叫做“偏振方向”。正常的光波是全方向的，偏振是一个圆形，经过CPL或PL后就只剩下能通过的偏振方向。</li>
+<li>LCD由悬浮于两个透明电极（氧化铟锡）间的一列液晶分子层，两边外侧两个偏振方向互相垂直的偏振过滤片组成。</li>
+<li>如果没有电极间的液晶，光通过其中一个偏振过滤片其偏振方向将和第二个偏振片完全垂直，但是如果通过一个偏振过滤片的光线偏振方向被液晶旋转，那么它就可以通过另一个偏振过滤</li>
+</ol>
+<p><strong>分类</strong></p>
+<ol>
+<li>透射型液晶显示器：屏幕背后的光源照亮，而观看则在屏幕另一边（前面），如电脑显示器、PDA和手机</li>
+<li>反射型液晶显示器：由后面的散射的反射面将外部的光反射回来照亮屏幕，功耗非常低，如电子钟表和计算器</li>
+<li>半穿透反射式液晶显示器：当外部光线很足的时候，该液晶显示器按照反射型工作，而当外部光线不足的时候，它又能当作透射型使用。</li>
+</ol>
+<p><strong>分类</strong></p>
+<ol>
+<li>被动矩阵式：TN-LCD、STN-LCD、DSTN-LCD，</li>
+<li>主动矩阵式：TFT-LCD</li>
+</ol>
+<h2 id="OLED"><a href="#OLED" class="headerlink" title="OLED"></a>OLED</h2><p>常用于现在的手机上。有机发光二极管，是一种有机电致发光器件，由比较特殊的有机材料构成，分小分子OLED和高分子OLED（也可称为PLED）比LCD更轻薄、亮度高、功耗低、响应快、清晰度高、柔性好、发光效率高。</p>
+<p><strong>原理</strong></p>
+<ol>
+<li>电子和空穴的注入。</li>
+<li>电子和空穴的传输。</li>
+<li>电子和空穴的再结合。</li>
+<li>激子的退激发光。</li>
+</ol>
+<p><strong>分类</strong></p>
+<ol>
+<li>单层器件也就是在器件的正、负极之间接入一层可以发光的有机层，其结构为衬底/ITO/发光层/阴极。在这种结构中由于电子、空穴注入、传输不平衡，导致器件效率、亮度都较低，器件稳定性差。</li>
+<li>双层器件是在单层器件的基础上,在发光层两侧加入空穴传输层（HTL）或电子传输层（ETL），克服了单层器件载流子注入不平衡的问题，改善了器件的电压-电流特性，提高了器件的发光效率。</li>
+<li>三层器件结构是应用最广泛的一种结构，其结构为衬底/ITO/HTL/发光层/ETL/阴极。这种结构的优点是使激子被局限在发光层中，进而提高器件的效率。</li>
+<li>多层结构的性能是比较好的一种结构，其能够很好的发挥各个层面的作用。发光层也可以由多层结构组成，由于各发机层之间相互独立，可以分别优化。</li>
+</ol>
+<ol>
+<li>被动式(无源驱动passive matrix，即PM-OLED)：其瞬间亮度与阴极扫瞄列数成正比，需要在高脉冲电流下操作。分辨率较低、成本低廉、制程简单。</li>
+<li>主动式(有源驱动active matrix，即AM—OLED)：每一个像素皆可连续与独立驱动，并可记忆驱动信号，不需在高脉冲电流下操作。效率较高、寿命延长、成本较昂贵、制程较复杂(仍比TFT-LCD容易)</li>
+</ol>
+<h1 id="材料"><a href="#材料" class="headerlink" title="材料"></a>材料</h1><p>用手指轻触面板，显现梅花纹的是VA面板，出现水波纹的则是TN面板，若无水纹现象则是硬屏</p>
+<p><strong>硬屏</strong><br>IPS，遇到外力时，硬屏液晶分子结构坚固性和稳定性优于软屏。不会画面失真，影响画面色彩，最大程度地保护画面的效果。S-IPS面板，属于IPS的改良型。</p>
+<p><strong>软屏</strong></p>
+<ol>
+<li>VA(vertical alignment)：分为MVA(multi-domain vertical alignment)与PVA(patterned vertical alignment),动态画面时，色彩衔接不太好</li>
+<li>TN(Twisted Nematic)：生产成本低</li>
+</ol>
+<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><ol>
+<li>HDMI(High Definition Multimedia，高清多媒体接口):不仅能传输高清数字视频信号，还可以同时传输高质量的音频信号。HDMI 2.1</li>
+<li>VGA(Video Graphic Array，即显示绘图阵列):传输的是红、绿、蓝模拟信号以及同步信号，不能同时传输音频信号，支持热插拔。</li>
+<li>DP(DisplayPort):同时传输视频和音频信号,带宽更高，成本更低。可与传统接口（如HDMI和DVI）向后兼容。DP 2.0</li>
+<li>DVI(Digital Visual Interface)：速度快、画面清晰,传输的是数字信号。但是没有发展</li>
+<li>FPD-Link（LVDS）：高速、低噪声和低功耗</li>
+</ol>
+<h1 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h1><ol>
+<li>对比度(Contrast ratio)：一幅图像中明暗区域最亮的白和最暗的黑之间不同亮度层级的测量，差异范围越大代表对比越大，差异范围越小代表对比越小。</li>
+<li>亮度(Luminance)：发光体光强与光源面积之比</li>
+<li>分辨率(Screen resolution)：纵横向上的像素点数px</li>
+</ol>
+<h1 id="颜色"><a href="#颜色" class="headerlink" title="颜色"></a>颜色</h1><p><strong>颜色是眼、脑和我们的生活经验对光的颜色类别描述的视觉感知特征，但人对颜色的感觉不仅仅由光的物理性质所决定，还包含心理等许多因素。</strong></p>
+<ol>
+<li>饱和度(saturation)：色彩的鲜艳程度，也称作纯度，</li>
+<li>色相(hue)：即各类色彩的相貌称谓，决定哪一种颜色被使用，如大红、普蓝</li>
+<li>明度(value):眼睛对光源和物体表面的明暗程度的感觉</li>
+</ol>
+<p><strong>用法</strong></p>
+<ol>
+<li>红绿蓝三原色 (RGB)：多用于发光的媒体，比如电视机</li>
+<li>青、洋红、黄、黑四元色 (CMYK)：主要用于印刷</li>
+<li>RGBA：主要用于图像的Alpha合成。RGBA是代表Red（红色）Green（绿色）Blue（蓝色）和Alpha。</li>
+</ol>
+<h2 id="配色"><a href="#配色" class="headerlink" title="配色"></a>配色</h2><p>人与计算机的互动主要基于与图形用户界面元素的交互，而色彩在该交互中起着关键作用。</p>
+<h3 id="基于色环的配色"><a href="#基于色环的配色" class="headerlink" title="基于色环的配色"></a>基于色环的配色</h3><p>色环（Color Wheel），又称色轮、色圈，是将可见光区域的颜色以圆环来表示，为色彩学的一个工具，一个基本色环通常包括12种不同的颜色。</p>
+<img src="1.png">
+
+<p><strong>单色配色</strong><br>每种色彩取自相同的基色,在色彩的深浅、明暗或饱和度上有所调整而形成明暗的层次关系</p>
+<p><strong>相近色配色</strong><br>相互不冲突的的相关色彩(临近色)，一种色彩用作主色，而其它色彩用于丰富该方案。6：3：1规则能更好地平衡颜色。</p>
+<p><strong>互补色配色</strong><br>互补色是色环上两个正对立的颜色。对比强烈，可以用来吸引观众的注意力。</p>
+<p><strong>自定义配色</strong><br>最简单的方法是将明亮的主色添加到一堆中性色中</p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Hardware</category>
+      </categories>
+  </entry>
+  <entry>
     <title>DataBase</title>
     <url>/blog/Computer/Software/DataBase/</url>
     <content><![CDATA[<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><p><strong>什么是数据库</strong><br>一个长期存储在计算机内的、有组织的、可共享的、统一管理的大量数据的集合。</p>
@@ -2269,45 +2269,6 @@ MT算法
     <title>MIT6.S081</title>
     <url>/blog/Computer/Software/MIT6-S081/</url>
     <content><![CDATA[]]></content>
-      <categories>
-        <category>Computer</category>
-        <category>Software</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Network</title>
-    <url>/blog/Computer/Software/Network/</url>
-    <content><![CDATA[<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><p>&emsp;&emsp;计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，实现资源共享和信息传递的计算机系统。</p>
-<img src = "1.png">
-
-<p><strong>OSI参考模型</strong></p>
-<p><img src = "2.png"></img></p>
-<h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><p>&emsp;&emsp;TCP/IP（Transmission Control Protocol/Internet Protocol，传输控制协议/网际协议）是指能够在多个不同网络间实现信息传输的协议簇。TCP/IP协议不仅仅指的是TCP 和IP两个协议，而是指一个由FTP、SMTP、TCP、UDP、IP等协议构成的协议簇， 只是因为在TCP/IP协议中TCP协议和IP协议最具代表性，所以被称为TCP/IP协议。</p>
-<p><img src = "3.png"></img></p>
-<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p><strong>HTTP</strong><br><img src = "4.png"></img></p>
-<p><strong>URL</strong><br><img src = "5.png"></p>
-<h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p><strong>TCP端口</strong><br>Transmission Control Protocol传输控制协议，TCP是一种面向连接（连接导向）的、可靠的、基于字节流的传输层（Transport layer）通信协议，由IETF的RFC 793说明（specified）。在简化的计算机网络OSI模型中，它完成第四层传输层所指定的功能。</p>
-<p><strong>UDP端口</strong><br>User Datagram Protocol用户数据报协议，UDP是OSI参考模型中一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务。UDP 协议基本上是IP协议与上层协议的接口。UDP协议适用端口分别运行在同一台设备上的多个应用程序。</p>
-<p><strong>Socket</strong><br>&nbsp;&nbsp;套接字(Socket)，就是对网络中不同主机上的应用进程之间进行双向通信的端点的抽象。一个套接字就是网络上进程通信的一端，提供了应用层进程利用网络协议交换数据的机制。从所处的地位来讲，套接字上联应用进程，下联网络协议栈，是应用程序通过网络协议进行通信的接口，是应用程序与网络协议栈进行交互的接口。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190718154556909.png" alt="在这里插入图片描述"></p>
-<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p><strong>IP</strong></p>
-<ol>
-<li>IP信息包的传送：需要IP地址（唯一标识网络中的设备）、IP路由（信息包互相传送的机制）</li>
-<li>IP信息包的分割与重组：IP信息包传输时，可能经过不同技术的网络</li>
-</ol>
-<h4 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h4><p><strong>网卡</strong></p>
-<ol>
-<li>数据的封装与解封：发送时将上一层传递来的数据加上首部和尾部，成为以太网的帧。接收时将以太网的帧剥去首部和尾部，然后送交上一层</li>
-<li>链路管理：主要是通过CSMA/CD（Carrier Sense Multiple Access with Collision Detection ，带冲突检测的载波监听多路访问）协议来实现</li>
-<li>数据编码与译码</li>
-</ol>
-<p><strong>以太网</strong><br>一种局域网技术</p>
-<ol>
-<li>以太帧起始部分由前导码和帧开始符组成，后面紧跟着一个以太网报头，以MAC地址说明目的地址和源地址</li>
-<li>帧的中部是该帧负载的包含其他协议报头的数据包(例如IP协议)</li>
-<li>以太帧由一个32位冗余校验码结尾：它用于检验数据传输是否出现损坏</li>
-</ol>
-]]></content>
       <categories>
         <category>Computer</category>
         <category>Software</category>
@@ -2371,6 +2332,45 @@ MT算法
 <p>emacs编辑文件<br>参考资料：</p>
 <ol>
 <li>计算机操作系统教程.清华大学出版社</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Computer</category>
+        <category>Software</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Network</title>
+    <url>/blog/Computer/Software/Network/</url>
+    <content><![CDATA[<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><p>&emsp;&emsp;计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，实现资源共享和信息传递的计算机系统。</p>
+<img src = "1.png">
+
+<p><strong>OSI参考模型</strong></p>
+<p><img src = "2.png"></img></p>
+<h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3><p>&emsp;&emsp;TCP/IP（Transmission Control Protocol/Internet Protocol，传输控制协议/网际协议）是指能够在多个不同网络间实现信息传输的协议簇。TCP/IP协议不仅仅指的是TCP 和IP两个协议，而是指一个由FTP、SMTP、TCP、UDP、IP等协议构成的协议簇， 只是因为在TCP/IP协议中TCP协议和IP协议最具代表性，所以被称为TCP/IP协议。</p>
+<p><img src = "3.png"></img></p>
+<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p><strong>HTTP</strong><br><img src = "4.png"></img></p>
+<p><strong>URL</strong><br><img src = "5.png"></p>
+<h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p><strong>TCP端口</strong><br>Transmission Control Protocol传输控制协议，TCP是一种面向连接（连接导向）的、可靠的、基于字节流的传输层（Transport layer）通信协议，由IETF的RFC 793说明（specified）。在简化的计算机网络OSI模型中，它完成第四层传输层所指定的功能。</p>
+<p><strong>UDP端口</strong><br>User Datagram Protocol用户数据报协议，UDP是OSI参考模型中一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务。UDP 协议基本上是IP协议与上层协议的接口。UDP协议适用端口分别运行在同一台设备上的多个应用程序。</p>
+<p><strong>Socket</strong><br>&nbsp;&nbsp;套接字(Socket)，就是对网络中不同主机上的应用进程之间进行双向通信的端点的抽象。一个套接字就是网络上进程通信的一端，提供了应用层进程利用网络协议交换数据的机制。从所处的地位来讲，套接字上联应用进程，下联网络协议栈，是应用程序通过网络协议进行通信的接口，是应用程序与网络协议栈进行交互的接口。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190718154556909.png" alt="在这里插入图片描述"></p>
+<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p><strong>IP</strong></p>
+<ol>
+<li>IP信息包的传送：需要IP地址（唯一标识网络中的设备）、IP路由（信息包互相传送的机制）</li>
+<li>IP信息包的分割与重组：IP信息包传输时，可能经过不同技术的网络</li>
+</ol>
+<h4 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h4><p><strong>网卡</strong></p>
+<ol>
+<li>数据的封装与解封：发送时将上一层传递来的数据加上首部和尾部，成为以太网的帧。接收时将以太网的帧剥去首部和尾部，然后送交上一层</li>
+<li>链路管理：主要是通过CSMA/CD（Carrier Sense Multiple Access with Collision Detection ，带冲突检测的载波监听多路访问）协议来实现</li>
+<li>数据编码与译码</li>
+</ol>
+<p><strong>以太网</strong><br>一种局域网技术</p>
+<ol>
+<li>以太帧起始部分由前导码和帧开始符组成，后面紧跟着一个以太网报头，以MAC地址说明目的地址和源地址</li>
+<li>帧的中部是该帧负载的包含其他协议报头的数据包(例如IP协议)</li>
+<li>以太帧由一个32位冗余校验码结尾：它用于检验数据传输是否出现损坏</li>
 </ol>
 ]]></content>
       <categories>
