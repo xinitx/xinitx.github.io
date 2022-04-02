@@ -164,10 +164,10 @@ function 加载圣·嘉然() {
 }
 
 function reSizeLive2d() {
-  const defaultWidth = 8; // 默认宽度280px , zoom = 1
+  const defaultWidth = 280; // 默认宽度280px , zoom = 1
   const container = document.getElementById("pio-container");
   if (container)
-    container.style.zoom = Math.round(window.innerWidth / defaultWidth);
+    container.style.zoom = Math.round(window.innerWidth / defaultWidth * 100) / 100;
 }
 
 window.addEventListener("resize", reSizeLive2d);
