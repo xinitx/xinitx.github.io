@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/logo.png">
+  <link rel="mask-icon" href="/blog/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xinitx.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+<meta name="description" content="前言Cpp继承了C语言高效、简洁、快速和可移植性的传统，添加了对面向对象编程和泛型编程的支持。  C语言代表的过程性语言 以类为代表的面向对象语言 以模板为支持的泛型编程  计算机语言要处理的是算法和数据过程化编程：强调的是编程的算法方面，通过编程语言实现计算机应该采取的操作，生产特定的结果。如早期BASIC行号跳跃、没有缩进等结构化编程：以一些简单、有层次的程序流程架构所组成，可分为循序（seq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cpp综述">
+<meta property="og:url" content="http://xinitx.github.io/blog/Languages/Cpp/Cpp%E7%BB%BC%E8%BF%B0/index.html">
+<meta property="og:site_name" content="山间残月的博客">
+<meta property="og:description" content="前言Cpp继承了C语言高效、简洁、快速和可移植性的传统，添加了对面向对象编程和泛型编程的支持。  C语言代表的过程性语言 以类为代表的面向对象语言 以模板为支持的泛型编程  计算机语言要处理的是算法和数据过程化编程：强调的是编程的算法方面，通过编程语言实现计算机应该采取的操作，生产特定的结果。如早期BASIC行号跳跃、没有缩进等结构化编程：以一些简单、有层次的程序流程架构所组成，可分为循序（seq">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://xinitx.github.io/blog/Languages/Cpp/Cpp%E7%BB%BC%E8%BF%B0/BASIC.png">
+<meta property="article:published_time" content="2022-03-15T03:08:42.000Z">
+<meta property="article:modified_time" content="2022-04-15T11:00:56.975Z">
+<meta property="article:author" content="init">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xinitx.github.io/blog/Languages/Cpp/Cpp%E7%BB%BC%E8%BF%B0/BASIC.png">
+
+
+<link rel="canonical" href="http://xinitx.github.io/blog/Languages/Cpp/Cpp%E7%BB%BC%E8%BF%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://xinitx.github.io/blog/Languages/Cpp/Cpp%E7%BB%BC%E8%BF%B0/","path":"Languages/Cpp/Cpp综述/","title":"Cpp综述"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Cpp综述 | 山间残月的博客</title><meta name="robots" content="noindex">
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+  
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><script type="text/javascript"> 
+	var title=document.title; 
+	// window 失去焦点 
+		window.onblur = function() { 
+		document.title='(つ ェ ⊂)我藏好了哦~';
+	};
+	// window 获得焦点 
+		window.onfocus = function() { 
+		document.title='(*゜ロ゜)ノ被发现了~'; 
+		setTimeout("document.title=title",3000); 
+	}
+</script>
+
+<div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+    <a href="https://xinitx.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">山间残月的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/blog/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/blog/tags" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/blog/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/blog/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8"><span class="nav-number">2.</span> <span class="nav-text">编译器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">3.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#class"><span class="nav-number">4.</span> <span class="nav-text">class</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">5.</span> <span class="nav-text">面向对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c-11%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">6.</span> <span class="nav-text">c++11新特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#STL"><span class="nav-number">7.</span> <span class="nav-text">STL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8"><span class="nav-number">7.1.</span> <span class="nav-text">容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E5%90%8C%E6%8E%A5%E5%8F%A3"><span class="nav-number">7.1.1.</span> <span class="nav-text">共同接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array"><span class="nav-number">7.1.2.</span> <span class="nav-text">array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector"><span class="nav-number">7.1.3.</span> <span class="nav-text">vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#deque"><span class="nav-number">7.1.4.</span> <span class="nav-text">deque</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list"><span class="nav-number">7.1.5.</span> <span class="nav-text">list</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%87%BD%E6%95%B0"><span class="nav-number">7.1.5.1.</span> <span class="nav-text">算法函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#forward-list"><span class="nav-number">7.2.</span> <span class="nav-text">forward_list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pair"><span class="nav-number">7.3.</span> <span class="nav-text">pair</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-multiset"><span class="nav-number">7.4.</span> <span class="nav-text">set&#x2F;multiset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">7.4.1.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unordered-queue"><span class="nav-number">7.4.2.</span> <span class="nav-text">unordered_queue</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-number">7.5.</span> <span class="nav-text">迭代器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95"><span class="nav-number">7.6.</span> <span class="nav-text">算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-number">8.</span> <span class="nav-text">多线程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%AE%89%E5%85%A8"><span class="nav-number">9.</span> <span class="nav-text">异常安全</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-number">10.</span> <span class="nav-text">内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="nav-number">10.1.</span> <span class="nav-text">内存分配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90"><span class="nav-number">10.2.</span> <span class="nav-text">内存对齐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E4%BC%98%E5%8C%96"><span class="nav-number">10.3.</span> <span class="nav-text">自动优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mutilthread"><span class="nav-number">11.</span> <span class="nav-text">Mutilthread</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F"><span class="nav-number">12.</span> <span class="nav-text">开发模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-number">13.</span> <span class="nav-text">服务器</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="init"
+      src="/blog/images/logo.png">
+  <p class="site-author-name" itemprop="name">init</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://xinitx.github.io/" title="Index → https:&#x2F;&#x2F;xinitx.github.io"><i class="fas fa-fan fa-fw"></i>Index</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/xinitx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xinitx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=x17152141010@163.com" title="Mail → http:&#x2F;&#x2F;mail.qq.com&#x2F;cgi-bin&#x2F;qm_share?t&#x3D;qm_mailme&amp;email&#x3D;x17152141010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Mail</a>
+      </span>
+  </div>
+
+
+
+          <p class="name">Have a <text id="changerificwordspanid"></text> day!</p>
+          
+          <!-- require APlayer -->
+          <link rel="stylesheet" href="/blog/js/APlayer.min.css">
+          <script src="/blog/js/APlayer.min.js"></script>
+          <!-- require MetingJS -->
+          <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+          <meting-js
+            server="tencent"
+            type="playlist"
+            id="8321899376"  theme = "#fff" style = "color:#000; opacity :0.3; "list-folded= "true">
+          </meting-js>
+        
+        </div>        
+      </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/typed.js"></script>
+    <script type="text/javascript">
+	  $("#changerificwordspanid").typed({
+		strings: ["good", "nice", "happy", "wonderful"],
+		typeSpeed: 100,
+		startDelay: 10,
+		showCursor: true,
+		shuffle: true,
+		loop:true
+	  });
+	</script>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://xinitx.github.io/blog/Languages/Cpp/Cpp%E7%BB%BC%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo.png">
+      <meta itemprop="name" content="init">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山间残月的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Cpp综述
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-03-15 11:08:42" itemprop="dateCreated datePublished" datetime="2022-03-15T11:08:42+08:00">2022-03-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-04-15 19:00:56" itemprop="dateModified" datetime="2022-04-15T19:00:56+08:00">2022-04-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Languages/" itemprop="url" rel="index"><span itemprop="name">Languages</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Languages/Cpp/" itemprop="url" rel="index"><span itemprop="name">Cpp</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+
+   
+  
+
+
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Cpp继承了C语言高效、简洁、快速和可移植性的传统，添加了对面向对象编程和泛型编程的支持。</p>
+<ol>
+<li>C语言代表的过程性语言</li>
+<li>以类为代表的面向对象语言</li>
+<li>以模板为支持的泛型编程</li>
+</ol>
+<p>计算机语言要处理的是算法和数据<br>过程化编程：强调的是编程的算法方面，通过编程语言实现计算机应该采取的操作，生产特定的结果。如早期BASIC行号跳跃、没有缩进等<br><img src="BASIC.png"><br>结构化编程：以一些简单、有层次的程序流程架构所组成，可分为循序（sequence）、选择（selection）及重复（repetition）。成对的关键字包围一段程序，形成一个结构，这种编程语言称为有“块结构”<br>面向对象编程：强调的是数据，让语言满足问题的要求，设计与问题本质特征相对应的数据格式。</p>
+<p>自顶向下设计：将大型程序分解成小型，便于管理的任务。</p>
+<p>类是一种规范，描述了新型数据结构，对象是根据这种规范构造的特定数据结构相当于类的数据实例<br>ＯＯＰ首先设计类抽象通用概念更加简单，其次多态、继承等重用和修改现有的、经过仔细测试的代码。</p>
+<p>泛型编程：也是使重用代码和抽象通用概念的技术更简单，但是强调的是独立于特定数据类型。提供执行常见任务的工具，创建不只限于具体类型的代码（模板）</p>
+<p>ＩＤＥ集成开发环境：能够在主程序中管理程序开发的所有步骤，包括编辑的开发环境</p>
+<h1 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h1><p>如果多个文件同时编译则不会删除目标代码文件，生成可执行文件，修改其中一个源文件时就省去了其他代码的编译过程</p>
+<p>VC、gcc（Google6.0开始c++）、clang（苹果）</p>
+<p>make、cmake（生成对应平台的配置文件）</p>
+<p>如何得到最新的版本，多版本gcc如何切换<br><strong>makefile</strong><br>改变头文件不被识别为改变源文件</p>
+<p><strong>main</strong><br>没有return，编译器自动调用 exit(0)</p>
+<p><strong>throw</strong><br>程序接受到throw语句后就会自动调用析构器，把该域（try后的括号内）对象clean up，然后再进<br>入catch语句（如果在循环体中就退出循环）。<br>语句“throw;”抛出一个无法被捕获的异常，即使是catch(…)也不能捕捉到，这时进入终止函数<br>。</p>
+<p><strong>class</strong><br>没跑完构造函数不会跑析构函数</p>
+<p><strong>namespace</strong><br>根据参数类型找函数，参数定义在哪个命名空间优先找那个命名空间</p>
+<p><strong>new</strong><br>构造和析构的过程是分开的，<br>function（new a， new b）;可能会内存泄露<br>new，在堆上动态创建对象，获得一块内存空间、调用构造函数、返回正确的指针<br>malloc失败时不会调用分配内存失败处理程序new_handler</p>
+<ol>
+<li>new operator ：operator new分配内存，调用构造函数，返回正确的指针</li>
+<li>operator new：分配内存    可以重载 </li>
+<li>placement new ：定位构造  new（地址） 对象；</li>
+</ol>
+<p>delete【】</p>
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><ol>
+<li>alignas， alignas(int) 设置对齐方式，struct会默认alignas，对齐查找较快（c++11）</li>
+<li>alignof， alignof(obj) 查询对齐方式（c++11）</li>
+<li>and， 等于&amp;&amp;, 某些国家没有&amp;</li>
+<li>and_eq，等于&amp;=</li>
+<li>asm，asm(“”);，内嵌汇编语言 </li>
+<li>assert</li>
+<li>auto，右值类型确定则左值类型确定</li>
+<li>bitand，等于&amp;</li>
+<li>bitor，等于|</li>
+<li>bool，布尔值，一般不用bool当函数参数</li>
+<li>break，从一个包裹层到另一个包裹层，for、while、switch</li>
+<li>case，switch</li>
+<li>catch</li>
+<li>char，unsigned int（Linux） int（Windows）</li>
+<li>char16_t (c++11) Unicode utf8</li>
+<li>char32_t (c++11) </li>
+<li>class</li>
+<li>compl，等于~</li>
+<li>concept （概念）</li>
+<li>const，不变性</li>
+<li>constexpr（c++11），拓展编译期功能，在编译期完成工作否则为正常的。</li>
+<li>const_cast，使const可以被改变</li>
+<li>continue，继续循环</li>
+<li>decltype，（c++11）把表达式类型给变量，decltype(a-&gt;x) y;（a-&gt;x）为其引用，后置返回类型表达式 template&lt; typename T, typename U &gt; auto add(T a,U b) -&gt; decltype(a + b){return a + b;}</li>
+<li>default，switch</li>
+<li>delete，new</li>
+<li>do</li>
+<li>double</li>
+<li>dynamic_cast，父类指针转换成子类指针</li>
+<li>else</li>
+<li>enum，枚举，默认从0开始赋值，enum class</li>
+<li>explicit，不允许隐式使用构造函数</li>
+<li>export，在cpp实现模板</li>
+<li>extern，外链接</li>
+<li>false</li>
+<li>float</li>
+<li>for</li>
+<li>friend，友元</li>
+<li>goto，用于跳出多层循环</li>
+<li>if</li>
+<li>inline，空间换时间，在调用函数的地方直接用函数内容替代，一个提示</li>
+<li>int</li>
+<li>long</li>
+<li>mutable，类定义成员时使用</li>
+<li>namespace，命名空间，防止名称冲突</li>
+<li>new，</li>
+<li>noexcept(false) （c++11），在函数声明名后，保证不会抛出异常给编译器做优化</li>
+<li>not，等于！</li>
+<li>not_eq，等于！=</li>
+<li>nullptr</li>
+<li>operator，重载</li>
+<li>or，等于||</li>
+<li>or_eq，等于||=</li>
+<li>private</li>
+<li>protected</li>
+<li>public</li>
+<li>register，提示加快速度</li>
+<li>reinterpret_cast，强转指针类型</li>
+<li>requires （概念）</li>
+<li>return，终止</li>
+<li>short</li>
+<li>signed</li>
+<li>sizeof，编译时结束，不能用于非明确的、不完全的</li>
+<li>static，对于类的static不属于类本身</li>
+<li>static_assert (c++11) 宏，不满足条件终止程序</li>
+<li>static_cast</li>
+<li>struct</li>
+<li>switch，值的派发</li>
+<li>template，模板</li>
+<li>this，</li>
+<li>thread_local (c++11)，避免多线程的值不一致</li>
+<li>throw</li>
+<li>true</li>
+<li>try</li>
+<li>typedef，类型别名，被auto取代</li>
+<li>typeid，增加运行时类型</li>
+<li>typename，增加运行时类型</li>
+<li>union，联合</li>
+<li>unsigned，无符号</li>
+<li>using，约等于typedef</li>
+<li>virtual，虚函数</li>
+<li>void，空类型</li>
+<li>volatile，不做优化</li>
+<li>wchar_t，</li>
+<li>while</li>
+<li>xor，^</li>
+<li>xor_eq，^= </li>
+</ol>
+<p>参数相当于外部变量</p>
+<h1 id="class"><a href="#class" class="headerlink" title="class"></a>class</h1><p>前置声明，不完整类型，只能使用指针、返回值、参数接口，基类、类成员<br>include，可以使用值、成员等</p>
+<p><strong>析构</strong><br>为什么要析构，因为可能会抛出异常。编译器能做很多事，有时候不是我们需要的，= delete</p>
+<ol>
+<li>如果有需要管理的资源时，构造时生成，析构函数时释放。</li>
+<li>如果是能拷贝的，要明确地写出拷贝构造函数 和 oprater重载，否则只是成员拷贝（指针是值拷贝）。</li>
+<li>拷贝构造函数右值重载</li>
+<li>默认：类成员的析构函数（内置的析构函数什么都没做）-》如果是派生类，父类的析构函数</li>
+</ol>
+<p>左值和右值，是否能取到地址，实现左右值的多态，节省资源<br>std::move(b) 将b变成一个右值，右值虽然不能引用但是能const引用</p>
+<p>编译器默认的析构函数会inline，不要抛出异常，不能抛出两个异常<br>构造函数内添加异常<br>stl函数不要抛出异常</p>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><p>数据的封装、类的继承、函数的多态</p>
+<ol>
+<li>虚函数，基类指针使用的派生类函数，二义性，前缀定义，不默认（资源消耗），virtual析构（转成基类时能调用到派生类的析构函数），</li>
+<li>基类强转派生类，dynamic_cast（会检查能不能转） static_cast（不知道有效性） ()（不知道有效性）</li>
+<li>override 改写基类虚函数</li>
+</ol>
+<h1 id="c-11新特性"><a href="#c-11新特性" class="headerlink" title="c++11新特性"></a>c++11新特性</h1><ol>
+<li>auto，减少程序员负担</li>
+<li>花括号构造函数，统一语法规则vector<int> q{1, 2, 3};，不能用宽的精度转到窄的精度（小括号可以）</li>
+<li>新的初始化，成员变量直接赋值</li>
+<li>右值引用</li>
+<li>内存管理，malloc可能返回空指针，不能保证作用，new能初始化类型和初始值。内存可能不需要释放，一种需要自己管理忘记释放，抛出异常运行不到delete，或者多线程同时拥有一个资源</li>
+<li>shared_ptr，智能指针，解决多线程运用资源等，用一点点代价防止内存泄露自动销毁<br>{<ol>
+<li>auto_ptr(弃用)</li>
+<li>shared_ptr（共享），.use_count()几个人在使用，拷贝增加使用，.reset()减一， = nullptr; .get();得到裸指针随后进行操作，同时其本身也能进行操作，.unique();是不是一个人，作为参数（引用传入不会）调用函数时会加一。创建时可传入销毁函数，不仅可以管理delete资源还可以管理其他资源，生命周期结束时，析构函数一定会调用到。但是只有use_count = 0时才会释放资源，一次构造只会调用一次析构，两个类相互拥有智能指针时还会留下一个    ，循环引用关系.引用计数</li>
+<li>unique_ptr（单人），.get()，直接像原生指针一样用，1、忘掉2、异常，不能共享，不能拷贝c++98，.reset()，但是可以用右值std::move()(但是资源已经变为形参了)</li>
+<li>weaked_ptr（）弱指针，是否有效依赖于外部有无智能指针，监听者，.lock()，如果是有效的返回一个智能指针，如果无效是一个空指针，.reset()，资源没释放，但是指针是空，.expired()（不返回智能指针判断），解决循环引用一个换成weaked_ptr();。还是会发生不好做循环引用函数参数问题（CRTP，std::enable_shared_from_this&lt;&gt;,shared_from_this()），类的内部需要调用本身的智能指针</li>
+</ol>
+</li>
+</ol>
+<p>}</p>
+<ol start="7">
+<li>lambda函数，等于inline函数，可作为一个参数或local对象， [local 变量，值或引用， = ， &amp;外部所有变量] (参数){函数体}</li>
+<li>template&lt; typename T1, typename T2 &gt;模板函数<br>绝对不要手动管理资源，一份资源不要用两个智能指针管理</li>
+</ol>
+<h1 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h1><h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><p>管理东西的集合<br>container，元素（1、必须可以copy或者move，隐含无副作用 2、必须可以被赋值操作复制或搬移 3、元素可以被销毁，某些操作需要定义==，存的是值而不是引用，不保证安全）</p>
+<ol start="5">
+<li>regex，正则表达式</li>
+<li>rand</li>
+<li>thread，async，future，time</li>
+</ol>
+<h3 id="共同接口"><a href="#共同接口" class="headerlink" title="共同接口"></a>共同接口</h3><ol>
+<li><p>默认构造</p>
+</li>
+<li><p>拷贝构造函数</p>
+</li>
+<li><p> = 构造函数</p>
+</li>
+<li><p>a（std:move(b)）</p>
+</li>
+<li><p>.begin()</p>
+</li>
+<li><p>.end()</p>
+</li>
+<li><p>迭代器构造函数</p>
+</li>
+<li><p>.size(); // std::forward_list没有，空间利用极致</p>
+</li>
+<li><p>.empty(); // .size() != 0;</p>
+</li>
+<li><p>.max_size(); 最大处理对象数量</p>
+</li>
+<li><p>b == c，先数量再迭代比较</p>
+</li>
+<li><p>b ！= c，</p>
+</li>
+<li><p>b &lt; c //无顺序容器没有</p>
+</li>
+<li><p>a = b;</p>
+</li>
+<li><p>.swap // std::array 线性的，其他的换个指针</p>
+</li>
+<li><p>a = std::move(b);</p>
+</li>
+<li><p>swap(a, b)</p>
+</li>
+<li><p>.cbegin()，const迭代器</p>
+</li>
+<li><p>.cend()</p>
+</li>
+<li><p>.clear(); 所有元素都会调用析构 // std::array</p>
+</li>
+</ol>
+<h3 id="array"><a href="#array" class="headerlink" title="array"></a>array</h3><ol>
+<li>对原生数组的封装</li>
+<li>内存分配再栈(stack)，不会重新分配，随机访问元素，&lt; typename T， size_t N &gt;，</li>
+</ol>
+<p>std::array&lt;int, 100&gt; b = {};<br>//访问元素<br>a[1];<br>a.at[1];（会检测能不能访问，抛出异常）<br>.data()，c风格数据</p>
+<p>auto info = std::get&lt;1&gt;(a);<br>a.fill(0);对所有元素赋值</p>
+<h3 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h3><ol>
+<li>动态数组，&lt; typename T， typename Allocator = allocator&lt; T &gt; &gt;</li>
+<li>末端添加删除元素效率高，前端和中间效率低，存在当前容器大小和容量的关系</li>
+</ol>
+<p>a(n)<br>a(n, 值)<br>a({1, 2, 3})<br>a = {1, 2, 3}</p>
+<p>a.capacity(); 容量<br>a.reserve();预先空间<br>a.shrink_to_fit() c++11，降内存，根据实现<br>.assign(n, 值)相当于构造函数</p>
+<p>.front(); 第一个元素引用<br>.back();  undifind</p>
+<p>pop_back()<br>.erase 不能用其他的迭代器，有始有终，会返回下一个迭代器位置<br>b.insert(b.end(), n, 值)；<br>b.emplace(b.end()) 原位生成 // c++11 move、copy<br>resize(100, 1.0f)，不足插入元素</p>
+<p>clear()不会使内存降下来</p>
+<h3 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h3><ol>
+<li>动态数组</li>
+<li>头部和尾部添加删除元素，比vector慢，不是普通的指针（一块一块的指针）</li>
+</ol>
+<p>//无，capacity()，reserve()</p>
+<p>//</p>
+<h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><p>双向列表<br>不支持随机访问元素，访问头部和尾部速度快，插入快，插入和删除不会造成迭代器失效。异常安全</p>
+<p>//无，capacity()，reserve()，shrink_to_fit();</p>
+<p>std::advance(iter, 4);<br>iter = std::next(iter1, 4);</p>
+<h4 id="算法函数"><a href="#算法函数" class="headerlink" title="算法函数"></a>算法函数</h4><p>sort是随机迭代器<br>b只能一步一步移动<br>b.remove（值）全部删除<br>b.remove_if(cmp) 满足的删除<br>.reverse() 反转<br>.sort<br>b.merge(g) 排好序的合并b<br>c.unique(排好序的) 删除重复的<br>c.splice(c.begin(), b) 把b接入c的某一位置</p>
+<h2 id="forward-list"><a href="#forward-list" class="headerlink" title="forward_list"></a>forward_list</h2><p>单向列表，头部快，异常安全</p>
+<p>//无，.size()，</p>
+<p>.before_begin() 第一个元素前一个位置<br>.erase_after（）删除下一个元素<br>.insert_after</p>
+<h2 id="pair"><a href="#pair" class="headerlink" title="pair"></a>pair</h2><p>就是struct</p>
+<h2 id="set-multiset"><a href="#set-multiset" class="headerlink" title="set/multiset"></a>set/multiset</h2><p>二叉树&lt; typename T，typename Compare = less&lt; T &gt;, typename Allocator = allocator&lt; T &gt; &gt;</p>
+<ol>
+<li>自动排序，插入删除logn，频繁插入、删除、查找，严格的弱循序。<br>小于具有传递性，自身比较恒等于false，比较时不改变值</li>
+</ol>
+<p>红黑树，左右父前后</p>
+<p>.count()<br>.find() 返回迭代器，需要做一次end比较<br>.lower_bound(n)，n第一个可以插入的位置<br>.upper_bound(n)，n最后一个插入点<br>.equal_range(n), 等于n的区间</p>
+<p>.insert 返回&lt; iter, bool &gt;</p>
+<p>查找只是按比较规则，logn，set不能改变属性，std的是靠==线性</p>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>&lt; typename Key, typename T，typename Compare = less&lt; Key &gt;, typename Allocator = allocator&lt; pair&lt; const Key, T &gt; &gt; &gt;<br>Key支持弱顺序，不能改变Key的值，和set一般是同一套数据结构</p>
+<h3 id="unordered-queue"><a href="#unordered-queue" class="headerlink" title="unordered_queue"></a>unordered_queue</h3><p>&lt; typename Key, typename T，typename Hash = Hash&lt; Key &gt;, typename EqPred = equal_to&lt; Key &gt;, typename Allocator = allocator&lt; pair&lt; const Key, T &gt; &gt; &gt;</p>
+<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><p>遍历元素</p>
+<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><ol>
+<li>单核红利已经结束</li>
+<li>多线程拥有自己的优势</li>
+<li>API日益成熟，操作系统和标准库已经支持多线程</li>
+<li>需要再数据IO和计算找到平衡点，内存带宽和CPU</li>
+<li>死锁、乱序、并发访问导致数据错误、低效率（有些工作适合单线程）<br>进程：fork（win），CreateProcess，signal（win）<br>线程：POSIX threads</li>
+</ol>
+<p>(1)高阶接口：（async，future）<br>(2)低阶接口：（thread，mutex）</p>
+<p>t thread(function);</p>
+<p>t.join();</p>
+<ol>
+<li>开多少个线程？</li>
+<li>当前机器开多少线程好？核切换</li>
+<li>共享变量的保护，写入寄存器、寄存器加1、写入寄存器（干一样的活，互不干扰，如果没有必要，线程间不要共享资源 2. 原子操作&lt; atomic &gt;，std::atomic&lt;类型&gt; 变量名，a.fetch_add(),a.fetch_sub(),两个原子操作间还是有问题，3.&lt; mutex &gt;临界区，.lock() \ .unlock()，区域代码不会被多个线程运行，连续调用或忘记unlock或异常，&lt;添加接口、写成模板类&gt;， lock_guard&lt; mutex &gt; lockA(a.mutex, std::adopt_lock) ）std::lock();同时锁住<br>线程 lambda函数传引用时方便<br>普通需要 std::ref(c)</li>
+</ol>
+<h1 id="异常安全"><a href="#异常安全" class="headerlink" title="异常安全"></a>异常安全</h1><h1 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h1><h2 id="内存分配"><a href="#内存分配" class="headerlink" title="内存分配"></a>内存分配</h2><ol>
+<li>栈：在执行函数时，函数内局部变量的存储单元都可以在栈上创建，函数执行结束时这些存储单元自动被释放。栈内存分配运算内置于处理器的指令集中，效率很高，但是分配的内存容量有限。</li>
+<li>堆：就是那些由 new分配的内存块，他们的释放编译器不去管，由我们的应用程序去控制，一般一个new就要对应一个 delete。如果程序员没有释放掉，那么在程序结束后，操作系统会自动回收。</li>
+<li>自由存储区：就是那些由malloc等分配的内存块，他和堆是十分相似的，不过它是用free来结束自己的生命的。</li>
+<li>全局/静态存储区：全局变量和静态变量被分配到同一块内存中，在以前的C语言中，全局变量又分为初始化的和未初始化的，在C++里面没有这个区分了，他们共同占用同一块内存区。</li>
+<li>常量存储区：这是一块比较特殊的存储区，他们里面存放的是常量，不允许修改。</li>
+</ol>
+<h2 id="内存对齐"><a href="#内存对齐" class="headerlink" title="内存对齐"></a>内存对齐</h2><p>对于结构体而言，如果我们取得其sizeof的结果，会发现这个值有可能会大于结构体内所有成员大小的总和，这是由于结构体内部成员进行了内存对齐。</p>
+<ol>
+<li>内存对齐使数据读取更高效</li>
+<li>某些平台，不进行内存对齐会崩溃</li>
+</ol>
+<p>thread 析构函数终止程序，操作系统相关（1. 主线程管理次线程 2. 不管），需要设置行为<br>if（j.joinable()） 自己管理<br>    j.join();</p>
+<p>j.detach();不管</p>
+<p>&lt; condition_variable &gt;<br>cv.notify_one();通知一个线程<br>unique_lock&lt; mutex &gt; lock(mutex);<br>cv.wait(lock, []{return quit|| }); 等待条件达成<br>线程池，c++标准没有线程池<br>std::this_thread::yield()，释放资源（可能会被抢掉）、sleep_for</p>
+<h2 id="自动优化"><a href="#自动优化" class="headerlink" title="自动优化"></a>自动优化</h2><p>寄存器</p>
+<h1 id="Mutilthread"><a href="#Mutilthread" class="headerlink" title="Mutilthread"></a>Mutilthread</h1><ol>
+<li>好处：效率高，响应快，API日益成熟</li>
+<li>坏处：</li>
+</ol>
+<h1 id="开发模式"><a href="#开发模式" class="headerlink" title="开发模式"></a>开发模式</h1><h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><!-- flag of hidden posts -->
+    </div>
+
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------文章到此已结束<i class="fa fa-heart"></i>发现错误请指正-------------</div>
+    
+</div>
+      
+    </div>
+	
+	
+    
+    
+    
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/alipay.png" alt="init Alipay">
+        <span>Alipay</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">init</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://xinitx.github.io/blog/Languages/Cpp/Cpp%E7%BB%BC%E8%BF%B0/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

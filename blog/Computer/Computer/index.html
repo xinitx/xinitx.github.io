@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/logo.png">
+  <link rel="mask-icon" href="/blog/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xinitx.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+<meta name="description" content="前言世界的基础是数学和物理，本文从基本逻辑和基本元件展现数字计算机基本组成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Computer">
+<meta property="og:url" content="http://xinitx.github.io/blog/Computer/Computer/index.html">
+<meta property="og:site_name" content="山间残月的博客">
+<meta property="og:description" content="前言世界的基础是数学和物理，本文从基本逻辑和基本元件展现数字计算机基本组成">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-01-25T05:42:28.000Z">
+<meta property="article:modified_time" content="2022-03-15T03:07:55.498Z">
+<meta property="article:author" content="init">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://xinitx.github.io/blog/Computer/Computer/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://xinitx.github.io/blog/Computer/Computer/","path":"Computer/Computer/","title":"Computer"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Computer | 山间残月的博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+  
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><script type="text/javascript"> 
+	var title=document.title; 
+	// window 失去焦点 
+		window.onblur = function() { 
+		document.title='(つ ェ ⊂)我藏好了哦~';
+	};
+	// window 获得焦点 
+		window.onfocus = function() { 
+		document.title='(*゜ロ゜)ノ被发现了~'; 
+		setTimeout("document.title=title",3000); 
+	}
+</script>
+
+<div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+    <a href="https://xinitx.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">山间残月的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/blog/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/blog/tags" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/blog/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/blog/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E8%B4%A8"><span class="nav-number">2.</span> <span class="nav-text">物质</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93"><span class="nav-number">2.1.</span> <span class="nav-text">半导体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E6%9E%81%E7%AE%A1"><span class="nav-number">2.1.1.</span> <span class="nav-text">二极管</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%9E%81%E5%9E%8B%E4%B8%89%E6%9E%81%E7%AE%A1"><span class="nav-number">2.1.2.</span> <span class="nav-text">双极型三极管</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MOS%E7%AE%A1"><span class="nav-number">2.1.3.</span> <span class="nav-text">MOS管</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%B5%E8%B7%AF"><span class="nav-number">2.2.</span> <span class="nav-text">电路</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF"><span class="nav-number">3.</span> <span class="nav-text">信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E4%BC%A0%E8%BE%93"><span class="nav-number">3.1.</span> <span class="nav-text">信息传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%A4%84%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">信息处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E5%AD%98%E5%82%A8"><span class="nav-number">3.3.</span> <span class="nav-text">信息存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="nav-number">3.3.1.</span> <span class="nav-text">触发器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8"><span class="nav-number">3.3.2.</span> <span class="nav-text">寄存器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-number">3.3.3.</span> <span class="nav-text">存储器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1"><span class="nav-number">4.</span> <span class="nav-text">抽象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%A1%E6%81%AF%E8%A1%A8%E7%A4%BA"><span class="nav-number">4.1.</span> <span class="nav-text">信息表示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%88%B6"><span class="nav-number">4.1.1.</span> <span class="nav-text">数制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%A0%81"><span class="nav-number">4.1.2.</span> <span class="nav-text">数码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE"><span class="nav-number">4.1.3.</span> <span class="nav-text">数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">4.1.4.</span> <span class="nav-text">基本操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0"><span class="nav-number">4.2.</span> <span class="nav-text">逻辑代数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="nav-number">4.2.1.</span> <span class="nav-text">基本运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.2.</span> <span class="nav-text">描述方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%96%E7%AE%80%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">化简方法</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="init"
+      src="/blog/images/logo.png">
+  <p class="site-author-name" itemprop="name">init</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives">
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/blog/categories">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://xinitx.github.io/" title="Index → https:&#x2F;&#x2F;xinitx.github.io"><i class="fas fa-fan fa-fw"></i>Index</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/xinitx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xinitx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=x17152141010@163.com" title="Mail → http:&#x2F;&#x2F;mail.qq.com&#x2F;cgi-bin&#x2F;qm_share?t&#x3D;qm_mailme&amp;email&#x3D;x17152141010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Mail</a>
+      </span>
+  </div>
+
+
+
+          <p class="name">Have a <text id="changerificwordspanid"></text> day!</p>
+          
+          <!-- require APlayer -->
+          <link rel="stylesheet" href="/blog/js/APlayer.min.css">
+          <script src="/blog/js/APlayer.min.js"></script>
+          <!-- require MetingJS -->
+          <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+          <meting-js
+            server="tencent"
+            type="playlist"
+            id="8321899376"  theme = "#fff" style = "color:#000; opacity :0.3; "list-folded= "true">
+          </meting-js>
+        
+        </div>        
+      </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/typed.js"></script>
+    <script type="text/javascript">
+	  $("#changerificwordspanid").typed({
+		strings: ["good", "nice", "happy", "wonderful"],
+		typeSpeed: 100,
+		startDelay: 10,
+		showCursor: true,
+		shuffle: true,
+		loop:true
+	  });
+	</script>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://xinitx.github.io/blog/Computer/Computer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo.png">
+      <meta itemprop="name" content="init">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山间残月的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Computer
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-01-25 13:42:28" itemprop="dateCreated datePublished" datetime="2022-01-25T13:42:28+08:00">2022-01-25</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-03-15 11:07:55" itemprop="dateModified" datetime="2022-03-15T11:07:55+08:00">2022-03-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/blog/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+
+   
+  
+
+
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>世界的基础是数学和物理，本文从基本逻辑和基本元件展现数字计算机基本组成</strong></p>
+<span id="more"></span>
+
+<p>对人类社会而言，物质、能量和信息构成现实世界的三大要素。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%B5%84%E6%BA%90%E4%B8%89%E8%A7%92%E5%BD%A2/785709">资源三角形.美国哈佛大学的研究小组</a><br>&emsp;&emsp;物质：构成宇宙间一切物体的实物和场<br>&emsp;&emsp;能量：促进物质间的作用和运动<br>&emsp;&emsp;信息：信息是物质、能量、信息及其属性的标示</p>
+<h1 id="物质"><a href="#物质" class="headerlink" title="物质"></a>物质</h1><p>&emsp;&emsp;物质按导电能力大小可分为导体、半导体、绝缘体。</p>
+<table>
+<thead>
+<tr>
+<th>对象</th>
+<th>定义</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>导体</td>
+<td>易于传导电流的物质</td>
+<td>导引电磁场、组成电路</td>
+</tr>
+<tr>
+<td>半导体</td>
+<td>导电性可控且范围从绝缘体到导体之间的物质</td>
+<td>控制电路</td>
+</tr>
+<tr>
+<td>绝缘体</td>
+<td>难以传导电流的物质</td>
+<td>保护层、绝缘层</td>
+</tr>
+</tbody></table>
+<h2 id="半导体"><a href="#半导体" class="headerlink" title="半导体"></a>半导体</h2><h3 id="二极管"><a href="#二极管" class="headerlink" title="二极管"></a>二极管</h3><p>构成：通常由PN结构成，将P型半导体与N型半导体制作在同一块半导体（通常是硅或锗）基片上<br>&emsp;&emsp;N型半导体：掺入少量杂质磷元素（或锑元素）的硅晶体，多数载流子为自由电子<br>&emsp;&emsp;P型半导体：掺入少量杂质硼元素（或铟元素）的硅晶体，多数载流子为空穴</p>
+<p>特点：单向导电性<br>&emsp;&emsp;外接正向电压时，多数载流子运动，表现为导通<br>&emsp;&emsp;外接反向电压时，只有少数载流子的运动，表现为截止，但也有微弱电流<br>&emsp;&emsp;外接反向电压达到一定值，足以破坏化学键时，就会存在击穿现象</p>
+<img src ="二极管.png">
+
+
+<h3 id="双极型三极管"><a href="#双极型三极管" class="headerlink" title="双极型三极管"></a>双极型三极管</h3><p>构成：相当于两个PN结背向串联。发射区的多数载流子浓度大于基区，且基区较薄。</p>
+<p>特点：开关特性<br>&emsp;&emsp;通过控制基区控制整个元件的导通</p>
+<p>原理：相当于一个PN结正偏，一个PN结反偏。但是，反偏也存在漏电流，本质是少子的运动，通过基区增加少子完成导通<br><img src ="三极管.png"></p>
+<h3 id="MOS管"><a href="#MOS管" class="headerlink" title="MOS管"></a>MOS管</h3><p>构成：相当于两个PN结背向串联，但是栅极和漏极、栅极和源极是绝缘的。</p>
+<p>特点：开关特性<br>&emsp;&emsp;通过控制栅极控制整个元件的导通</p>
+<p>原理：栅极与衬底形成电场等效一个电容，构成一个导电沟道完成导通。</p>
+<img src ="Mos管.png">
+
+<img src ="Mos1.png">
+
+<img src ="mos2.png">
+
+
+<h2 id="电路"><a href="#电路" class="headerlink" title="电路"></a>电路</h2><p>&emsp;&emsp;定义：导线和电气、电子部件组成的导电回路<br>&emsp;&emsp;原理：物质运动，具体来说是原子核和电子的运动，属于电磁相互作用<br>&emsp;&emsp;作用：传递能量，存储、传输和处理信息</p>
+<h1 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h1><p>&emsp;&emsp;根据信息表示方式的不同，电路可以分为模拟电路和数字电路<br>&emsp;&emsp;模拟电路直接用电压模拟其他物理量，如模拟声音、温度等<br>&emsp;&emsp;数字电路用高低电平表示两种不同的逻辑状态，如高电平表示1、低电平表示0</p>
+<h2 id="信息传输"><a href="#信息传输" class="headerlink" title="信息传输"></a>信息传输</h2><p><strong>矩形脉冲信号</strong><br>&emsp;&emsp;<strong>基本概念</strong></p>
+<ol>
+<li>上升沿（正边沿）：脉冲波形由低电位跳变到高电位，反之为下降沿（负边沿）。</li>
+<li>正跳变：由低电位跳变到高电位的过程，反之为负跳变</li>
+<li>正脉冲：脉冲出现时的电位比脉冲出现前后的电位值高，反之为负脉冲。</li>
+<li>脉冲的前沿：脉冲出现。脉冲的后沿：脉冲消失。</li>
+<li>电平：高电位称为高电平，用 UH表示；低电位称为低电平，用 UL 表示。</li>
+</ol>
+<p>&emsp;&emsp;<strong>产生方法</strong></p>
+<ol>
+<li>脉冲整形电路：将已有周期性变化波形变换为符合要求的矩形脉冲</li>
+<li>脉冲波形产生电路：自动产生矩形脉冲</li>
+</ol>
+<p>&emsp;&emsp;<strong>电路结构</strong></p>
+<table>
+<thead>
+<tr>
+<th>电路</th>
+<th>特点</th>
+<th>原理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>斯密特触发电路</td>
+<td>双稳态且控制状态变换的电平不同</td>
+<td>正反馈</td>
+</tr>
+<tr>
+<td>单稳态电路</td>
+<td>暂稳态会自动返回稳态</td>
+<td>RC电路延时性</td>
+</tr>
+<tr>
+<td>多谐振荡电路</td>
+<td>无稳态</td>
+<td>深度正反馈</td>
+</tr>
+</tbody></table>
+<h2 id="信息处理"><a href="#信息处理" class="headerlink" title="信息处理"></a>信息处理</h2><p>&emsp;&emsp;任何复杂的逻辑运算都可以用基本逻辑运算组合而成，实现基本逻辑运算的电路称为门电路或逻辑门，按功能分为与门、或门、非门、与非门、或非门、与或非门、异或门等<br>&emsp;&emsp;原理：根据不同电路的开关特性，从表示二值逻辑到表示复杂的逻辑</p>
+<table>
+<thead>
+<tr>
+<th>电路</th>
+<th>主要元件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>半导体二极管门电路</td>
+<td>二极管</td>
+</tr>
+<tr>
+<td>CMOS门电路</td>
+<td>mos管</td>
+</tr>
+<tr>
+<td>TTL门电路</td>
+<td>三极管</td>
+</tr>
+</tbody></table>
+<img src ="and.png">
+<center>半导体二极管门电路与门</center>
+
+<img src ="or.png">
+<center>半导体二极管门电路或门</center>
+
+
+<img src ="anti.png">
+<center>CMOS反相器（非门）</center>
+
+
+
+
+
+
+
+<h2 id="信息存储"><a href="#信息存储" class="headerlink" title="信息存储"></a>信息存储</h2><p>&emsp;&emsp;只要可以记录二值逻辑就能存储信息，比如早期批处理计算机用纸带输入输出、磁盘用磁通量以及磁阻的变化来分辨二进制中的0或者1。</p>
+<img src ="storage.png">
+
+<h3 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h3><table>
+<thead>
+<tr>
+<th>电路</th>
+<th>特性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>SR锁存器</td>
+<td>存储一位数据</td>
+</tr>
+<tr>
+<td>SR触发器</td>
+<td>增加了触发信号，只有信号到达才能修改触发器状态。双输入信号，所以不可以通过截止瞬间的输入确定输出，S = R = 1时，次态不确定</td>
+</tr>
+<tr>
+<td>脉冲触发的触发器</td>
+<td>两个SR触发器，异步修改存储内容，仅根据有效电平到达时的输入状态无法确定输出</td>
+</tr>
+<tr>
+<td>JK触发器</td>
+<td>改进的脉冲触发SR触发器成为JK触发器，确定了当 J = K = 1时输出次态</td>
+</tr>
+<tr>
+<td>T触发器</td>
+<td>JK触发器的J、K端连接即可形成T端，T = 1时每到达一次时钟信号，状态翻转一次，T = 0时保持不变</td>
+</tr>
+<tr>
+<td>Ｄ触发器</td>
+<td>单输入信号，所以可以通过截止瞬间的输入确定输出</td>
+</tr>
+<tr>
+<td>边沿触发器</td>
+<td>两个D触发器，提高抗干扰能力，导通时的输出不会改变</td>
+</tr>
+</tbody></table>
+<img src ="sr.png">
+<center>SR触发器</center>
+
+<img src ="脉冲.png">
+<center>脉冲触发的触发器</center>
+
+
+    
+<img src ="d.png">
+<center>Ｄ触发器</center>
+
+
+<img src ="边沿.png">
+<center>边沿触发器</center>
+
+
+<img src ="jk.png">
+<center>JK触发器</center>
+
+<img src ="t.png">
+<center>T触发器</center>
+
+<h3 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h3><pre><code>触发器的组合
+</code></pre>
+<img src ="寄存.png">
+
+<h3 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h3><pre><code>存储器中给每个存储单元编了地址，只有地址指定的存储单元才能与公共引脚接通
+</code></pre>
+<p><strong>静态随机存储器（SRAM）</strong></p>
+<pre><code>通常由存储矩阵、地址译码器、读写控制电路组成
+</code></pre>
+<ol>
+<li>存储矩阵由存储单元组成，SR锁存器加门控管</li>
+<li>地址译码器一般分行地址译码器和列地址译码器，输入地址的若干位分成行或列，选中相应存储单元与读写控制电路接通</li>
+<li>读写控制电路控制工作状态，R/W’ = 1时读操作，R/W‘ = 0时写操作</li>
+<li>CS’片选输入端控制能否对RAM进行操作</li>
+</ol>
+<p> <strong>动态随机存储器（DRAM）</strong></p>
+<pre><code>利用MOS电容可以存储电荷的原理制成，大容量、高集成度、速度较SRAM慢，需要刷新
+通常由存储矩阵、地址译码器、读写控制电路、刷新控制电路组成
+</code></pre>
+<ol>
+<li>存储单元为MOS电容</li>
+<li>刷新控制电路包括刷新操作信号和时钟信号发生器、刷新计数器和行地址数据选择器，按行刷新，逐行计数，刷新时不能读写</li>
+</ol>
+<p> <strong>只读存储器（ROM）</strong></p>
+<pre><code>存储固定不变的、预先写好的数据，正常工作时只能读出不能随时写入或修改
+可由将每个存储单元输出接到固定的高电平或低电平实现
+通常由存储矩阵、地址译码器、输出缓冲器组成
+</code></pre>
+<ol>
+<li>存储单元为二极管、双极型三极管、MOS管等</li>
+<li>输出缓冲器能提高存储器的带负载能力，实现对输出状态的三态控制，以便与系统总线连接<img src ="存储.png"></li>
+</ol>
+<p><strong>存储器容量的拓展</strong></p>
+<pre><code>位拓展方式和字拓展方式
+位拓展即代表地址数不变，将相应存储器连接到同一地址线上
+字拓展即代表地址数改变，增加地址代码控制选择对应存储器
+</code></pre>
+<h1 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h1><h2 id="信息表示"><a href="#信息表示" class="headerlink" title="信息表示"></a>信息表示</h2><p>&emsp;&emsp;数字信号是信息的载体，数字电路中数字信号以<strong>数码</strong>的形式表示。数码表示<strong>数量大小</strong>时，可以进行算术运算，同时多位数码中每一位的构成方法和从低位到高位的进制规则为<strong>数制</strong>。数码表示<strong>不同事物或相同事物的不同状态</strong>时，数码可称为<strong>代码</strong>，代码的规则称为<strong>码制</strong>，如ASCII码。</p>
+<h3 id="数制"><a href="#数制" class="headerlink" title="数制"></a>数制</h3><p>&emsp;&emsp;<strong>数制的基本属性</strong><br>&emsp;&emsp;&emsp;&emsp;基：数制每一位上允许使用的数码个数称为”基”。<br>&emsp;&emsp;&emsp;&emsp;权：某数制每一位所具有的值称为”权”。<br>&emsp;&emsp;&emsp;&emsp;进制是指进位计数制，一位数码等于或超过基数时就要进位。<br>&emsp;&emsp;<strong>基于数制的基本属性就能实现任意数制间的转换</strong></p>
+<img src ="取余.png">
+<center>取余法</center>
+
+<img src ="取整.png">
+<center>取整法</center>
+
+<img src ="任意.png">
+
+<h3 id="数码"><a href="#数码" class="headerlink" title="数码"></a>数码</h3><pre><code>数字电路使用二值逻辑，主要是二进制数码
+</code></pre>
+<p><strong>真值</strong><br>&emsp;&emsp;计算机数值表示中，用正负号加绝对值表示数据的形式被称为“真值”。<br><strong>原码</strong><br>&emsp;&emsp;相对于真值，符号位用数码表示，数值位不变<br><strong>反码</strong><br>&emsp;&emsp;原码除符号位外按位取反，原码求补码的过渡码<br><strong>补码</strong><br>&emsp;&emsp;真值加2^n^（n为总位数）即补码。但是单符号位的补码存在算术溢出问题</p>
+<img src ="补码.png">
+
+<img src ="补码2.png">
+
+<img src ="对照表.png">
+<center>补码的‘0’只有一种形式</center>
+
+<p><strong>移码</strong><br>&emsp;&emsp;将二进制真值正向平移或加上2^n-1^（n为总位数），即全部转换成无符号数，通常表示阶码，便于比较大小</p>
+<h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><p><strong>定点数</strong></p>
+<p>&emsp;&emsp;数的小数点固定不变(数值位为n)</p>
+<p>1、带符号的定点小数：约定所有数的小数点在符号位后，范围-（1-2^-n^）~ 1-2^-n^，通常是原码或补码</p>
+<p>2、带符号的定点整数：约定所有数的小数点在最低位后，范围-2^n-1^~2^n-1^，通常是原码或补码</p>
+<p>3、无符号的定点整数：范围0~2^n+1^-1，通常是移码</p>
+<img src ="定点数.png">
+
+
+<p><strong>浮点数</strong></p>
+<p>&emsp;&emsp;小数点的位置可以按需浮动，相同字长较定点数表示范围更大、精度更高</p>
+<p><em><strong>通用格式</strong></em>：阶符+阶码+数符+尾数<br><img src ="浮点数.png"><br><em><strong>规格化格式</strong></em>：固定尾数，使浮点数表示代码唯一。阶码的精度为1，所以限制尾数在1个偏移内。<br>&emsp;&emsp;原码表示时：1/2 =&lt; |M| &lt; 1 （范围不包括-1、+1）<br>&emsp;&emsp;补码表示时：-1 =&lt; M &lt; -1/2   1/2 =&lt; M &lt; 1 （范围不包括-1/2、+1）<br><img src ="规格化.png"></p>
+<p><em><strong>IEEE754标准</strong></em>：阶码用移码表示<br>&emsp;&emsp;float 的阶码8位 数符1位 尾数 23位，并且尾数隐含为1.x，所以范围约3.4<em>e^38^= 2^128^ ，同时23位尾数可以表示的10进制数最大为16,777,216，所以有效位7~8位<br>&emsp;&emsp;double 的阶码11位 数符1位 尾数 52位，所以范围约1.7</em>e^308^= 2^1024^，同时52位尾数可以表示的10进制数最大为9,007,199,254,740,992，所以有效位15~16位<br><img src ="Ieee.png"><br><strong>字符型数据</strong><br>&emsp;&emsp;<em><strong>ASCII码</strong></em>：7位有效位+1位奇偶校验位。所以共可以表示128个字符，包括字母、数字、运算符、标点符号、标示符、格式控制符。奇偶校验位是用来简单检测数据传输中是否存在错误，例如，校验位为奇校验位时，当数据有效位中1的个数为奇数时，校验位为1，传输过程中有效位中1的个数变成了偶数，则可通过校验位判断传输发生错误。<br><img src ="Ascii.png"><br>&emsp;&emsp;<em><strong>汉字码</strong></em><br>输入码：数字码（区位码）、拼音码（拼音输入法）、字形码（五笔输入法）<br>内码：国标码（通常转换成机内码存储，以和ASCII码区分）、GBK、Unicode<br>输出码：字模码（将内码转换成点阵，以实现各种字体）<br><img src ="汉字码.png"></p>
+<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><ol>
+<li>移位：逻辑移位（循环左移最高位会移动至最低位）、算术移位（相当于乘除2、负数补码移位时在空位补1、如果是双符号位第二符号位要参与移动）</li>
+<li>舍入：末位恒置1、0舍1入</li>
+<li>扩展：符号位扩展（符号位为0高位补0，符号位为1高位补1）、0扩展（高位补0，用于无符号数）</li>
+<li>压缩：弃高位留低位</li>
+<li>存储：小端模式（小地址单元存储数据低位）、大端模式（大地址单元存储数据低位）</li>
+<li>字的对齐：按边界对齐（按字存储，读取次数少）、不按边界对齐（按字节存储，存储利用率高）</li>
+</ol>
+<h2 id="逻辑代数"><a href="#逻辑代数" class="headerlink" title="逻辑代数"></a>逻辑代数</h2><pre><code>分析数字电路逻辑功能的数学方法
+</code></pre>
+<h3 id="基本运算"><a href="#基本运算" class="headerlink" title="基本运算"></a>基本运算</h3><pre><code>基本运算包括与、或、非
+</code></pre>
+<img src ="门1.png">
+<img src ="门2.png">
+
+<h3 id="描述方法"><a href="#描述方法" class="headerlink" title="描述方法"></a>描述方法</h3><pre><code>包括逻辑真值表、逻辑函数式、逻辑图、波形图
+</code></pre>
+<img src ="描述1.png">
+<img src ="描述2.png">
+### 逻辑函数式化简方法
+#### 标准形式
+    值为1的最小项之和或值为0的最大项之积。
+**最小项性质**
+&emsp;&emsp;性质是由定义确定的
+ 1. 对于任意一个输入变量有且只有一个最小项为1。
+ 2. 具有相邻性的两个最小项之和可以合并成一项并消去一对因子。
+ 3. 对于输入变量的任何一组取值，任意两个最小项的乘积为0。
+ 4. 对于输入变量的任何一组取值，全体最小项的和为1。
+ 5. 最小项通常用m表示，下标i即最小项编号，将最小项中的原变量用1表示，非变量用0表示，得到的二进制编码转换成十进制，可得到最小项的编号。
+
+<h4 id="化简方法"><a href="#化简方法" class="headerlink" title="化简方法"></a>化简方法</h4><pre><code>通用卡诺图化简，原理是利用了最小项或最大项的逻辑相邻性.
+若存在约束项或任意项可以充当1或0使用.
+若对象是多输出逻辑函数则可寻找卡诺图中不同输出间的相同项.
+</code></pre>
+<p><strong>步骤</strong></p>
+<ol>
+<li>函数化为最小项之和</li>
+<li>画出卡诺图</li>
+<li>找出可合并最小项</li>
+<li>选取化简后的乘积项：覆盖所有最小项、乘积项最少、乘积项包含的因子最少</li>
+</ol>
+<img src ="描述3.png">
+
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
+<li>计算机组成原理</li>
+<li>数字电路</li>
+</ol>
+
+    </div>
+
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------文章到此已结束<i class="fa fa-heart"></i>发现错误请指正-------------</div>
+    
+</div>
+      
+    </div>
+	
+	
+    
+    
+    
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/alipay.png" alt="init Alipay">
+        <span>Alipay</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/Learn/" rel="prev" title="Learn">
+                  <i class="fa fa-chevron-left"></i> Learn
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/Computer/Hardware/Basics/" rel="next" title="Basics">
+                  Basics <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">init</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://xinitx.github.io/blog/Computer/Computer/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
