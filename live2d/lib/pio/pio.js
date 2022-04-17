@@ -154,6 +154,7 @@ var Paul_Pio = function (prop) {
         // 右侧按钮
         buttons: function () {
             // asoulworld网站
+			/*
             elements.home.onclick = function () {
                 window.open('https://asoulworld.com/')
             };
@@ -161,6 +162,7 @@ var Paul_Pio = function (prop) {
                 modules.render(prop.content.home || "想查看更多A-Soul的信息吗？");
             };
             current.menu.appendChild(elements.home);
+			*/
             /*
             // 更换背景图
             elements.background.onclick = function () {
@@ -187,6 +189,7 @@ var Paul_Pio = function (prop) {
             if (prop.model.length > 1) current.menu.appendChild(elements.skin);
             */
             // 溜冰场
+			/*
             elements.skate.onclick = function () {
                 const link = window.溜冰场 || prop.content.link;
                 if (link) {
@@ -204,7 +207,7 @@ var Paul_Pio = function (prop) {
                 modules.render(list);
             };
             current.menu.appendChild(elements.skate);
-
+*/
 
             // 音频测试
             elements.audio.onclick = function () {
@@ -235,6 +238,7 @@ var Paul_Pio = function (prop) {
             current.menu.appendChild(elements.fans);
             */
             // 关于我
+			/*
             elements.info.onclick = function () {
                 window.open("https://www.bilibili.com/video/BV1FZ4y1F7HH");
             };
@@ -242,6 +246,7 @@ var Paul_Pio = function (prop) {
                 modules.render(["想了解更多关于我的信息吗？", "模型来源"]);
             };
             current.menu.appendChild(elements.info);
+			*/
         }
     };
 
