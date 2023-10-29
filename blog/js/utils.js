@@ -230,9 +230,10 @@ NexT.utils = {
     });
   },
 
-  registerSidebarTOC: function() {
+  registerSidebarTOC: function() {  
     this.sections = [...document.querySelectorAll('.post-toc li a.nav-link')].map(element => {
       const target = document.getElementById(decodeURI(element.getAttribute('href')).replace('#', ''));
+      console.log(decodeURI(element.getAttribute('href')));
       // TOC item animation navigate.
       element.addEventListener('click', event => {
         event.preventDefault();

@@ -2,6 +2,10 @@
 
 const pjax = new Pjax({
   selectors: [
+    '#del',
+    '#cute',
+    '#cute-tips',
+    '.Canvas left',
     'head title',
     'script[type="application/json"]',
     '.main-inner',
