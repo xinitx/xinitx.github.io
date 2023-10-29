@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>init的小站</title>
+<style>
+	body{
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		display: flex;		
+		background: #282828;
+		width: 100%;
+		height: 100%;
+		justify-content: center;
+	}
+	#canvas {
+	 width: 100%;
+	 height: 100%;
+	 display: block;
+	 opacity: .8;
+	 z-index: -1;
+	}
+	#lose{
+		position: absolute;
+		margin: auto;
+		top: 40%;
+		color: #66ccff;
+		font-size: 40px;
+		z-index: 1;
+	}
+	.emoji{
+		position: absolute;
+		font-size: 50px;
+		z-index: 1;
+		animation: spin 1s linear infinite;
+	}
+	@keyframes spin {
+	  from {
+		 transform: rotate(0deg);
+	  }
+
+	  to {
+		 transform: rotate(360deg);
+	  }
+	}
+
+</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<div id = "lose">404! &#x1F62D;</div>
+</body>
+	
+<script type="text/javascript">
+var x = new Array();
+var the_time = 10;
+var idx = 0;
+var the_interval;
+var emoji_list = ["1F622;", "1F97A;", "1F60B;",  "1F606;", "1F601;", "1F605;"];
+var emoji_this = document.getElementById("lose");
+emoji_this.addEventListener("touchstart", change_text, true);
+function change_text(){
+	if(idx > 10){
+		if(the_time == 10)
+		{
+			the_time --;
+			emoji_this.innerHTML = "找不同！" + the_time;
+			create_emoji();
+			
+			the_interval = setInterval(()=>{
+				the_time --;
+				emoji_this.innerHTML = "找不同！" + the_time;
+				if(the_time == 0)
+				{
+					clearInterval(the_interval);
+					emoji_this.innerHTML = "你输了！";
+					the_time = 10;
+					for(var i = 0; i < 11; i++){
+						document.body.removeChild(x[i]);
+					}
+				}
+			}, 1000);
+		}
+	}
+	else if(idx == 10){
+		emoji_this.innerHTML = "来玩个游戏吧 &#x1F97A";
+	}
+	else if(idx >= emoji_list.length){
+		emoji_this.innerHTML = "本网站尚未适配手机 &#x1F97A";
+	}
+	else{
+		emoji_this.innerHTML = "404! &#x" + emoji_list[idx];
+	}
+	idx += 1;
+}
+function create_emoji(){
+	for(var i = 0; i < 10; i++){
+		x[i] = document.createElement("div");
+		x[i].innerHTML = "&#x1F97A;";
+		x[i].classList.add("emoji");
+		x[i].style.top = Math.floor((Math.random() * window.screen.availHeight)) + "px";
+		x[i].style.left = Math.floor((Math.random() * window.screen.availWidth)) + "px" ;
+		x[i].addEventListener("touchstart", game_loss, true);
+		document.body.appendChild(x[i]);
+	}
+	x[10] = document.createElement("div");
+	x[10].innerHTML = "&#x1F60B;";
+	x[10].classList.add("emoji");
+	x[10].style.top = Math.floor((Math.random() * window.screen.availHeight)) + "px";
+	x[10].style.left = Math.floor((Math.random() * window.screen.availWidth)) + "px" ;
+	x[10].addEventListener("touchstart", game_win, true);
+	document.body.appendChild(x[10]);
+}
+function game_loss(){
+	
+	for(var i = 0; i < 11; i++){
+		document.body.removeChild(x[i]);
+	}
+	clearInterval(the_interval);
+	emoji_this.innerHTML = "你输了！";
+	the_time = 10;
+}
+function game_win(){
+
+	for(var i = 0; i < 11; i++){
+		document.body.removeChild(x[i]);
+	}
+	clearInterval(the_interval);
+	emoji_this.innerHTML = "你赢了！";
+	the_time = 10;
+}
+
+// 音量大小,0.01-1
+ 
+//宇宙特效
+var canvas = document.getElementById('canvas'),
+ctx = canvas.getContext('2d'),
+w = canvas.width = window.innerWidth,
+h = canvas.height = window.innerHeight,
+ 
+hue = 217,
+stars = [],
+count = 0,
+maxStars = 500;    //星星数量,默认1300
+var canvas2 = document.createElement('canvas'),
+ctx2 = canvas2.getContext('2d');
+canvas2.width = 100;
+canvas2.height = 100;
+var half = canvas2.width / 2,
+gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+gradient2.addColorStop(0.025, '#CCC');
+gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
+gradient2.addColorStop(1, 'transparent');
+ 
+ctx2.fillStyle = gradient2;
+ctx2.beginPath();
+ctx2.arc(half, half, half, 0, Math.PI * 2);
+ctx2.fill();
+ 
+// End cache
+function random(min, max) {
+ if (arguments.length < 2) {
+  max = min;
+  min = 0;
+ }
+ 
+ if (min > max) {
+  var hold = max;
+  max = min;
+  min = hold;
+ }
+ 
+ return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+ 
+function maxOrbit(x, y) {
+ var max = Math.max(x, y),
+ diameter = Math.round(Math.sqrt(max * max + max * max));
+ return diameter / 2;
+ //星星移动范围，值越大范围越小，
+}
+ 
+var Star = function() {
+ 
+ this.orbitRadius = random(maxOrbit(w, h));
+ this.radius = random(60, this.orbitRadius) / 10;  //星星大小,值越大星星越小,默认8
+ 
+ this.orbitX = w / 2;
+ this.orbitY = h / 2;
+ this.timePassed = random(0, maxStars);
+ this.speed = random(this.orbitRadius) / 800000;  //星星移动速度,值越大越慢,默认5W
+ 
+ this.alpha = random(2, 10) / 10;
+ 
+ count++;
+ stars[count] = this;
+}
+ 
+Star.prototype.draw = function() {
+ var x = Math.sin(this.timePassed) * this.orbitRadius + this.orbitX,
+ y = Math.cos(this.timePassed) * this.orbitRadius + this.orbitY,
+ twinkle = random(10);
+ 
+ if (twinkle === 1 && this.alpha > 0) {
+  this.alpha -= 0.05;
+ } else if (twinkle === 2 && this.alpha < 1) {
+  this.alpha += 0.05;
+ }
+ 
+ ctx.globalAlpha = this.alpha;
+ ctx.drawImage(canvas2, x - this.radius / 2, y - this.radius / 2, this.radius, this.radius);
+ this.timePassed += this.speed;
+}
+ 
+for (var i = 0; i < maxStars; i++) {
+ new Star();
+}
+ 
+function animation() {
+ ctx.globalCompositeOperation = 'source-over';
+ ctx.globalAlpha = 0.5;         //尾巴
+ ctx.fillStyle = 'hsla(' + hue + ', 64%, 6%, 2)';
+ ctx.fillRect(0, 0, w, h)
+ 
+ ctx.globalCompositeOperation = 'lighter';
+ for (var i = 1,
+ l = stars.length; i < l; i++) {
+  stars[i].draw();
+ };
+ 
+ window.requestAnimationFrame(animation);
+}
+animation();	
+</script>
+</html>
