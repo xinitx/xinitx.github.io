@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/logo.png">
+  <link rel="mask-icon" href="/blog/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xinitx.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+<meta name="description" content="概述操作系统概述在计算机系统上配置操作系统，其主要目标是：方便性、有效性、可扩充性和开放性      处理机管理 批处理系统：平均周转时间短、系统吞吐量高、处理机利用率高，周转时间 &#x3D; 完成时间 - 到达时间、带权周转时间 &#x3D; 周转时间 &#x2F; 服务时间  分时系统：响应时间快、均衡性  实时系统：截止时间的保证、可预测性，处理时间和 &#x2F; 周期时间和 &lt;&#x3D; N，松弛度 &#x3D; 截止时间 - 运行时间">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Computer_Software">
+<meta property="og:url" content="http://xinitx.github.io/blog/Computer-Software/index.html">
+<meta property="og:site_name" content="山间残月的博客">
+<meta property="og:description" content="概述操作系统概述在计算机系统上配置操作系统，其主要目标是：方便性、有效性、可扩充性和开放性      处理机管理 批处理系统：平均周转时间短、系统吞吐量高、处理机利用率高，周转时间 &#x3D; 完成时间 - 到达时间、带权周转时间 &#x3D; 周转时间 &#x2F; 服务时间  分时系统：响应时间快、均衡性  实时系统：截止时间的保证、可预测性，处理时间和 &#x2F; 周期时间和 &lt;&#x3D; N，松弛度 &#x3D; 截止时间 - 运行时间">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220813152247403.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220813161351380.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220813211904626.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220814084630864.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220814223040015.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220815121503911.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220815183006418.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220815230500727.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220816110714031.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220816184139091.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220816213613136.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220816213623210.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220817101758879.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220817103016818.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220817103300287.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220817104830478.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220817111457870.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220817144430095.png">
+<meta property="article:published_time" content="2022-08-13T02:20:36.000Z">
+<meta property="article:modified_time" content="2022-08-17T07:00:44.368Z">
+<meta property="article:author" content="init">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xinitx.github.io/blog/Computer-Software/Computer-Software/image-20220813152247403.png">
+
+
+<link rel="canonical" href="http://xinitx.github.io/blog/Computer-Software/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://xinitx.github.io/blog/Computer-Software/","path":"Computer-Software/","title":"Computer_Software"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Computer_Software | 山间残月的博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+  
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><script type="text/javascript"> 
+	var title=document.title; 
+	// window 失去焦点 
+		window.onblur = function() { 
+		document.title='(つ ェ ⊂)我藏好了哦~';
+	};
+	// window 获得焦点 
+		window.onfocus = function() { 
+		document.title='(*゜ロ゜)ノ被发现了~'; 
+		setTimeout("document.title=title",3000); 
+	}
+</script>
+
+<div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+    <a href="https://xinitx.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">山间残月的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/blog/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/blog/tags" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/blog/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/blog/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.1.</span> <span class="nav-text">操作系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-1"><span class="nav-number">1.1.1.</span> <span class="nav-text">概述</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E6%9C%BA%E7%AE%A1%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">处理机管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6"><span class="nav-number">2.1.</span> <span class="nav-text">调度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%BB%E9%94%81"><span class="nav-number">2.2.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%AE%A1%E7%90%86"><span class="nav-number">2.3.</span> <span class="nav-text">存储器管理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IO%E7%B3%BB%E7%BB%9F"><span class="nav-number">3.</span> <span class="nav-text">IO系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-number">3.1.</span> <span class="nav-text">设备控制器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">文件管理</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="init"
+      src="/blog/images/logo.png">
+  <p class="site-author-name" itemprop="name">init</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://xinitx.github.io/" title="Index → https:&#x2F;&#x2F;xinitx.github.io"><i class="fas fa-fan fa-fw"></i>Index</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/xinitx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xinitx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=x17152141010@163.com" title="Mail → http:&#x2F;&#x2F;mail.qq.com&#x2F;cgi-bin&#x2F;qm_share?t&#x3D;qm_mailme&amp;email&#x3D;x17152141010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Mail</a>
+      </span>
+  </div>
+
+
+
+          <p class="name">Have a <text id="changerificwordspanid"></text> day!</p>
+          
+          <!-- require APlayer -->
+          <link rel="stylesheet" href="/blog/js/APlayer.min.css">
+          <script src="/blog/js/APlayer.min.js"></script>
+          <!-- require MetingJS -->
+          <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+          <meting-js
+            server="tencent"
+            type="playlist"
+            id="8321899376"  theme = "#fff" style = "color:#000; opacity :0.3; "list-folded= "true">
+          </meting-js>
+        
+        </div>        
+      </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/typed.js"></script>
+    <script type="text/javascript">
+	  $("#changerificwordspanid").typed({
+		strings: ["good", "nice", "happy", "wonderful"],
+		typeSpeed: 100,
+		startDelay: 10,
+		showCursor: true,
+		shuffle: true,
+		loop:true
+	  });
+	</script>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://xinitx.github.io/blog/Computer-Software/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo.png">
+      <meta itemprop="name" content="init">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山间残月的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Computer_Software
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-08-13 10:20:36" itemprop="dateCreated datePublished" datetime="2022-08-13T10:20:36+08:00">2022-08-13</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-08-17 15:00:44" itemprop="dateModified" datetime="2022-08-17T15:00:44+08:00">2022-08-17</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+
+   
+  
+
+
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>在计算机系统上配置操作系统，其主要目标是：方便性、有效性、可扩充性和开放性</p>
+<p><img src="Computer-Software/image-20220813152247403.png" alt="image-20220813152247403"></p>
+<p><img src="Computer-Software/image-20220813161351380.png" alt="image-20220813161351380"></p>
+<p><img src="Computer-Software/image-20220813211904626.png" alt="image-20220813211904626"></p>
+<p><img src="Computer-Software/image-20220814084630864.png" alt="image-20220814084630864"></p>
+<p><img src="Computer-Software/image-20220814223040015.png" alt="image-20220814223040015"></p>
+<h1 id="处理机管理"><a href="#处理机管理" class="headerlink" title="处理机管理"></a>处理机管理</h1><ol>
+<li><p>批处理系统：平均周转时间短、系统吞吐量高、处理机利用率高，周转时间 = 完成时间 - 到达时间、带权周转时间 = 周转时间 / 服务时间</p>
+</li>
+<li><p>分时系统：响应时间快、均衡性</p>
+</li>
+<li><p>实时系统：截止时间的保证、可预测性，处理时间和 / 周期时间和 &lt;= N，松弛度 = 截止时间 - 运行时间</p>
+<p><img src="Computer-Software/image-20220815121503911.png" alt="image-20220815121503911"></p>
+<h2 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h2><p><img src="Computer-Software/image-20220815183006418.png" alt="image-20220815183006418"></p>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p><img src="Computer-Software/image-20220815230500727.png" alt="image-20220815230500727"></p>
+</li>
+</ol>
+<h2 id="存储器管理"><a href="#存储器管理" class="headerlink" title="存储器管理"></a>存储器管理</h2><p><img src="Computer-Software/image-20220816110714031.png" alt="image-20220816110714031"></p>
+<p><img src="Computer-Software/image-20220816184139091.png" alt="image-20220816184139091"></p>
+<p><img src="Computer-Software/image-20220816213613136.png" alt="image-20220816213613136"></p>
+<p><img src="Computer-Software/image-20220816213623210.png" alt="image-20220816213623210"></p>
+<h1 id="IO系统"><a href="#IO系统" class="headerlink" title="IO系统"></a>IO系统</h1><p><img src="Computer-Software/image-20220817101758879.png" alt="image-20220817101758879"></p>
+<h2 id="设备控制器"><a href="#设备控制器" class="headerlink" title="设备控制器"></a>设备控制器</h2><p>驱动程序将抽象IO命令转换出的一系列具体的命令、参数等数据装入设备控制器的相应寄存器，由控制器来执行这些命令，具体实施对IO设备的控制。</p>
+<ol>
+<li>利用特定的IO指令：每个控制寄存器分配一个IO端口，设置特定IO指令，访问内存和访问设备需要两种不同的指令</li>
+<li>内存映像IO：在编址上不再区分内存单元地址和设备控制器中的寄存器地址</li>
+<li>中断：IO设备中断信号的响应，外中断</li>
+<li>陷入：CPU内部事件(上溢下溢等)引起的，内中断</li>
+</ol>
+<p><img src="Computer-Software/image-20220817103016818.png" alt="image-20220817103016818"></p>
+<p><img src="Computer-Software/image-20220817103300287.png" alt="image-20220817103300287"></p>
+<p><img src="Computer-Software/image-20220817104830478.png" alt="image-20220817104830478"></p>
+<p><img src="Computer-Software/image-20220817111457870.png" alt="image-20220817111457870"></p>
+<h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><p><img src="Computer-Software/image-20220817144430095.png" alt="image-20220817144430095"></p>
+
+    </div>
+
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------文章到此已结束<i class="fa fa-heart"></i>发现错误请指正-------------</div>
+    
+</div>
+      
+    </div>
+	
+	
+    
+    
+    
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/alipay.png" alt="init Alipay">
+        <span>Alipay</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/blog/Computer-Hardware/" rel="prev" title="Computer_Hardware">
+                  <i class="fa fa-chevron-left"></i> Computer_Hardware
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/Computer-DataStructure/" rel="next" title="Computer_Data">
+                  Computer_Data <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">init</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://xinitx.github.io/blog/Computer-Software/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+
+</body>
+</html>

@@ -1,8 +1,412 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>java</title>
-    <url>/blog/java/</url>
-    <content><![CDATA[]]></content>
+    <title>Computer_Data</title>
+    <url>/blog/Computer-DataStructure/</url>
+    <content><![CDATA[<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><p><img src="Computer-Data/image-20220817203115534.png" alt="image-20220817203115534"></p>
+<p><img src="Computer-Data/image-20220821222015409.png" alt="image-20220821222015409"></p>
+<p><img src="Computer-Data/image-20220821222037266.png" alt="image-20220821222037266"></p>
+<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><p><img src="Computer-Data/image-20220823084203598.png" alt="image-20220823084203598"></p>
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><p><img src="Computer-Data/image-20220823084234373.png" alt="image-20220823084234373"></p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p><img src="Computer-Data/image-20220823193143300.png" alt="image-20220823193143300"></p>
+<h2 id="内部排序"><a href="#内部排序" class="headerlink" title="内部排序"></a>内部排序</h2><p><img src="Computer-Data/image-20220823212142995.png" alt="image-20220823212142995"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Computer_Hardware</title>
+    <url>/blog/Computer-Hardware/</url>
+    <content><![CDATA[<h1 id="计算机组成"><a href="#计算机组成" class="headerlink" title="计算机组成"></a>计算机组成</h1><p><img src="Computer-Hardware/image-20220630204548700.png" alt="image-20220630204548700"></p>
+<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p>计算机组成|organization和计算机体系结构|architecture：后者是前者的抽象|概念化，比如存储器属于体系结构、ROM属于组成</p>
+<h1 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h1><h2 id="信息表示"><a href="#信息表示" class="headerlink" title="信息表示"></a>信息表示</h2><p><img src="Computer-Hardware/image-20220630202529217.png" alt="image-20220630202529217"></p>
+<h1 id="总线"><a href="#总线" class="headerlink" title="总线"></a>总线</h1><p>总线是一种能由多个部件分时共享的公共信息传送线路</p>
+<p><img src="Computer-Hardware/image-20220630223703709.png" alt="image-20220630223703709"></p>
+<h2 id="总线标准"><a href="#总线标准" class="headerlink" title="总线标准"></a>总线标准</h2><p><img src="Computer-Hardware/image-20220708212659043.png" alt="image-20220708212659043"></p>
+<h2 id="总线结构"><a href="#总线结构" class="headerlink" title="总线结构"></a>总线结构</h2><p><img src="Computer-Hardware/image-20220708214946720.png" alt="image-20220708214946720"></p>
+<h2 id="总线控制"><a href="#总线控制" class="headerlink" title="总线控制"></a>总线控制</h2><p><img src="Computer-Hardware/image-20220708233814843.png" alt="image-20220708233814843"></p>
+<h1 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h1><p><img src="Computer-Hardware/image-20220805201618189.png" alt="image-20220805201618189"></p>
+<p><img src="Computer-Hardware/image-20220805202412158.png" alt="image-20220805202412158"></p>
+<p><img src="Computer-Hardware/image-20220805205814417.png" alt="image-20220805205814417"></p>
+<h2 id="RAM"><a href="#RAM" class="headerlink" title="RAM"></a>RAM</h2><p>主存分为按字寻址和按字节寻址，地址总线决定寻址范围、数据总线决定存储字长</p>
+<ol>
+<li>容量 = 存储单元个数×存储字长 （位）</li>
+<li>存取时间：读出时间（接收到有效地址开始到产生有效输出所需的时间、写入时间（接收到有效地址开始到数据写入单元的时间</li>
+<li>存取周期：存储器连续两次独立的存储器操作所需的最小间隔时间，通常大于存取时间（有一段维持有效数据的时间保证数据可靠</li>
+<li>存储器带宽：缩短存取周期、增加存储字长、增加存储体</li>
+<li>译码驱动方式：线选法（直接选中一个单元，重合法（分两个方向选中某一位</li>
+</ol>
+<p><img src="Computer-Hardware/image-20220805205940624.png" alt="image-20220805205940624"></p>
+<p><img src="Computer-Hardware/image-20220805213049746.png" alt="image-20220805213049746"></p>
+<p><img src="Computer-Hardware/image-20220806134828595.png" alt="image-20220806134828595"></p>
+<h2 id="ROM"><a href="#ROM" class="headerlink" title="ROM"></a>ROM</h2><p>按ROM的原始定义，一旦注人原始信息即不能改变，对半导体ROM而言，基本器件为两种：MOS型和TTL型。</p>
+<p><img src="Computer-Hardware/image-20220806145309741.png" alt="image-20220806145309741"></p>
+<p><img src="Computer-Hardware/image-20220806162242382.png" alt="image-20220806162242382"></p>
+<p><img src="Computer-Hardware/image-20220806223018020.png" alt="image-20220806223018020"></p>
+<p><img src="Computer-Hardware/image-20220806222605414.png" alt="image-20220806222605414"></p>
+<h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><p>在多体并行存储系统中，由于/O设备向主存请求的级别高于CPU访存，增加Cache避免空等；主存速度的提高始终跟不上CPU的发展</p>
+<p><img src="Computer-Hardware/image-20220806230309664.png" alt="image-20220806230309664"></p>
+<p><img src="Computer-Hardware/image-20220806230420350.png" alt="image-20220806230420350"></p>
+<p><img src="Computer-Hardware/image-20220806232041050.png" alt="image-20220806232041050"></p>
+<p><img src="Computer-Hardware/image-20220807103321075.png" alt="image-20220807103321075"></p>
+<p><img src="Computer-Hardware/image-20220807103448891.png" alt="image-20220807103448891"></p>
+<p><img src="Computer-Hardware/image-20220807103513429.png" alt="image-20220807103513429"></p>
+<h2 id="辅存"><a href="#辅存" class="headerlink" title="辅存"></a>辅存</h2><p>与主存相比，辅存具有容量大、速度慢、价格低、可脱机保存信息等特点，有硬磁盘、软磁盘、磁带、光盘等</p>
+<ol>
+<li>道密度（磁盘）：半径方向单位长度磁道数，等于道距的倒数</li>
+<li>位密度（磁盘）：单位长度磁道能记录二进制信息的位数，等于每道总位数除以最内同心圆长度（规定，各磁道信息量相同位密度不同）</li>
+<li>存储容量：外存所能存储的二进制信息总数量，非格式化容量是磁表面可以利用的磁化单元总数，格式化容量是指按某种特定的记录格式所能存储信息的总量即用户能使用的容量</li>
+<li>平均寻址时间：平均找道时间（max + min）/ 2 和平均等待时间（max + min）/ 2之和</li>
+<li>数据传输率：单位时间内磁表面存储器向主机传送数据的位数或字节数，记录密度乘以记录介质的运动速度</li>
+<li>误码率：出错信息位数和读出信息的总位数之比，磁表面存储器通常采用循环冗余码来发现并纠正错误</li>
+</ol>
+<h1 id="IO系统"><a href="#IO系统" class="headerlink" title="IO系统"></a>IO系统</h1><p><img src="Computer-Hardware/image-20220807160143250.png" alt="image-20220807160143250"></p>
+<h1 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h1><h2 id="运算方法"><a href="#运算方法" class="headerlink" title="运算方法"></a>运算方法</h2><p><img src="Computer-Hardware/image-20220810205218316.png" alt="image-20220810205218316"></p>
+<p><img src="Computer-Hardware/image-20220809213855406.png" alt="image-20220809213855406"></p>
+<p><img src="Computer-Hardware/image-20220810152403222.png" alt="image-20220810152403222"></p>
+<ol>
+<li>逻辑移位：逻辑左移时，高位移丢，低位添0；逻辑右移时，低位移丢，高位添0</li>
+<li>带进位的算术移位：避免算术左移时最高数位丢1</li>
+<li>加减法运算：一般采用补码运算，结果是取模后的结果</li>
+<li>一位符号位判断溢出：只要实际参加操作的两个数（减法时即为被减数和“求补”以后的减数）符号相同，结果又与原操作数的符号不同，即为溢出。</li>
+<li>两位符号位判断溢出：采用变形补码(模数为4时的补码)运算，当2位符号位不同时，表示溢出，否则，无溢出，高位符号位代表真正的符号。</li>
+<li>乘法运算：分解为移位运算和加法运算，初始部分积为0，递归地加被乘数当前位乘乘数再右移一位（算术移位）</li>
+<li>原码一位乘：乘积符号由两原码符号位异或运箅结果决定，乘积的数值部分由两数绝对值相乘</li>
+<li>原码两位乘：乘积符号由两原码符号位异或运箅结果决定，乘积的数值部分是两位两位地乘，加四倍通过存一个标志位让下一次运算实现，但是有可能大于2所以部分积需3位符号位且最高位为真正符号位，乘数前需添补两个0，偶n / 2次移位最多n / 2 + 1次加法，奇n / 2 + 1次移位最多n / 2 + 1次加法</li>
+<li>补码一位乘：当乘数y为正数时，按原码乘法的规则运算；当乘数y为负数时，去掉符号位当成正数按原码乘法的规则运算，最后加上[-x]补，2位符号位</li>
+<li>补码两位乘：3位符号位</li>
+</ol>
+<p><img src="Computer-Hardware/image-20220810154549653.png" alt="原码两位乘"></p>
+<p><img src="Computer-Hardware/image-20220810164949010.png" alt="image-20220810164949010"></p>
+<h2 id="除法"><a href="#除法" class="headerlink" title="除法"></a>除法</h2><ol>
+<li>原码除法：商符由两数符号位进行异或运算求得</li>
+<li>恢复余数法：比较x和y的大小，[|x|]补 + [-|y|]补，若余数为正商1，若余数为负商0且恢复余数(+[|y|]补)，第一次商是整数位可用于溢出判断</li>
+<li>加减交替法(不恢复余数法)：当余数为正，商1左移减除数(+ [-|y|]补)；当余数为负，商0左移加除数(+ [|y|]补)，共上商n+1次（第一次商判断是否溢出，不判断则可少一次商），左移n次</li>
+<li>双符号位运算：移位采用算术移位，最高位是真正的符号，次高位移位时可被占用</li>
+<li>补码除法：符号位和数值部分一起参加运算，商1时左移一位(乘2)减除数(+ [-y]补)，商0时左移一位(乘2)加除数(+ [y]补)，若对商的精度无要求，采用“末位恒置1”，最大误差2的-n次方</li>
+</ol>
+<p><img src="Computer-Hardware/image-20220810202027474.png" alt="image-20220810202027474"></p>
+<p><img src="Computer-Hardware/image-20220810202236780.png" alt="image-20220810202236780"></p>
+<p><img src="Computer-Hardware/image-20220810203516651.png" alt="image-20220810203516651"></p>
+<h2 id="浮点四则运算"><a href="#浮点四则运算" class="headerlink" title="浮点四则运算"></a>浮点四则运算</h2><h3 id="加减"><a href="#加减" class="headerlink" title="加减"></a>加减</h3><ol>
+<li>小阶向大阶看齐，较小的数会丢失一些精度</li>
+<li>特规定负二分之一不是规格化数(对补码而言)，补码规格化形式：大于0时，00.1xxx，小于0时，11.0xxx</li>
+<li>00.0xxx、11.1xxx时左规，01.xx或10.xx时溢出右规（定点算溢出，浮点不算）</li>
+<li>对阶和右规可能丢失低位，0舍1入法（移去的最高位为1时末尾加1），恒置1法（尾数末位恒置为1）</li>
+<li>下溢一般机器不作溢出处理，仅把它作为机器零，上溢为浮点数真正溢出，机器需停止运算，作溢出中断处理</li>
+</ol>
+<p><img src="Computer-Hardware/image-20220810204306199.png" alt="image-20220810204306199"></p>
+<h3 id="乘除"><a href="#乘除" class="headerlink" title="乘除"></a>乘除</h3><ol>
+<li>乘积的阶码应为相乘两数的阶码之和，乘积的尾数应为相乘两数的尾数之积</li>
+<li>商的阶码为被除数的阶码减去除数的阶码，尾数为被除数的尾数除以除数的尾数所得的商</li>
+<li>先按阶码做溢出判断，进行移码加减运算时，只需将移码表示的加数或减数的符号位取反（即变为补码），移码最高位加一个0，若计算后最高位为10上溢、11下溢，最高位为0无溢出</li>
+<li>尾数乘法运算：一个数为0结果为0，否则采用定点小数运算，规格化后若阶码下溢则机器零，若阶码上溢则溢出处理，若限定字长或截断处理或0舍1入（原码舍会使绝对值变小，入会使绝对值变大，补码正数与原码相同，负数与原码相反（采用丢失全0、0不全0、1全0直接舍去，1不全0则最末尾加1））</li>
+<li>尾数除法运算：除数为0商为0，再检测被除数为0商为无穷大另作处理，防止溢出如果被除数的绝对值大于除数的绝对值，除数可先右移</li>
+</ol>
+<h2 id="ALU"><a href="#ALU" class="headerlink" title="ALU"></a>ALU</h2><ol>
+<li>并行加法器：每位全加器的进位输出是高一位全加器的进位输人，一级一级传递进位的过程将会大大影响运算速度</li>
+<li>串行进位链：并行加法器中的进位信号采用串行传递，若与非门延迟t则每多一个全加器加2t时间</li>
+<li>并行进位链（先行进位、跳跃进位）：并行加法器中的进位信号是同时产生的，理想n位进位同时产生，但实际实现有困难，单重分组（分若干小组，组内并行、组间串行）、双重分组（分若干大组再分若干小组，组内并行、组间并行）</li>
+</ol>
+<h2 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h2><p>人们习惯把每一条机器语言的语句称为机器指令，而又将全部机器指令的集合称为机器的指令系统。因此机器的指令系统集中反映了机器的功能。计算机能解题是由于机器本身存在一种语言，它既能理解人的意图，又能被机器自身识别</p>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ol>
+<li>固定长度操作码：便于硬件设计，指令译码时间短，广泛用于字长较长的、大中型计算机、超小型计算机以及RISC中</li>
+<li>变化长度操作码：有效压缩操作码的平均长度，在字长较短的微型计算机中被广泛采用，通常采用拓展扩展操作码技术，使操作码的长度随地址数的减少而增加（上层指令的全1代码会用于下层指令）</li>
+</ol>
+<p><img src="Computer-Hardware/image-20220811182920243.png" alt="image-20220811182920243"></p>
+<p><img src="Computer-Hardware/image-20220811193418414.png" alt="image-20220811193418414"></p>
+<h2 id="操作数"><a href="#操作数" class="headerlink" title="操作数"></a>操作数</h2><p>机器中常见的操作数类型有地址、数字、字符、逻辑数据等。</p>
+<p><img src="Computer-Hardware/image-20220811215811871.png" alt="image-20220811215811871"></p>
+<h2 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h2><p><img src="Computer-Hardware/image-20220812212956388.png" alt="image-20220812212956388"></p>
+<ol>
+<li><p>指令周期：CPU每取出并执行一条指令所需的全部时间称为指令周期，也即CPU完成一条指令的时间</p>
+</li>
+<li><p>取指周期：完成取指令和分析指令的操作</p>
+</li>
+<li><p>执行周期：完成执行指令的操作</p>
+</li>
+<li><p>间指周期：取有效地址</p>
+</li>
+<li><p>中断周期：进入中断响应阶段，将程序断点保存到存储器中</p>
+</li>
+<li><p>提高处理机速度：提高器件性能、改进系统结构（开发系统并行性）（将指令周期分段，分两段就是二级流水，结构相关、数据相关、控制相关（转移指令会使操作作废））</p>
+</li>
+<li><p>吞吐率：在指令级流水线中，吞吐率是指单位时间内流水线所完成指令或输出结果的数量</p>
+</li>
+<li><p>最大吞吐率：流水线在连续流动达到稳定状态（流水线中各段都处于工作状态)后所获得的吞吐率。对于m段的指令流水线而言，若各段的时间均为t，则最大吞吐率为t分之1</p>
+</li>
+<li><p>实际吞吐率：流水线完成n条指令的实际吞吐率，m段流水n条指令共需m * t + (n - 1) t 时间，仅n远大于m时才有实际接近最大吞吐率</p>
+</li>
+<li><p>加速比：m段流水线的速度与等功能的非流水线的速度之比</p>
+</li>
+<li><p>效率：流水线中各功能段的利用率，各段工作时间和各段总的时间之比，mnt / m(m+n-1)t</p>
+</li>
+</ol>
+<p><img src="Computer-Hardware/image-20220811222116617.png" alt="image-20220811222116617"></p>
+<p><img src="Computer-Hardware/image-20220811224740229.png" alt="image-20220811224740229"></p>
+<p><img src="Computer-Hardware/image-20220812182111514.png" alt="image-20220812182111514"></p>
+<h2 id="中断系统"><a href="#中断系统" class="headerlink" title="中断系统"></a>中断系统</h2><p><img src="Computer-Hardware/image-20220812212338947.png" alt="image-20220812212338947"></p>
+<h2 id="控制单元"><a href="#控制单元" class="headerlink" title="控制单元"></a>控制单元</h2><p>​    不同的指令对应不同的微操作命令，且控制单元受时钟控制，每一个时钟脉冲使控制单元发送一个操作命令，或发送一组需要同时执行的操作命令，时钟、指令的操作码字段、”标志”（比如上条指令结果的正负）、系统总线（控制总线）的控制信号（中断、DMA等）是控制单元输入信号，CPU内的控制信号、系统总线（控制总线）的信号是输出信号</p>
+<p>​    机器周期可看做是所有指令执行过程中的一个基准时间，由于CPU内部的操作速度较快，CPU访存的操作时间较长，因此通常以访问一次存储器的时间定为基准时间较为合理。在存储字长等于指令字长的前提下，取指周期可以看作机器周期</p>
+<p>​    时钟周期即时钟信号的一个节拍（周l期），时钟信号的频率即CPU的主频，根据时钟周期完成微操作命令</p>
+<p>静态微程序设计（事先编好）和动态微程序设计（可以改变）</p>
+<p>串行微程序控制和并行微程序控制（流水微指令）</p>
+<p><img src="Computer-Hardware/image-20220812230250332.png" alt="image-20220812230250332"></p>
+<p><img src="Computer-Hardware/image-20220812231831690.png" alt="image-20220812231831690"></p>
+]]></content>
+      <tags>
+        <tag>Computer Hardware</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Computer Network</title>
+    <url>/blog/Computer_Network/</url>
+    <content><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>&emsp;计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，以功能完善的网络软件实现资源共享和信息传递的计算机系统。</p>
+<span id="more"></span>
+
+<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><ol>
+<li>互联网：凡是能彼此通信的设备组成的网络，<strong>包括</strong>因特网、军网等</li>
+<li>因特网|world wide web：世界最大的互联网，<strong>包含</strong>万维网（URL、HTTP、HTML）、计算机网络（TCP/IP）、物联网等</li>
+</ol>
+<h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><p>主机|host（端系统|end system）、通信链路|communication link和分组交换机|packet switch、协议|protocol</p>
+<p><img src="Computer_Network/image-20220623110404639.png" alt="image-20220623110404639"></p>
+<p><img src="Computer_Network/image-20220623202917409.png" alt="image-20220623202917409"></p>
+<p><img src="Computer_Network/image-20220622232710217.png" alt="image-20220622232710217"></p>
+<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><p><img src="Computer_Network/image-20220622234128938.png" alt="image-20220622234128938"></p>
+<h2 id="拓展-1"><a href="#拓展-1" class="headerlink" title="拓展"></a>拓展</h2><ol>
+<li>标准和协议：标准是官方规定的，能统一化</li>
+<li>信道和链路：链路一般描述物理载体，信道是路径的逻辑抽象</li>
+<li>FDM和TDM：频分多路需要复杂的硬件</li>
+</ol>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>应用程序体系结构|application architecture 规定如何在端系统组织该应用程序：客户-服务器体系结构|Client/Server、对等体系结构|P2P</p>
+<p><img src="Computer_Network/image-20220623185812829.png" alt="image-20220623185812829"></p>
+<h2 id="SNMP"><a href="#SNMP" class="headerlink" title="SNMP"></a>SNMP</h2><p><img src="Computer_Network/image-20220625210816447.png" alt="image-20220625210816447"></p>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p><img src="Computer_Network/image-20220623202831189.png" alt="image-20220623202831189"></p>
+<p><img src="Computer_Network/image-20220623195119738.png" alt="image-20220623195119738"><img src="Computer_Network/image-20220623195129222.png" alt="image-20220623195129222"></p>
+<p><strong>状态代码</strong></p>
+<ul>
+<li>1xx：指示信息–表示请求已接收，继续处理。</li>
+<li>2xx：成功–表示请求已被成功接收、理解、接受。</li>
+<li>3xx：重定向–要完成请求必须进行更进一步的操作。</li>
+<li>4xx：客户端错误–请求有语法错误或请求无法实现。</li>
+<li>5xx：服务器端错误–服务器未能实现合法的请求。</li>
+</ul>
+<p><strong>常见状态代码</strong></p>
+<ul>
+<li>200 OK：客户端请求成功。</li>
+<li>400 Bad Request：客户端请求有语法错误，不能被服务器所理解。</li>
+<li>401 Unauthorized：请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用。</li>
+<li>403 Forbidden：服务器收到请求，但是拒绝提供服务。</li>
+<li>404 Not Found：请求资源不存在，举个例子：输入了错误的URL。</li>
+<li>500 Internal Server Error：服务器发生不可预期的错误。</li>
+<li>503 Server Unavailable：服务器当前不能处理客户端的请求，一段时间后可能恢复正常，举个例子：HTTP/1.1 200 OK（CRLF）。</li>
+</ul>
+<p><strong>提高HTTP连接性能的技术</strong></p>
+<ul>
+<li><strong>并行连接：</strong>通过多条 TCP 连接发起并发的 HTTP 请求，RFC 2616规定should not</li>
+<li><strong>持久连接：</strong>重用 TCP 连接，以消除连接及关闭时延</li>
+<li><strong>管道化连接：</strong>通过共享的 TCP 连接发起并发的 HTTP 请求，多条请求放入队列</li>
+<li><strong>复用的连接：</strong>交替传送请求和响应报文，HTTP/2多路复用</li>
+</ul>
+<h2 id="SMTP-POP3-IMAP"><a href="#SMTP-POP3-IMAP" class="headerlink" title="SMTP + POP3 + IMAP"></a>SMTP + POP3 + IMAP</h2><p><img src="Computer_Network/image-20220623210826386.png" alt="image-20220623210826386"></p>
+<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><p><img src="Computer_Network/image-20220623215714437.png" alt="image-20220623215714437"></p>
+<p><img src="Computer_Network/image-20220623220809942.png" alt="image-20220623220809942"></p>
+<p><strong>资源记录</strong></p>
+<p>Resource Record,RR提供了主机名到IP地址的映射：(Name,Value,Type,TTL：记录的生存时间)，注册登记机构|registrar确保将一个类型NS和一个类型A的记录输人TLD DNS服务器，[RFC2136]和[RFC3007]定义了DNS动态更新</p>
+<ol>
+<li>A：Name是主机名，Value是该主机名对应的IP地址，标准的主机名到P地址的映射</li>
+<li>NS：Name是个域（如foo.com)，而Value是个知道如何获得该域中主机IP地址的权威DNS服务器的主机名</li>
+<li>CNAME：Name是别名，Value是主机对应的规范主机名</li>
+<li>MX：Name是别名，Value是邮件服务器的规范主机名</li>
+</ol>
+<h2 id="BitTorrent"><a href="#BitTorrent" class="headerlink" title="BitTorrent"></a>BitTorrent</h2><p><img src="Computer_Network/image-20220623224453772.png" alt="image-20220623224453772"></p>
+<p><img src="Computer_Network/image-20220623222223591.png" alt="image-20220623222223591"></p>
+<p><img src="Computer_Network/image-20220623222235988.png" alt="image-20220623222235988"></p>
+<h2 id="DASH"><a href="#DASH" class="headerlink" title="DASH"></a>DASH</h2><p>HTTP的动态适应性流DASH|Dynamic Adaptive Streaming over HTTP，允许客户使用不同的以太网接人速率流式播放具有不同编码速率的视频</p>
+<ol>
+<li><p>每个视频版本存储在HTTP服务器中，都有一个不同的URL，HTTP服务器也有一个告示文件|manifest file</p>
+</li>
+<li><p>客户首先请求该告示文件并且得知各种各样的版本</p>
+</li>
+<li><p>客户通过在HTTP GET请求报文中对每块指定一个URL和一个字节范围，一次选择一块</p>
+</li>
+<li><p>在下载块的同时，客户也测量接收带宽并运行一个速率决定算法来选择下次请求的块</p>
+</li>
+</ol>
+<h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>内容分发网Content Distribution Network解决时延大、重复资源浪费带宽和ISP费用、单点故障的问题</p>
+<p><img src="Computer_Network/image-20220623233933754.png" alt="image-20220623233933754"></p>
+<h2 id="SMS-MMS-iMessage-Whatsapp"><a href="#SMS-MMS-iMessage-Whatsapp" class="headerlink" title="SMS+MMS+iMessage+Whatsapp"></a>SMS+MMS+iMessage+Whatsapp</h2><p><img src="Computer_Network/image-20220624083144516.png" alt="image-20220624083144516"></p>
+<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># udpclient</span><br><span class="line">from socket import*</span><br><span class="line">serverName = &#x27;hostname&#x27; #IP地址</span><br><span class="line">serverPort = 12000		#端口号</span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)		#AF_INET IPV4，SOCK_DGRAM UDP</span><br><span class="line">message= raw_input(&#x27;lnput lowercase sentence :&#x27;)</span><br><span class="line">clientSocket.sendto(message.encode(), (serverName, serverPort))</span><br><span class="line">modifiedMessage, serverAddress = clientSocket .recvfrom(2048)	# 分组数据 源地址</span><br><span class="line">print(modifiedMessage.decode())</span><br><span class="line">clientSocket.close()</span><br><span class="line"></span><br><span class="line"># udpserver</span><br><span class="line">from socket import*</span><br><span class="line">serverPort = 12000	#端口号</span><br><span class="line">serverSocket = socket(AF_INET, SOCK_DGRAM)  #AF_INET IPV4，SOCK_DGRAM UDP</span><br><span class="line">serverSocket.bind ((&#x27;&#x27;, serverPort))</span><br><span class="line">print(&quot;The server is ready to receive&quot;)</span><br><span class="line">while True:</span><br><span class="line">    message, client.Address= serverSocket.recvfrom(2048)</span><br><span class="line">    modified.Message= message.decode().upper()</span><br><span class="line">    serverSocket.sendto(modifiedMessage.encode(), client.Address)</span><br><span class="line"></span><br><span class="line"># tcpclient</span><br><span class="line">from socket import*</span><br><span class="line">serverName = &#x27;servername&#x27; #IP地址</span><br><span class="line">serverPort = 12000		  #端口号</span><br><span class="line">clientSocket = socket(AF_INET, SOCK_ STREAM)  #AF_INET IPV4，SOCK_ STREAM TCP</span><br><span class="line">clientSocket.connect((serverName, serverPort)) #建立TCP连接</span><br><span class="line">sentence = raw_input(&#x27;Input lowercase sencence: &#x27;)</span><br><span class="line">clientSocket.send(sentence.encode())  #发送数据</span><br><span class="line">modifiedSentence = clientSocket.recv(1024)</span><br><span class="line">print(&#x27;From Server:&#x27;, modifiedSentence.decode())</span><br><span class="line">clientSocket.close()</span><br><span class="line"></span><br><span class="line"># tcpserver</span><br><span class="line">from socket impert＊</span><br><span class="line">serverPort = 12000</span><br><span class="line">serverSocket = socket(AF_INET, SOCK_STREAM)   #欢迎套接字</span><br><span class="line">serverSocket.bind((&#x27;&#x27;, serverPort））</span><br><span class="line">serverSocket.listen(1)						  #最大连接数</span><br><span class="line">print(&#x27;The server is ready to receive&#x27;)</span><br><span class="line">while True:</span><br><span class="line">    connectionSocket, addr = serverSocket.accept()		#创建连接套接字</span><br><span class="line">    sentence = connectionSocket.recv(1024).decode()</span><br><span class="line">    capitalizedSentence = sentence.upper()</span><br><span class="line">    connectionSocket.send(capitalizedSentence.encode())</span><br><span class="line">    connectionSocket.close()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="拓展-2"><a href="#拓展-2" class="headerlink" title="拓展"></a>拓展</h2><ol>
+<li>HTTP与SMTP的区别：HTTP主要是一个拉协议|pull protocol、SMTP基本上是一个推协议|push protocol，SMTP要求每个报文（包括它们的体）采用7比特ASCII码格式，HTTP把每个对象封装到它自己的HTTP响应报文中、SMTP则把所有报文对象放在一个报文之中</li>
+<li>UDP和TCP编程的区别：TCP客户端程序并未显式地创建一个分组并为该分组附上目的地址，直接将字符串放入TCP连接</li>
+<li>DNS的区别：不是一个直接和用户打交道的应用，为因特网上的用户应用程序以及其他软件提供一种核心功能，即将主机名转换为其背后的IP地址</li>
+<li>应用层握手：HTTP没有，HTTPS、SMTP有</li>
+<li>Telnet登录远程主机的标准协议</li>
+<li>iMessage、Whatsapp使用流量套餐，SMS使用文本消息套餐</li>
+<li>覆盖网络：P2P文件共享系统中的覆盖网络由参与的节点和节点之间的逻辑链路组成，若两个节点间存在TCP半永久连接即存在逻辑链路。</li>
+<li>负载均衡：将负载（工作任务）进行平衡、分摊到多个操作单元上进行运行</li>
+<li>集中式和分布式的区别：单点故障|a single point of failure、通信容量|traffic volume、远距离的集中式数据库|distant centralized database、维护|maintenance，没有一台DNS服务器拥有因特网上所有主机的映射、这些映射分布在所有的DNS服务器上</li>
+</ol>
+<h1 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h1><p>运输层协议为运行在不同主机上的应用进程之间提供了逻辑通信|logic communication功能，将到达主机的分组分拣给相应进程</p>
+<ol>
+<li>如果网络层协议无法为主机之间发送的运输层报文段提供时延或带宽保证的话，运输层协议也就无法为进程之间发送的应用程序报文提供时延或带宽保证</li>
+<li>即使底层网络协议不能在网络层提供相应的服务，运输层协议也能提供某些服务</li>
+<li>高层是低层的拓展，将主机间交付扩展到进程间交付被称为运输层的多路复用|transport-layer multiplexing与多路分解|demultiplexing</li>
+</ol>
+<p><img src="Computer_Network/image-20220624160555297.png" alt="image-20220624160555297"></p>
+<p><img src="Computer_Network/image-20220624161309429.png" alt="image-20220624161309429"></p>
+<h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p><img src="Computer_Network/image-20220624161543566.png" alt="image-20220624161543566"></p>
+<ol>
+<li>数据字段：要么包含一个查询报文，要么包含一个响应报文</li>
+<li>长度字段：指示了在UDP报文段中的字节数（首部加数据）</li>
+<li>检验和字段：检查UDP报文段中是否出现了差错，报文段中的所有16比特字的和进行反码运算，求和时遇到的任何溢出都被回卷(溢出的1加到最低位)，端到端原则|end-end principle(不能保证低层协议使用了差错检测)</li>
+<li>套接字匹配：应用层按发送缓冲区大小写数据，udp发送，目的主机缓存满了就会丢弃，套接字不匹配：特殊的ICMP数据报</li>
+</ol>
+<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><h3 id="可靠数据传输协议"><a href="#可靠数据传输协议" class="headerlink" title="可靠数据传输协议"></a>可靠数据传输协议</h3><p>可靠数据传输协议|reliable data transfer protocol：数据可以通过一条可靠的信道进行传输。借助于可靠信道，传输数据比特就不会受到损坏(由0变为1，或者相反)或丢失，而且所有数据都是按照其发送顺序进行交付</p>
+<p><img src="Computer_Network/image-20220624185103050.png" alt="image-20220624185103050"></p>
+<p><img src="Computer_Network/image-20220624185113844.png" alt="image-20220624185113844"></p>
+<h3 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h3><p><img src="Computer_Network/image-20220624191834889.png" alt="image-20220624191834889"></p>
+<ol>
+<li>序号：本报文段所发送的数据的第一个字节的序号</li>
+<li>确认号：确认序号为上次接收的最后一个字节序号加1</li>
+<li>数据偏移：首部长度</li>
+<li>保留：保留为今后使用，目前应置为0</li>
+<li>标志字段：ACK比特用于指示确认字段中的值是有效的，RST、SYN和FIN比特用于连接建立和拆除，NS拥塞控制随机和、防止TCP发送者的数据包标记被意外或恶意改动，ECN比特指示该路由器正在历经拥塞(接收方接收)，ECE比特显式拥塞通知(接收方发给发送方)，CWR拥塞窗口缩减、已缩减，PSH比特指示接收方应立即将数据交给上层，URG比特指示报文段里存在“紧急”数据、紧急数据的最后一个字节由16比特的紧急数据指针字段(urgent data pointer field)指出、当紧急数据存在并给出指向紧急数据尾指针的时候、TCP必须通知接收端的上层实体</li>
+<li>接收窗口字段：接收方目前允许对方一次发送的数据量</li>
+<li>选项：该字段用于发送方与接收方协商最大报文段长度(MSS)时，或在高速网络环境下用作窗口调节因子时使用。首部字段中<br>还定义了一个时间戳选项。可参见RFC854和RFC1323了解其他细节</li>
+</ol>
+<p><img src="Computer_Network/image-20220624220913394.png" alt="image-20220624220913394"></p>
+<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p><img src="Computer_Network/image-20220624222423321.png" alt="image-20220624222423321"></p>
+<h2 id="拓展-3"><a href="#拓展-3" class="headerlink" title="拓展"></a>拓展</h2><h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p><img src="Computer_Network/image-20220625085618737.png" alt="image-20220625085618737"></p>
+<p><img src="Computer_Network/image-20220625085630892.png" alt="image-20220625085630892"></p>
+<h2 id="IPV4"><a href="#IPV4" class="headerlink" title="IPV4"></a>IPV4</h2><p><img src="Computer_Network/261906124517515.jpg" alt="img"></p>
+<ol>
+<li>版本：IP协议版本</li>
+<li>首部长度：因为可包含一些可变数量的选项，说明首部长度</li>
+<li>服务类型：区分不同类型数据报</li>
+<li>数据报总长度：首部加数据的长度</li>
+<li>标识、标志、片偏移：IP分片</li>
+<li>寿命：TTL，每当一台路由器处理数据报时，该字段的值减1，值为0时丢弃</li>
+<li>协议：指示了IP数据报的数据部分应交给哪个特定的运输层协议</li>
+<li>首部检验和：帮助路由器检测收到的IP数据报中的比特错误，首部中的每2个字节当作一个数，用反码算术对这些数求和，每台路由器上必须重新计算检验和并再次放回原处，因为TTL字段会发生改变</li>
+<li>选项：允许IP首部被扩展</li>
+<li>数据（有效载荷）：包含要交付给目的地的运输层报文段，也可以是ICMP报文等</li>
+</ol>
+<p><img src="Computer_Network/image-20220625105409243.png" alt="image-20220625105409243"></p>
+<p><img src="Computer_Network/image-20220625105846140.png" alt="image-20220625105846140"></p>
+<p><img src="Computer_Network/image-20220625112752506.png" alt="image-20220625112752506"></p>
+<h2 id="IPV6"><a href="#IPV6" class="headerlink" title="IPV6"></a>IPV6</h2><p><img src="Computer_Network/image-20220625112948955.png" alt="image-20220625112948955"></p>
+<ol>
+<li>扩大的地址容量引入了一种任播地址anycast address，可以使数据报交付给一组主机中的任意一个，40字节定长首部</li>
+<li>版本：IP协议版本</li>
+<li>服务类型：区分不同类型数据报</li>
+<li>流标签：用于给属于特殊流的分组加上标签，这些特殊流是发送方要求进行特殊处理的流，如一种非默认服务质量或需要实时服务的流</li>
+<li>下一个首部：标识数据报中的内容（数据字段）需要交付给哪个协议</li>
+<li>跳限制：转发数据报的每台路由器将对该字段的内容减1，如果跳限制计数达到0，则该数据报将被丢弃</li>
+<li>没有分片/重新组装：分组过大向发送方发回一个“分组太大”的ICMP差错报文</li>
+<li>没有首部检验和：数据链路层、运输层会检验</li>
+<li>选项没有消失：可能出现在IPv6首部中由“下一个首部”指出的位置上</li>
+<li>隧道：通过IPV4通信链路时，封装到IPV4中，用协议字段指出，目的IPV6端取出</li>
+</ol>
+<h2 id="转发"><a href="#转发" class="headerlink" title="转发"></a>转发</h2><p><img src="Computer_Network/image-20220625201609958.png" alt="image-20220625201609958"></p>
+<h2 id="路由选择"><a href="#路由选择" class="headerlink" title="路由选择"></a>路由选择</h2><p><img src="Computer_Network/image-20220625201218267.png" alt="image-20220625201218267"></p>
+<h2 id="SDN"><a href="#SDN" class="headerlink" title="SDN"></a>SDN</h2><p><img src="Computer_Network/image-20220625203134565.png" alt="image-20220625203134565"></p>
+<h2 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h2><p><img src="Computer_Network/image-20220625203817585.png" alt="image-20220625203817585"></p>
+<ul>
+<li><strong>Type</strong> - ICMP的类型,标识生成的错误报文；</li>
+<li><strong>Code</strong> - 进一步划分ICMP的类型,该字段用来查找产生错误的原因.；例如，ICMP的目标不可达类型可以把这个位设为1至15等来表示不同的意思。</li>
+<li><strong>Checksum</strong> - Internet校验和（<a href="https://tools.ietf.org/html/rfc1071">RFC 1071</a>），用于进行错误检查，该校验和是从ICMP头和以该字段替换为0的数据计算得出的。</li>
+<li><strong>Rest of Header</strong> - 报头的其余部分，四字节字段，内容根据ICMP类型和代码而有所不同。</li>
+</ul>
+<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><p><img src="Computer_Network/image-20220625214125145.png" alt="image-20220625214125145"></p>
+<h2 id="差错检测和纠正"><a href="#差错检测和纠正" class="headerlink" title="差错检测和纠正"></a>差错检测和纠正</h2><p><img src="Computer_Network/image-20220625222155656.png" alt="image-20220625222155656"></p>
+<h2 id="多路访问链路"><a href="#多路访问链路" class="headerlink" title="多路访问链路"></a>多路访问链路</h2><p><img src="Computer_Network/image-20220627135143735.png" alt="image-20220627135143735"></p>
+<h2 id="交换局域网"><a href="#交换局域网" class="headerlink" title="交换局域网"></a>交换局域网</h2><p><img src="Computer_Network/image-20220627161605124.png" alt="image-20220627161605124"></p>
+<h2 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h2><p><img src="Computer_Network/image-20220627163246086.png" alt="image-20220627163246086"></p>
+<ol>
+<li>数据字段：承载IP数据报，以太网的最大传输单元(MTU)是1500字节，数据报必须被填充到46字节(网络层使用IP数据报首部中的长度字段去除填充)</li>
+<li>目的地址：包含目的适配器的MAC地址</li>
+<li>源地址：传输该帧到局域网上的适配器MAC地址</li>
+<li>类型：类型字段允许以太网复用多种网络层协议</li>
+<li>前同步码：以太网帧以一个8字节的前同步码(Preamble)字段开始，该前同步码的前7字节的值都是10101010，最后一个字节是10101011。前同步码字段的前7字节用于“唤醒”接收适配器，并且将它们的时钟和发送方的时钟同步。最后两个比特（第一个出现的两个连续的1）警告适配器“重要”的内容要来了</li>
+<li>CRC校验：不通过直接丢弃</li>
+</ol>
+<p><img src="Computer_Network/image-20220627192342949.png" alt="image-20220627192342949"></p>
+<h2 id="VLAN"><a href="#VLAN" class="headerlink" title="VLAN"></a>VLAN</h2><p><img src="Computer_Network/image-20220627195425323.png" alt="image-20220627195425323"></p>
+<h2 id="MPLS"><a href="#MPLS" class="headerlink" title="MPLS"></a>MPLS</h2><p><img src="Computer_Network/image-20220627195548655.png" alt="image-20220627195548655"></p>
+<p><img src="Computer_Network/image-20220627200558919.png" alt="image-20220627200558919"></p>
+<h2 id="数据中心网络"><a href="#数据中心网络" class="headerlink" title="数据中心网络"></a>数据中心网络</h2><p><img src="Computer_Network/image-20220627201225383.png" alt="image-20220627201225383"></p>
+<h2 id="拓展-4"><a href="#拓展-4" class="headerlink" title="拓展"></a>拓展</h2><ol>
+<li>路由器和交换机的区别：路由器拓扑不会限制在生成树并可以使用最佳路径、有广播风暴的防火墙保护、不是即插即用的需配置IP地址、必须处理第三层处理时间长，交换机即插即用、只需处理第二层的帧、为限制广播帧的循环活跃拓扑限制成一颗生成树、不能避免广播风暴</li>
+<li>MAC和IP：保持各层独立，局域网是为任意网络层协议而设计的，链路层使用IP就需手动配置</li>
+</ol>
+<h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><p><img src="Computer_Network/image-20220627202621093.png" alt="image-20220627202621093"></p>
+<p><img src="Computer_Network/image-20220627210143914.png" alt="image-20220627210143914"></p>
+<h2 id="WIFI"><a href="#WIFI" class="headerlink" title="WIFI"></a>WIFI</h2><p>IEEE802.11无线LAN</p>
+<p><img src="Computer_Network/image-20220627214954840.png" alt="image-20220627214954840"></p>
+<ol>
+<li>有效载荷：通常是由一个IP数据报或者ARP分组组成，允许的最大长度为2312字节，但它通常小于1500字节</li>
+<li>地址字段：地址2是传输该帧的站点的MAC地址，地址1是要接收该帧的无线站点的MAC地址，地址3包含外网路由器接口的MAC地址，自组织模式中互相转发时使用第四个地址</li>
+<li>持续期：预约信道的持续时间</li>
+<li>序号：区分新传输帧和以前帧的重传</li>
+<li>帧控制字段：类型和子类型用于区分关联、RTS、CTS、ACK和数据帧，To和From字段用于定义不同地址字段的含义(自组织或基础设施模式)，WEP字段指示是否使用加密</li>
+</ol>
+<p><img src="Computer_Network/image-20220627210334519.png" alt="image-20220627210334519"></p>
+<p><img src="Computer_Network/image-20220627220556773.png" alt="image-20220627220556773"></p>
+<h2 id="蓝牙和ZigBee"><a href="#蓝牙和ZigBee" class="headerlink" title="蓝牙和ZigBee"></a>蓝牙和ZigBee</h2><p><img src="Computer_Network/image-20220627222540229.png" alt="image-20220627222540229"></p>
+<h2 id="蜂窝网络"><a href="#蜂窝网络" class="headerlink" title="蜂窝网络"></a>蜂窝网络</h2><p><img src="Computer_Network/image-20220627225001967.png" alt="image-20220627225001967"></p>
+<h2 id="移动管理"><a href="#移动管理" class="headerlink" title="移动管理"></a>移动管理</h2><p><img src="Computer_Network/image-20220627233121473.png" alt="image-20220627233121473"></p>
+<h2 id="蜂窝网的移动性"><a href="#蜂窝网的移动性" class="headerlink" title="蜂窝网的移动性"></a>蜂窝网的移动性</h2><p><img src="Computer_Network/image-20220627234205906.png" alt="image-20220627234205906"></p>
+<p><img src="Computer_Network/image-20220627235117053.png" alt="image-20220627235117053"></p>
+<h2 id="无线和移动性：对高层协议的影响"><a href="#无线和移动性：对高层协议的影响" class="headerlink" title="无线和移动性：对高层协议的影响"></a>无线和移动性：对高层协议的影响</h2><p>针对TCP的优化：</p>
+<ol>
+<li>本地恢复。本地恢复方法的目标是在比特差错出现的当时和当地（如在无线链路中)将其恢复。</li>
+<li>TCP发送方知晓无线链路。将在有线网络中发生的拥塞性丢包和在无线网络中发生的差错/丢包区分开</li>
+<li>分离连接方法。移动用户和其他端点之间的端到端连接被打断为两个运输层连接，无线部分和有线部分级连形成</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>Computer_Software</title>
+    <url>/blog/Computer-Software/</url>
+    <content><![CDATA[<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><h3 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h3><p>在计算机系统上配置操作系统，其主要目标是：方便性、有效性、可扩充性和开放性</p>
+<p><img src="Computer-Software/image-20220813152247403.png" alt="image-20220813152247403"></p>
+<p><img src="Computer-Software/image-20220813161351380.png" alt="image-20220813161351380"></p>
+<p><img src="Computer-Software/image-20220813211904626.png" alt="image-20220813211904626"></p>
+<p><img src="Computer-Software/image-20220814084630864.png" alt="image-20220814084630864"></p>
+<p><img src="Computer-Software/image-20220814223040015.png" alt="image-20220814223040015"></p>
+<h1 id="处理机管理"><a href="#处理机管理" class="headerlink" title="处理机管理"></a>处理机管理</h1><ol>
+<li><p>批处理系统：平均周转时间短、系统吞吐量高、处理机利用率高，周转时间 = 完成时间 - 到达时间、带权周转时间 = 周转时间 / 服务时间</p>
+</li>
+<li><p>分时系统：响应时间快、均衡性</p>
+</li>
+<li><p>实时系统：截止时间的保证、可预测性，处理时间和 / 周期时间和 &lt;= N，松弛度 = 截止时间 - 运行时间</p>
+<p><img src="Computer-Software/image-20220815121503911.png" alt="image-20220815121503911"></p>
+<h2 id="调度"><a href="#调度" class="headerlink" title="调度"></a>调度</h2><p><img src="Computer-Software/image-20220815183006418.png" alt="image-20220815183006418"></p>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p><img src="Computer-Software/image-20220815230500727.png" alt="image-20220815230500727"></p>
+</li>
+</ol>
+<h2 id="存储器管理"><a href="#存储器管理" class="headerlink" title="存储器管理"></a>存储器管理</h2><p><img src="Computer-Software/image-20220816110714031.png" alt="image-20220816110714031"></p>
+<p><img src="Computer-Software/image-20220816184139091.png" alt="image-20220816184139091"></p>
+<p><img src="Computer-Software/image-20220816213613136.png" alt="image-20220816213613136"></p>
+<p><img src="Computer-Software/image-20220816213623210.png" alt="image-20220816213623210"></p>
+<h1 id="IO系统"><a href="#IO系统" class="headerlink" title="IO系统"></a>IO系统</h1><p><img src="Computer-Software/image-20220817101758879.png" alt="image-20220817101758879"></p>
+<h2 id="设备控制器"><a href="#设备控制器" class="headerlink" title="设备控制器"></a>设备控制器</h2><p>驱动程序将抽象IO命令转换出的一系列具体的命令、参数等数据装入设备控制器的相应寄存器，由控制器来执行这些命令，具体实施对IO设备的控制。</p>
+<ol>
+<li>利用特定的IO指令：每个控制寄存器分配一个IO端口，设置特定IO指令，访问内存和访问设备需要两种不同的指令</li>
+<li>内存映像IO：在编址上不再区分内存单元地址和设备控制器中的寄存器地址</li>
+<li>中断：IO设备中断信号的响应，外中断</li>
+<li>陷入：CPU内部事件(上溢下溢等)引起的，内中断</li>
+</ol>
+<p><img src="Computer-Software/image-20220817103016818.png" alt="image-20220817103016818"></p>
+<p><img src="Computer-Software/image-20220817103300287.png" alt="image-20220817103300287"></p>
+<p><img src="Computer-Software/image-20220817104830478.png" alt="image-20220817104830478"></p>
+<p><img src="Computer-Software/image-20220817111457870.png" alt="image-20220817111457870"></p>
+<h1 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h1><p><img src="Computer-Software/image-20220817144430095.png" alt="image-20220817144430095"></p>
+]]></content>
   </entry>
 </search>

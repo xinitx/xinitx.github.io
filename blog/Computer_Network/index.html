@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 6.0.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/logo.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/logo.png">
+  <link rel="mask-icon" href="/blog/images/logo.png" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"xinitx.github.io","root":"/blog/","images":"/blog/images","scheme":"Mist","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/blog/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/blog/js/config.js"></script>
+<meta name="description" content="概述&amp;emsp;计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，以功能完善的网络软件实现资源共享和信息传递的计算机系统。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Computer Network">
+<meta property="og:url" content="http://xinitx.github.io/blog/Computer_Network/index.html">
+<meta property="og:site_name" content="山间残月的博客">
+<meta property="og:description" content="概述&amp;emsp;计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，以功能完善的网络软件实现资源共享和信息传递的计算机系统。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623110404639.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623202917409.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220622232710217.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220622234128938.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623185812829.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625210816447.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623202831189.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623195119738.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623195129222.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623210826386.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623215714437.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623220809942.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623224453772.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623222223591.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623222235988.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623233933754.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220624083144516.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220624160555297.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220624161309429.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220624161543566.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220624185103050.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220624185113844.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220624191834889.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220624220913394.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220624222423321.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625085618737.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625085630892.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/261906124517515.jpg">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625105409243.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625105846140.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625112752506.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625112948955.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625201609958.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625201218267.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625203134565.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625203817585.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625214125145.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220625222155656.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627135143735.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627161605124.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627163246086.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627192342949.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627195425323.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627195548655.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627200558919.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627201225383.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627202621093.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627210143914.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627214954840.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627210334519.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627220556773.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627222540229.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627225001967.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627233121473.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627234205906.png">
+<meta property="og:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220627235117053.png">
+<meta property="article:published_time" content="2022-03-15T02:38:52.000Z">
+<meta property="article:modified_time" content="2022-06-27T15:54:19.417Z">
+<meta property="article:author" content="init">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://xinitx.github.io/blog/Computer_Network/Computer_Network/image-20220623110404639.png">
+
+
+<link rel="canonical" href="http://xinitx.github.io/blog/Computer_Network/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://xinitx.github.io/blog/Computer_Network/","path":"Computer_Network/","title":"Computer Network"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Computer Network | 山间残月的博客</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/blog/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+  
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><script type="text/javascript"> 
+	var title=document.title; 
+	// window 失去焦点 
+		window.onblur = function() { 
+		document.title='(つ ェ ⊂)我藏好了哦~';
+	};
+	// window 获得焦点 
+		window.onfocus = function() { 
+		document.title='(*゜ロ゜)ノ被发现了~'; 
+		setTimeout("document.title=title",3000); 
+	}
+</script>
+
+<div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+    <a href="https://xinitx.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">山间残月的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-about"><a href="/blog/about" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/blog/tags" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/blog/categories" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/blog/archives" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E5%B1%95"><span class="nav-number">1.1.</span> <span class="nav-text">拓展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%84%E6%88%90"><span class="nav-number">1.2.</span> <span class="nav-text">组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E5%85%A8"><span class="nav-number">1.3.</span> <span class="nav-text">安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E5%B1%95-1"><span class="nav-number">1.4.</span> <span class="nav-text">拓展</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="nav-number">2.</span> <span class="nav-text">应用层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SNMP"><span class="nav-number">2.1.</span> <span class="nav-text">SNMP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">2.2.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SMTP-POP3-IMAP"><span class="nav-number">2.3.</span> <span class="nav-text">SMTP + POP3 + IMAP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS"><span class="nav-number">2.4.</span> <span class="nav-text">DNS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BitTorrent"><span class="nav-number">2.5.</span> <span class="nav-text">BitTorrent</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DASH"><span class="nav-number">2.6.</span> <span class="nav-text">DASH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN"><span class="nav-number">2.7.</span> <span class="nav-text">CDN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SMS-MMS-iMessage-Whatsapp"><span class="nav-number">2.8.</span> <span class="nav-text">SMS+MMS+iMessage+Whatsapp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket"><span class="nav-number">2.9.</span> <span class="nav-text">Socket</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E5%B1%95-2"><span class="nav-number">2.10.</span> <span class="nav-text">拓展</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%90%E8%BE%93%E5%B1%82"><span class="nav-number">3.</span> <span class="nav-text">运输层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP"><span class="nav-number">3.1.</span> <span class="nav-text">UDP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP"><span class="nav-number">3.2.</span> <span class="nav-text">TCP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE"><span class="nav-number">3.2.1.</span> <span class="nav-text">可靠数据传输协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP%E8%BF%9E%E6%8E%A5"><span class="nav-number">3.2.2.</span> <span class="nav-text">TCP连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="nav-number">3.2.3.</span> <span class="nav-text">拥塞控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E5%B1%95-3"><span class="nav-number">3.3.</span> <span class="nav-text">拓展</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="nav-number">4.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IPV4"><span class="nav-number">4.1.</span> <span class="nav-text">IPV4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPV6"><span class="nav-number">4.2.</span> <span class="nav-text">IPV6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%AC%E5%8F%91"><span class="nav-number">4.3.</span> <span class="nav-text">转发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%AF%E7%94%B1%E9%80%89%E6%8B%A9"><span class="nav-number">4.4.</span> <span class="nav-text">路由选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDN"><span class="nav-number">4.5.</span> <span class="nav-text">SDN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICMP"><span class="nav-number">4.6.</span> <span class="nav-text">ICMP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="nav-number">5.</span> <span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B%E5%92%8C%E7%BA%A0%E6%AD%A3"><span class="nav-number">5.1.</span> <span class="nav-text">差错检测和纠正</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AE%E9%93%BE%E8%B7%AF"><span class="nav-number">5.2.</span> <span class="nav-text">多路访问链路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E6%8D%A2%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="nav-number">5.3.</span> <span class="nav-text">交换局域网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91"><span class="nav-number">5.4.</span> <span class="nav-text">以太网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VLAN"><span class="nav-number">5.5.</span> <span class="nav-text">VLAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MPLS"><span class="nav-number">5.6.</span> <span class="nav-text">MPLS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83%E7%BD%91%E7%BB%9C"><span class="nav-number">5.7.</span> <span class="nav-text">数据中心网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E5%B1%95-4"><span class="nav-number">5.8.</span> <span class="nav-text">拓展</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E5%B1%82"><span class="nav-number">6.</span> <span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#WIFI"><span class="nav-number">6.1.</span> <span class="nav-text">WIFI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%93%9D%E7%89%99%E5%92%8CZigBee"><span class="nav-number">6.2.</span> <span class="nav-text">蓝牙和ZigBee</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%9C%82%E7%AA%9D%E7%BD%91%E7%BB%9C"><span class="nav-number">6.3.</span> <span class="nav-text">蜂窝网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E7%AE%A1%E7%90%86"><span class="nav-number">6.4.</span> <span class="nav-text">移动管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%9C%82%E7%AA%9D%E7%BD%91%E7%9A%84%E7%A7%BB%E5%8A%A8%E6%80%A7"><span class="nav-number">6.5.</span> <span class="nav-text">蜂窝网的移动性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E7%BA%BF%E5%92%8C%E7%A7%BB%E5%8A%A8%E6%80%A7%EF%BC%9A%E5%AF%B9%E9%AB%98%E5%B1%82%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="nav-number">6.6.</span> <span class="nav-text">无线和移动性：对高层协议的影响</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="init"
+      src="/blog/images/logo.png">
+  <p class="site-author-name" itemprop="name">init</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/blog/archives">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/blog/tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://xinitx.github.io/" title="Index → https:&#x2F;&#x2F;xinitx.github.io"><i class="fas fa-fan fa-fw"></i>Index</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/xinitx" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xinitx" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=x17152141010@163.com" title="Mail → http:&#x2F;&#x2F;mail.qq.com&#x2F;cgi-bin&#x2F;qm_share?t&#x3D;qm_mailme&amp;email&#x3D;x17152141010@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Mail</a>
+      </span>
+  </div>
+
+
+
+          <p class="name">Have a <text id="changerificwordspanid"></text> day!</p>
+          
+          <!-- require APlayer -->
+          <link rel="stylesheet" href="/blog/js/APlayer.min.css">
+          <script src="/blog/js/APlayer.min.js"></script>
+          <!-- require MetingJS -->
+          <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+          <meting-js
+            server="tencent"
+            type="playlist"
+            id="8321899376"  theme = "#fff" style = "color:#000; opacity :0.3; "list-folded= "true">
+          </meting-js>
+        
+        </div>        
+      </div>
+    <script src="/blog/js/jquery.min.js"></script>
+    <script src="/blog/js/typed.js"></script>
+    <script type="text/javascript">
+	  $("#changerificwordspanid").typed({
+		strings: ["good", "nice", "happy", "wonderful"],
+		typeSpeed: 100,
+		startDelay: 10,
+		showCursor: true,
+		shuffle: true,
+		loop:true
+	  });
+	</script>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://xinitx.github.io/blog/Computer_Network/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo.png">
+      <meta itemprop="name" content="init">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="山间残月的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Computer Network
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-03-15 10:38:52" itemprop="dateCreated datePublished" datetime="2022-03-15T10:38:52+08:00">2022-03-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-06-27 23:54:19" itemprop="dateModified" datetime="2022-06-27T23:54:19+08:00">2022-06-27</time>
+      </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+
+   
+  
+
+
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>&emsp;计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，以功能完善的网络软件实现资源共享和信息传递的计算机系统。</p>
+<span id="more"></span>
+
+<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><ol>
+<li>互联网：凡是能彼此通信的设备组成的网络，<strong>包括</strong>因特网、军网等</li>
+<li>因特网|world wide web：世界最大的互联网，<strong>包含</strong>万维网（URL、HTTP、HTML）、计算机网络（TCP/IP）、物联网等</li>
+</ol>
+<h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><p>主机|host（端系统|end system）、通信链路|communication link和分组交换机|packet switch、协议|protocol</p>
+<p><img src="Computer_Network/image-20220623110404639.png" alt="image-20220623110404639"></p>
+<p><img src="Computer_Network/image-20220623202917409.png" alt="image-20220623202917409"></p>
+<p><img src="Computer_Network/image-20220622232710217.png" alt="image-20220622232710217"></p>
+<h2 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h2><p><img src="Computer_Network/image-20220622234128938.png" alt="image-20220622234128938"></p>
+<h2 id="拓展-1"><a href="#拓展-1" class="headerlink" title="拓展"></a>拓展</h2><ol>
+<li>标准和协议：标准是官方规定的，能统一化</li>
+<li>信道和链路：链路一般描述物理载体，信道是路径的逻辑抽象</li>
+<li>FDM和TDM：频分多路需要复杂的硬件</li>
+</ol>
+<h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><p>应用程序体系结构|application architecture 规定如何在端系统组织该应用程序：客户-服务器体系结构|Client/Server、对等体系结构|P2P</p>
+<p><img src="Computer_Network/image-20220623185812829.png" alt="image-20220623185812829"></p>
+<h2 id="SNMP"><a href="#SNMP" class="headerlink" title="SNMP"></a>SNMP</h2><p><img src="Computer_Network/image-20220625210816447.png" alt="image-20220625210816447"></p>
+<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p><img src="Computer_Network/image-20220623202831189.png" alt="image-20220623202831189"></p>
+<p><img src="Computer_Network/image-20220623195119738.png" alt="image-20220623195119738"><img src="Computer_Network/image-20220623195129222.png" alt="image-20220623195129222"></p>
+<p><strong>状态代码</strong></p>
+<ul>
+<li>1xx：指示信息–表示请求已接收，继续处理。</li>
+<li>2xx：成功–表示请求已被成功接收、理解、接受。</li>
+<li>3xx：重定向–要完成请求必须进行更进一步的操作。</li>
+<li>4xx：客户端错误–请求有语法错误或请求无法实现。</li>
+<li>5xx：服务器端错误–服务器未能实现合法的请求。</li>
+</ul>
+<p><strong>常见状态代码</strong></p>
+<ul>
+<li>200 OK：客户端请求成功。</li>
+<li>400 Bad Request：客户端请求有语法错误，不能被服务器所理解。</li>
+<li>401 Unauthorized：请求未经授权，这个状态代码必须和WWW-Authenticate报头域一起使用。</li>
+<li>403 Forbidden：服务器收到请求，但是拒绝提供服务。</li>
+<li>404 Not Found：请求资源不存在，举个例子：输入了错误的URL。</li>
+<li>500 Internal Server Error：服务器发生不可预期的错误。</li>
+<li>503 Server Unavailable：服务器当前不能处理客户端的请求，一段时间后可能恢复正常，举个例子：HTTP/1.1 200 OK（CRLF）。</li>
+</ul>
+<p><strong>提高HTTP连接性能的技术</strong></p>
+<ul>
+<li><strong>并行连接：</strong>通过多条 TCP 连接发起并发的 HTTP 请求，RFC 2616规定should not</li>
+<li><strong>持久连接：</strong>重用 TCP 连接，以消除连接及关闭时延</li>
+<li><strong>管道化连接：</strong>通过共享的 TCP 连接发起并发的 HTTP 请求，多条请求放入队列</li>
+<li><strong>复用的连接：</strong>交替传送请求和响应报文，HTTP/2多路复用</li>
+</ul>
+<h2 id="SMTP-POP3-IMAP"><a href="#SMTP-POP3-IMAP" class="headerlink" title="SMTP + POP3 + IMAP"></a>SMTP + POP3 + IMAP</h2><p><img src="Computer_Network/image-20220623210826386.png" alt="image-20220623210826386"></p>
+<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><p><img src="Computer_Network/image-20220623215714437.png" alt="image-20220623215714437"></p>
+<p><img src="Computer_Network/image-20220623220809942.png" alt="image-20220623220809942"></p>
+<p><strong>资源记录</strong></p>
+<p>Resource Record,RR提供了主机名到IP地址的映射：(Name,Value,Type,TTL：记录的生存时间)，注册登记机构|registrar确保将一个类型NS和一个类型A的记录输人TLD DNS服务器，[RFC2136]和[RFC3007]定义了DNS动态更新</p>
+<ol>
+<li>A：Name是主机名，Value是该主机名对应的IP地址，标准的主机名到P地址的映射</li>
+<li>NS：Name是个域（如foo.com)，而Value是个知道如何获得该域中主机IP地址的权威DNS服务器的主机名</li>
+<li>CNAME：Name是别名，Value是主机对应的规范主机名</li>
+<li>MX：Name是别名，Value是邮件服务器的规范主机名</li>
+</ol>
+<h2 id="BitTorrent"><a href="#BitTorrent" class="headerlink" title="BitTorrent"></a>BitTorrent</h2><p><img src="Computer_Network/image-20220623224453772.png" alt="image-20220623224453772"></p>
+<p><img src="Computer_Network/image-20220623222223591.png" alt="image-20220623222223591"></p>
+<p><img src="Computer_Network/image-20220623222235988.png" alt="image-20220623222235988"></p>
+<h2 id="DASH"><a href="#DASH" class="headerlink" title="DASH"></a>DASH</h2><p>HTTP的动态适应性流DASH|Dynamic Adaptive Streaming over HTTP，允许客户使用不同的以太网接人速率流式播放具有不同编码速率的视频</p>
+<ol>
+<li><p>每个视频版本存储在HTTP服务器中，都有一个不同的URL，HTTP服务器也有一个告示文件|manifest file</p>
+</li>
+<li><p>客户首先请求该告示文件并且得知各种各样的版本</p>
+</li>
+<li><p>客户通过在HTTP GET请求报文中对每块指定一个URL和一个字节范围，一次选择一块</p>
+</li>
+<li><p>在下载块的同时，客户也测量接收带宽并运行一个速率决定算法来选择下次请求的块</p>
+</li>
+</ol>
+<h2 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h2><p>内容分发网Content Distribution Network解决时延大、重复资源浪费带宽和ISP费用、单点故障的问题</p>
+<p><img src="Computer_Network/image-20220623233933754.png" alt="image-20220623233933754"></p>
+<h2 id="SMS-MMS-iMessage-Whatsapp"><a href="#SMS-MMS-iMessage-Whatsapp" class="headerlink" title="SMS+MMS+iMessage+Whatsapp"></a>SMS+MMS+iMessage+Whatsapp</h2><p><img src="Computer_Network/image-20220624083144516.png" alt="image-20220624083144516"></p>
+<h2 id="Socket"><a href="#Socket" class="headerlink" title="Socket"></a>Socket</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"># udpclient</span><br><span class="line">from socket import*</span><br><span class="line">serverName = &#x27;hostname&#x27; #IP地址</span><br><span class="line">serverPort = 12000		#端口号</span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)		#AF_INET IPV4，SOCK_DGRAM UDP</span><br><span class="line">message= raw_input(&#x27;lnput lowercase sentence :&#x27;)</span><br><span class="line">clientSocket.sendto(message.encode(), (serverName, serverPort))</span><br><span class="line">modifiedMessage, serverAddress = clientSocket .recvfrom(2048)	# 分组数据 源地址</span><br><span class="line">print(modifiedMessage.decode())</span><br><span class="line">clientSocket.close()</span><br><span class="line"></span><br><span class="line"># udpserver</span><br><span class="line">from socket import*</span><br><span class="line">serverPort = 12000	#端口号</span><br><span class="line">serverSocket = socket(AF_INET, SOCK_DGRAM)  #AF_INET IPV4，SOCK_DGRAM UDP</span><br><span class="line">serverSocket.bind ((&#x27;&#x27;, serverPort))</span><br><span class="line">print(&quot;The server is ready to receive&quot;)</span><br><span class="line">while True:</span><br><span class="line">    message, client.Address= serverSocket.recvfrom(2048)</span><br><span class="line">    modified.Message= message.decode().upper()</span><br><span class="line">    serverSocket.sendto(modifiedMessage.encode(), client.Address)</span><br><span class="line"></span><br><span class="line"># tcpclient</span><br><span class="line">from socket import*</span><br><span class="line">serverName = &#x27;servername&#x27; #IP地址</span><br><span class="line">serverPort = 12000		  #端口号</span><br><span class="line">clientSocket = socket(AF_INET, SOCK_ STREAM)  #AF_INET IPV4，SOCK_ STREAM TCP</span><br><span class="line">clientSocket.connect((serverName, serverPort)) #建立TCP连接</span><br><span class="line">sentence = raw_input(&#x27;Input lowercase sencence: &#x27;)</span><br><span class="line">clientSocket.send(sentence.encode())  #发送数据</span><br><span class="line">modifiedSentence = clientSocket.recv(1024)</span><br><span class="line">print(&#x27;From Server:&#x27;, modifiedSentence.decode())</span><br><span class="line">clientSocket.close()</span><br><span class="line"></span><br><span class="line"># tcpserver</span><br><span class="line">from socket impert＊</span><br><span class="line">serverPort = 12000</span><br><span class="line">serverSocket = socket(AF_INET, SOCK_STREAM)   #欢迎套接字</span><br><span class="line">serverSocket.bind((&#x27;&#x27;, serverPort））</span><br><span class="line">serverSocket.listen(1)						  #最大连接数</span><br><span class="line">print(&#x27;The server is ready to receive&#x27;)</span><br><span class="line">while True:</span><br><span class="line">    connectionSocket, addr = serverSocket.accept()		#创建连接套接字</span><br><span class="line">    sentence = connectionSocket.recv(1024).decode()</span><br><span class="line">    capitalizedSentence = sentence.upper()</span><br><span class="line">    connectionSocket.send(capitalizedSentence.encode())</span><br><span class="line">    connectionSocket.close()</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="拓展-2"><a href="#拓展-2" class="headerlink" title="拓展"></a>拓展</h2><ol>
+<li>HTTP与SMTP的区别：HTTP主要是一个拉协议|pull protocol、SMTP基本上是一个推协议|push protocol，SMTP要求每个报文（包括它们的体）采用7比特ASCII码格式，HTTP把每个对象封装到它自己的HTTP响应报文中、SMTP则把所有报文对象放在一个报文之中</li>
+<li>UDP和TCP编程的区别：TCP客户端程序并未显式地创建一个分组并为该分组附上目的地址，直接将字符串放入TCP连接</li>
+<li>DNS的区别：不是一个直接和用户打交道的应用，为因特网上的用户应用程序以及其他软件提供一种核心功能，即将主机名转换为其背后的IP地址</li>
+<li>应用层握手：HTTP没有，HTTPS、SMTP有</li>
+<li>Telnet登录远程主机的标准协议</li>
+<li>iMessage、Whatsapp使用流量套餐，SMS使用文本消息套餐</li>
+<li>覆盖网络：P2P文件共享系统中的覆盖网络由参与的节点和节点之间的逻辑链路组成，若两个节点间存在TCP半永久连接即存在逻辑链路。</li>
+<li>负载均衡：将负载（工作任务）进行平衡、分摊到多个操作单元上进行运行</li>
+<li>集中式和分布式的区别：单点故障|a single point of failure、通信容量|traffic volume、远距离的集中式数据库|distant centralized database、维护|maintenance，没有一台DNS服务器拥有因特网上所有主机的映射、这些映射分布在所有的DNS服务器上</li>
+</ol>
+<h1 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h1><p>运输层协议为运行在不同主机上的应用进程之间提供了逻辑通信|logic communication功能，将到达主机的分组分拣给相应进程</p>
+<ol>
+<li>如果网络层协议无法为主机之间发送的运输层报文段提供时延或带宽保证的话，运输层协议也就无法为进程之间发送的应用程序报文提供时延或带宽保证</li>
+<li>即使底层网络协议不能在网络层提供相应的服务，运输层协议也能提供某些服务</li>
+<li>高层是低层的拓展，将主机间交付扩展到进程间交付被称为运输层的多路复用|transport-layer multiplexing与多路分解|demultiplexing</li>
+</ol>
+<p><img src="Computer_Network/image-20220624160555297.png" alt="image-20220624160555297"></p>
+<p><img src="Computer_Network/image-20220624161309429.png" alt="image-20220624161309429"></p>
+<h2 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h2><p><img src="Computer_Network/image-20220624161543566.png" alt="image-20220624161543566"></p>
+<ol>
+<li>数据字段：要么包含一个查询报文，要么包含一个响应报文</li>
+<li>长度字段：指示了在UDP报文段中的字节数（首部加数据）</li>
+<li>检验和字段：检查UDP报文段中是否出现了差错，报文段中的所有16比特字的和进行反码运算，求和时遇到的任何溢出都被回卷(溢出的1加到最低位)，端到端原则|end-end principle(不能保证低层协议使用了差错检测)</li>
+<li>套接字匹配：应用层按发送缓冲区大小写数据，udp发送，目的主机缓存满了就会丢弃，套接字不匹配：特殊的ICMP数据报</li>
+</ol>
+<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><h3 id="可靠数据传输协议"><a href="#可靠数据传输协议" class="headerlink" title="可靠数据传输协议"></a>可靠数据传输协议</h3><p>可靠数据传输协议|reliable data transfer protocol：数据可以通过一条可靠的信道进行传输。借助于可靠信道，传输数据比特就不会受到损坏(由0变为1，或者相反)或丢失，而且所有数据都是按照其发送顺序进行交付</p>
+<p><img src="Computer_Network/image-20220624185103050.png" alt="image-20220624185103050"></p>
+<p><img src="Computer_Network/image-20220624185113844.png" alt="image-20220624185113844"></p>
+<h3 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h3><p><img src="Computer_Network/image-20220624191834889.png" alt="image-20220624191834889"></p>
+<ol>
+<li>序号：本报文段所发送的数据的第一个字节的序号</li>
+<li>确认号：确认序号为上次接收的最后一个字节序号加1</li>
+<li>数据偏移：首部长度</li>
+<li>保留：保留为今后使用，目前应置为0</li>
+<li>标志字段：ACK比特用于指示确认字段中的值是有效的，RST、SYN和FIN比特用于连接建立和拆除，NS拥塞控制随机和、防止TCP发送者的数据包标记被意外或恶意改动，ECN比特指示该路由器正在历经拥塞(接收方接收)，ECE比特显式拥塞通知(接收方发给发送方)，CWR拥塞窗口缩减、已缩减，PSH比特指示接收方应立即将数据交给上层，URG比特指示报文段里存在“紧急”数据、紧急数据的最后一个字节由16比特的紧急数据指针字段(urgent data pointer field)指出、当紧急数据存在并给出指向紧急数据尾指针的时候、TCP必须通知接收端的上层实体</li>
+<li>接收窗口字段：接收方目前允许对方一次发送的数据量</li>
+<li>选项：该字段用于发送方与接收方协商最大报文段长度(MSS)时，或在高速网络环境下用作窗口调节因子时使用。首部字段中<br>还定义了一个时间戳选项。可参见RFC854和RFC1323了解其他细节</li>
+</ol>
+<p><img src="Computer_Network/image-20220624220913394.png" alt="image-20220624220913394"></p>
+<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><p><img src="Computer_Network/image-20220624222423321.png" alt="image-20220624222423321"></p>
+<h2 id="拓展-3"><a href="#拓展-3" class="headerlink" title="拓展"></a>拓展</h2><h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p><img src="Computer_Network/image-20220625085618737.png" alt="image-20220625085618737"></p>
+<p><img src="Computer_Network/image-20220625085630892.png" alt="image-20220625085630892"></p>
+<h2 id="IPV4"><a href="#IPV4" class="headerlink" title="IPV4"></a>IPV4</h2><p><img src="Computer_Network/261906124517515.jpg" alt="img"></p>
+<ol>
+<li>版本：IP协议版本</li>
+<li>首部长度：因为可包含一些可变数量的选项，说明首部长度</li>
+<li>服务类型：区分不同类型数据报</li>
+<li>数据报总长度：首部加数据的长度</li>
+<li>标识、标志、片偏移：IP分片</li>
+<li>寿命：TTL，每当一台路由器处理数据报时，该字段的值减1，值为0时丢弃</li>
+<li>协议：指示了IP数据报的数据部分应交给哪个特定的运输层协议</li>
+<li>首部检验和：帮助路由器检测收到的IP数据报中的比特错误，首部中的每2个字节当作一个数，用反码算术对这些数求和，每台路由器上必须重新计算检验和并再次放回原处，因为TTL字段会发生改变</li>
+<li>选项：允许IP首部被扩展</li>
+<li>数据（有效载荷）：包含要交付给目的地的运输层报文段，也可以是ICMP报文等</li>
+</ol>
+<p><img src="Computer_Network/image-20220625105409243.png" alt="image-20220625105409243"></p>
+<p><img src="Computer_Network/image-20220625105846140.png" alt="image-20220625105846140"></p>
+<p><img src="Computer_Network/image-20220625112752506.png" alt="image-20220625112752506"></p>
+<h2 id="IPV6"><a href="#IPV6" class="headerlink" title="IPV6"></a>IPV6</h2><p><img src="Computer_Network/image-20220625112948955.png" alt="image-20220625112948955"></p>
+<ol>
+<li>扩大的地址容量引入了一种任播地址anycast address，可以使数据报交付给一组主机中的任意一个，40字节定长首部</li>
+<li>版本：IP协议版本</li>
+<li>服务类型：区分不同类型数据报</li>
+<li>流标签：用于给属于特殊流的分组加上标签，这些特殊流是发送方要求进行特殊处理的流，如一种非默认服务质量或需要实时服务的流</li>
+<li>下一个首部：标识数据报中的内容（数据字段）需要交付给哪个协议</li>
+<li>跳限制：转发数据报的每台路由器将对该字段的内容减1，如果跳限制计数达到0，则该数据报将被丢弃</li>
+<li>没有分片/重新组装：分组过大向发送方发回一个“分组太大”的ICMP差错报文</li>
+<li>没有首部检验和：数据链路层、运输层会检验</li>
+<li>选项没有消失：可能出现在IPv6首部中由“下一个首部”指出的位置上</li>
+<li>隧道：通过IPV4通信链路时，封装到IPV4中，用协议字段指出，目的IPV6端取出</li>
+</ol>
+<h2 id="转发"><a href="#转发" class="headerlink" title="转发"></a>转发</h2><p><img src="Computer_Network/image-20220625201609958.png" alt="image-20220625201609958"></p>
+<h2 id="路由选择"><a href="#路由选择" class="headerlink" title="路由选择"></a>路由选择</h2><p><img src="Computer_Network/image-20220625201218267.png" alt="image-20220625201218267"></p>
+<h2 id="SDN"><a href="#SDN" class="headerlink" title="SDN"></a>SDN</h2><p><img src="Computer_Network/image-20220625203134565.png" alt="image-20220625203134565"></p>
+<h2 id="ICMP"><a href="#ICMP" class="headerlink" title="ICMP"></a>ICMP</h2><p><img src="Computer_Network/image-20220625203817585.png" alt="image-20220625203817585"></p>
+<ul>
+<li><strong>Type</strong> - ICMP的类型,标识生成的错误报文；</li>
+<li><strong>Code</strong> - 进一步划分ICMP的类型,该字段用来查找产生错误的原因.；例如，ICMP的目标不可达类型可以把这个位设为1至15等来表示不同的意思。</li>
+<li><strong>Checksum</strong> - Internet校验和（<a target="_blank" rel="noopener" href="https://tools.ietf.org/html/rfc1071">RFC 1071</a>），用于进行错误检查，该校验和是从ICMP头和以该字段替换为0的数据计算得出的。</li>
+<li><strong>Rest of Header</strong> - 报头的其余部分，四字节字段，内容根据ICMP类型和代码而有所不同。</li>
+</ul>
+<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><p><img src="Computer_Network/image-20220625214125145.png" alt="image-20220625214125145"></p>
+<h2 id="差错检测和纠正"><a href="#差错检测和纠正" class="headerlink" title="差错检测和纠正"></a>差错检测和纠正</h2><p><img src="Computer_Network/image-20220625222155656.png" alt="image-20220625222155656"></p>
+<h2 id="多路访问链路"><a href="#多路访问链路" class="headerlink" title="多路访问链路"></a>多路访问链路</h2><p><img src="Computer_Network/image-20220627135143735.png" alt="image-20220627135143735"></p>
+<h2 id="交换局域网"><a href="#交换局域网" class="headerlink" title="交换局域网"></a>交换局域网</h2><p><img src="Computer_Network/image-20220627161605124.png" alt="image-20220627161605124"></p>
+<h2 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h2><p><img src="Computer_Network/image-20220627163246086.png" alt="image-20220627163246086"></p>
+<ol>
+<li>数据字段：承载IP数据报，以太网的最大传输单元(MTU)是1500字节，数据报必须被填充到46字节(网络层使用IP数据报首部中的长度字段去除填充)</li>
+<li>目的地址：包含目的适配器的MAC地址</li>
+<li>源地址：传输该帧到局域网上的适配器MAC地址</li>
+<li>类型：类型字段允许以太网复用多种网络层协议</li>
+<li>前同步码：以太网帧以一个8字节的前同步码(Preamble)字段开始，该前同步码的前7字节的值都是10101010，最后一个字节是10101011。前同步码字段的前7字节用于“唤醒”接收适配器，并且将它们的时钟和发送方的时钟同步。最后两个比特（第一个出现的两个连续的1）警告适配器“重要”的内容要来了</li>
+<li>CRC校验：不通过直接丢弃</li>
+</ol>
+<p><img src="Computer_Network/image-20220627192342949.png" alt="image-20220627192342949"></p>
+<h2 id="VLAN"><a href="#VLAN" class="headerlink" title="VLAN"></a>VLAN</h2><p><img src="Computer_Network/image-20220627195425323.png" alt="image-20220627195425323"></p>
+<h2 id="MPLS"><a href="#MPLS" class="headerlink" title="MPLS"></a>MPLS</h2><p><img src="Computer_Network/image-20220627195548655.png" alt="image-20220627195548655"></p>
+<p><img src="Computer_Network/image-20220627200558919.png" alt="image-20220627200558919"></p>
+<h2 id="数据中心网络"><a href="#数据中心网络" class="headerlink" title="数据中心网络"></a>数据中心网络</h2><p><img src="Computer_Network/image-20220627201225383.png" alt="image-20220627201225383"></p>
+<h2 id="拓展-4"><a href="#拓展-4" class="headerlink" title="拓展"></a>拓展</h2><ol>
+<li>路由器和交换机的区别：路由器拓扑不会限制在生成树并可以使用最佳路径、有广播风暴的防火墙保护、不是即插即用的需配置IP地址、必须处理第三层处理时间长，交换机即插即用、只需处理第二层的帧、为限制广播帧的循环活跃拓扑限制成一颗生成树、不能避免广播风暴</li>
+<li>MAC和IP：保持各层独立，局域网是为任意网络层协议而设计的，链路层使用IP就需手动配置</li>
+</ol>
+<h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><p><img src="Computer_Network/image-20220627202621093.png" alt="image-20220627202621093"></p>
+<p><img src="Computer_Network/image-20220627210143914.png" alt="image-20220627210143914"></p>
+<h2 id="WIFI"><a href="#WIFI" class="headerlink" title="WIFI"></a>WIFI</h2><p>IEEE802.11无线LAN</p>
+<p><img src="Computer_Network/image-20220627214954840.png" alt="image-20220627214954840"></p>
+<ol>
+<li>有效载荷：通常是由一个IP数据报或者ARP分组组成，允许的最大长度为2312字节，但它通常小于1500字节</li>
+<li>地址字段：地址2是传输该帧的站点的MAC地址，地址1是要接收该帧的无线站点的MAC地址，地址3包含外网路由器接口的MAC地址，自组织模式中互相转发时使用第四个地址</li>
+<li>持续期：预约信道的持续时间</li>
+<li>序号：区分新传输帧和以前帧的重传</li>
+<li>帧控制字段：类型和子类型用于区分关联、RTS、CTS、ACK和数据帧，To和From字段用于定义不同地址字段的含义(自组织或基础设施模式)，WEP字段指示是否使用加密</li>
+</ol>
+<p><img src="Computer_Network/image-20220627210334519.png" alt="image-20220627210334519"></p>
+<p><img src="Computer_Network/image-20220627220556773.png" alt="image-20220627220556773"></p>
+<h2 id="蓝牙和ZigBee"><a href="#蓝牙和ZigBee" class="headerlink" title="蓝牙和ZigBee"></a>蓝牙和ZigBee</h2><p><img src="Computer_Network/image-20220627222540229.png" alt="image-20220627222540229"></p>
+<h2 id="蜂窝网络"><a href="#蜂窝网络" class="headerlink" title="蜂窝网络"></a>蜂窝网络</h2><p><img src="Computer_Network/image-20220627225001967.png" alt="image-20220627225001967"></p>
+<h2 id="移动管理"><a href="#移动管理" class="headerlink" title="移动管理"></a>移动管理</h2><p><img src="Computer_Network/image-20220627233121473.png" alt="image-20220627233121473"></p>
+<h2 id="蜂窝网的移动性"><a href="#蜂窝网的移动性" class="headerlink" title="蜂窝网的移动性"></a>蜂窝网的移动性</h2><p><img src="Computer_Network/image-20220627234205906.png" alt="image-20220627234205906"></p>
+<p><img src="Computer_Network/image-20220627235117053.png" alt="image-20220627235117053"></p>
+<h2 id="无线和移动性：对高层协议的影响"><a href="#无线和移动性：对高层协议的影响" class="headerlink" title="无线和移动性：对高层协议的影响"></a>无线和移动性：对高层协议的影响</h2><p>针对TCP的优化：</p>
+<ol>
+<li>本地恢复。本地恢复方法的目标是在比特差错出现的当时和当地（如在无线链路中)将其恢复。</li>
+<li>TCP发送方知晓无线链路。将在有线网络中发生的拥塞性丢包和在无线网络中发生的差错/丢包区分开</li>
+<li>分离连接方法。移动用户和其他端点之间的端到端连接被打断为两个运输层连接，无线部分和有线部分级连形成</li>
+</ol>
+
+    </div>
+
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------文章到此已结束<i class="fa fa-heart"></i>发现错误请指正-------------</div>
+    
+</div>
+      
+    </div>
+	
+	
+    
+    
+    
+
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/blog/images/alipay.png" alt="init Alipay">
+        <span>Alipay</span>
+      </div>
+
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/blog/Computer-Hardware/" rel="next" title="Computer_Hardware">
+                  Computer_Hardware <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">init</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.5.0/pjax.min.js" integrity="sha256-3NkoLDrmHLTYj7csHIZSr0MHAFTXth7Ua/DDt4MRUAg=" crossorigin="anonymous"></script>
+<script src="/blog/js/comments.js"></script><script src="/blog/js/utils.js"></script><script src="/blog/js/motion.js"></script><script src="/blog/js/schemes/muse.js"></script><script src="/blog/js/next-boot.js"></script><script src="/blog/js/pjax.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/blog/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.2.0/dist/quicklink.umd.js" integrity="sha256-4kQf9z5ntdQrzsBC3YSHnEz02Z9C1UeW/E9OgnvlzSY=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"http://xinitx.github.io/blog/Computer_Network/"}</script>
+  <script src="/blog/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
