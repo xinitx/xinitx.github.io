@@ -210,7 +210,7 @@ var Paul_Pio = function (prop) {
 */
 
             // 音频测试
-            elements.audio.onclick = function () {
+            /*elements.audio.onclick = function () {
                 if(current.idol === 0) {
                     window.live2d_playAction({
                         text: "嘉心糖屁都用没有",
@@ -227,6 +227,7 @@ var Paul_Pio = function (prop) {
                 modules.render("卷起来啊！");
             };
             current.menu.appendChild(elements.audio);
+            */
             /*
             // 一个魂们的二创
             elements.fans.onclick = function () {
