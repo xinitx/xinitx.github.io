@@ -1789,6 +1789,11 @@ pre code {
   margin: 0 5px;
   animation: icon-animate 1.33s ease-in-out infinite;
 }
+.beian img {
+  display: inline-block;
+  margin: 0 3px;
+  vertical-align: middle;
+}
 @-moz-keyframes icon-animate {
   0%, 100% {
     transform: scale(1);
@@ -3222,7 +3227,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #f0f6cb;
+  background: #592a4e;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

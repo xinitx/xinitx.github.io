@@ -20,8 +20,13 @@
 	}
 </script>
 <link rel="icon" type="image/x-icon" href="assets/logo.png" />
+
+<link rel="stylesheet" href="css/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/fontawesome/css/all.min.css">
+<!--
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+-->
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/APlayer.min.css">
 <link href="live2d/lib/pio/pio.css" rel="stylesheet" type="text/css">
@@ -35,7 +40,7 @@
 <script src="js/typed.js"></script>
 
 </head>
-<body>
+<body id="backgroundPic">
 	
 
 <script src="live2d/lib/live2d_display/pixi.min.js"></script>
@@ -48,6 +53,10 @@
 <script src="live2d/lib/pio/pio.js"></script>
 
 <script src="live2d/lib/load.js"></script>
+
+<div id = "beian">
+	<a href="https://beian.miit.gov.cn/" style="color: #66ccff;">滇ICP备2023001289号-1</a>
+</div>
 
 	<!--加载页面-->
 <div id="loading">
@@ -92,7 +101,7 @@
 	
 	<div id = "icon">
 		<a href="https://github.com/xinitx" target="_blank"><i class="fab fa-github" id = "github" ></i></a>
-		<a href="https://init33.top/blog/" target="_blank"> <i class="fab fa-wikipedia-w" id = "wiki"></i></a>
+		<a href="http://init33.top/blog/" target="_blank"> <i class="fab fa-wikipedia-w" id = "wiki"></i></a>
 		
 		<a href="Collection.html" target="_blank"><svg xmlns="https://www.w3.org/2000/svg" class="bi bi-collection" viewBox="0 0 16 16" id="collection">
 		  <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
@@ -101,25 +110,33 @@
 		<p class="name">Have a <text id="changerificwordspanid"></text> day!</p>
 	</div>
 	
+	
 </div>
 </body>
 	
 
 <script type="text/javascript">
-	setTimeout(()=>{
-		
-		document.getElementById("loading").style.opacity = 1;
-		
-	}, 2000)
 	const player_btn = document.getElementById("playerBtn");
+	const backgroundPic = document.getElementById("backgroundPic");
 	const player = document.getElementById("player");
 	const fold = document.getElementById("fold");
+	//const pio = document.getElementById("pio-container");
+	//pio.style.width = "0px";
 	player_btn.style.display = "none";
 	the_timeout = setTimeout(decay, 3000);
+
+	setTimeout(()=>{
+		//pio.style.width = "auto";
+		backgroundPic.style.backgroundSize = "cover";
+		document.getElementById("loading").style.opacity = 1;
+	}, 2000)
+	
+
 	function decay(){
 		player.style.width = "0px";
 		fold.style.display = "none";
 		player_btn.style.display = "block";
+		
 	}
 	function appear(){
 		clearTimeout(the_timeout);
@@ -176,4 +193,5 @@ setTimeout(() =>{
 }, 4000)
 
 </script>
+
 </html>

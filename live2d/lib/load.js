@@ -1,4 +1,5 @@
 // 通过读取远程配置文件，进行设置默认信息
+/*
 function getInitConfig(callback) {
   fetch(`https://cdn.jsdelivr.net/gh/TheSecondAkari/vscode-live2d@latest/live2dExtraConfig.json`, {
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -36,12 +37,12 @@ var 引流 = [
   "https://space.bilibili.com/672328094",
   "https://www.bilibili.com/video/BV1Y64y1U7FZ"
 ]
-
+*/
 const initConfig = {
   mode: "fixed",
   hidden: false,
   content: {
-    link: 引流,
+    //link: 引流,
     welcome: ["Hi!"],
     touch: "",
     home: ["这里有一些好康的。", "想查看更多A-Soul的信息吗？"],
