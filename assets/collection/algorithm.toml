@@ -1,0 +1,16 @@
+title = "学习"
+[[oj]]
+name = "leetcode：核心代码模式"
+url = "https://leetcode.cn/"
+[[oj]]
+name = "洛谷：ACM模式"
+url = "https://www.luogu.com.cn/"
+[[oj]]
+name = "acwing：模板练习"
+url = 'https://www.acwing.com/about/'
+[[oj]]
+name = "codeforces：竞赛"
+url = "https://codeforces.com/"
+[[oj]]
+name = "udebug：测试用例"
+url = "https://www.udebug.com/"

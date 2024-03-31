@@ -23,7 +23,7 @@
 
 
 
-! function($) {
+ function ChangeWord($) {
 
 	"use strict";
 
@@ -435,4 +435,4 @@
 	};
 
 
-}(window.jQuery);
+};

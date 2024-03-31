@@ -4,7 +4,7 @@
  * Version: v1.0.1
  * GitHub: https://github.com/hustcc/canvas-nest.js
 **/
-! function() {
+(function() {
     //封装方法，压缩之后减少文件大小
     function get_attribute(node, attr, default_value) {
       return node.getAttribute(attr) || default_value;
@@ -115,4 +115,4 @@
     setTimeout(function() {
       draw_canvas();
     }, 100);
-  }();
+  })();

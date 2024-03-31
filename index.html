@@ -1,197 +1,32 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>init的小站</title>
-<script type="text/javascript">
-	var userAgentInfo = navigator.userAgent;
-    var Agents = ["Android", "iPhone","SymbianOS", 
-                    "Windows Phone","iPad", "iPod"];
-    var flag = true;
-    for (var v = 0; v < Agents.length; v++) {
-        if (userAgentInfo.indexOf(Agents[v]) > 0) {
-            flag = false;
-            break;
-        }
-    }
-	if(!flag){
-		window.location.replace("404.html");
-		
-	}
-</script>
-<link rel="icon" type="image/x-icon" href="assets/logo.png" />
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/assets/logo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>init的小站</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/APlayer.min.css">
+    <link href="/live2d/lib/pio/pio.css" rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="css/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/fontawesome/css/all.min.css">
-<!--
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
--->
-<link rel="stylesheet" href="css/index.css">
-<link rel="stylesheet" href="css/APlayer.min.css">
-<link href="live2d/lib/pio/pio.css" rel="stylesheet" type="text/css">
-
-<script src="js/velocity.js"></script>
-<script src="js/APlayer.min.js"></script>
-<script src="js/Meting.min.js"></script>
-<script src="js/other.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/typed.js"></script>
-
-</head>
-<body id="backgroundPic">
-	
-
-<script src="live2d/lib/live2d_display/pixi.min.js"></script>
-	<!-- https://github.com/guansss/pixi-live2d-display/blob/master/README.zh.md -->
-<script src="live2d/lib/live2d_display/live2dcubismcore.min.js"></script>
-<script src="live2d/lib/live2d_display/live2d.min.js"></script>
-<script src="live2d/lib/live2d_display/index.min.js"></script>
-
-<script src="live2d/lib/pio/pio_sdk4.js"></script>
-<script src="live2d/lib/pio/pio.js"></script>
-
-<script src="live2d/lib/load.js"></script>
-
-<div id = "beian">
-	<a href="https://beian.miit.gov.cn/" style="color: #66ccff;">滇ICP备2023001289号-1</a>
-</div>
-
-	<!--加载页面-->
-<div id="loading">
-	<script color="0,0,0" opacity="0.5" count="99" src="js/canvas_nest.js" charset="utf-8" type="text/javascript"> </script>
-		<script src="js/canvas_dai.js"></script>
-	<div class = "loadpic">
-	</div>
-	<div>
-		<div class="hander"></div>
-		<div class="bar"></div>
-	</div>
-</div>
-<div class = "content" style="opacity: 0;">
-	<!--播放器-->
-	<div>
-	<div id = "player" >
-	<meting-js server="tencent" type="playlist" id="8321899376"> </meting-js>
-	</div>
-	
-	<button id="fold"><p>收起</p></button>
-	<button id="playerBtn"  ><img src ="assets/music.png" style="width: 40px; height: 40px;"></button>
-	
-	</div>
-
-<!--展示台-->	                                                                                                         
-<div id="stage">
-
-	<div id="inner" >
-			<div id="cover" style="bottom: 0%;" >
-				<div id="text">
-					<span style="color: cyan;">Hello</span><span style="color: white;">World!</span>
-				</div>
-				
-				<div id="detail"><div id="handle"></div></div>
-				
-			</div>
-		<!--
-			<div class="Canvas left" align="center" style="border-radius: 50% 50% 50% 50%;" ></div>
-		-->
-		<img style="  border-radius: 50% 50% 50% 50%;" src="assets/logo.png">
-	</div>
-	
-	<div id = "icon">
-		<a href="https://github.com/xinitx" target="_blank"><i class="fab fa-github" id = "github" ></i></a>
-		<a href="http://init33.top/blog/" target="_blank"> <i class="fab fa-wikipedia-w" id = "wiki"></i></a>
-		
-		<a href="Collection.html" target="_blank"><svg xmlns="https://www.w3.org/2000/svg" class="bi bi-collection" viewBox="0 0 16 16" id="collection">
-		  <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
-		</svg></a>
-	</div>
-		<p class="name">Have a <text id="changerificwordspanid"></text> day!</p>
-	</div>
-	
-	
-</div>
-</body>
-	
-
-<script type="text/javascript">
-	const player_btn = document.getElementById("playerBtn");
-	const backgroundPic = document.getElementById("backgroundPic");
-	const player = document.getElementById("player");
-	const fold = document.getElementById("fold");
-	//const pio = document.getElementById("pio-container");
-	//pio.style.width = "0px";
-	player_btn.style.display = "none";
-	the_timeout = setTimeout(decay, 3000);
-
-	setTimeout(()=>{
-		//pio.style.width = "auto";
-		backgroundPic.style.backgroundSize = "cover";
-		document.getElementById("loading").style.opacity = 1;
-	}, 2000)
-	
-
-	function decay(){
-		player.style.width = "0px";
-		fold.style.display = "none";
-		player_btn.style.display = "block";
-		
-	}
-	function appear(){
-		clearTimeout(the_timeout);
-		the_timeout = setTimeout(decay, 16000);
-	}
-	function spread(){
-		player.style.width = "25%";
-		fold.style.display = "block";
-		player_btn.style.display = "none";
-		clearTimeout(the_timeout);
-		the_timeout = setTimeout(decay, 16000);
-	}
-	player.addEventListener("mousemove", appear, false);
-	player_btn.addEventListener("click", spread, false);
-	fold.addEventListener("click", decay, false);
-	
-	  $("#changerificwordspanid").typed({
-		strings: ["good", "nice", "happy", "wonderful"],
-		typeSpeed: 100,
-		startDelay: 10,
-		showCursor: true,
-		shuffle: true,
-		loop:true
-	  });
-
-	var buf = 5;
-	var time = 2000;
-	var interval;
-	setTimeout(starcover, 3000)
-	function coverPosition() {
-	if(buf < 95)
-		buf += 15;
-	else
-		clearInterval(interval);
-	var slider = String(buf) + "%";
-	document.getElementById("cover").style.bottom = slider;
-	}
-	function starcover(){
-		interval = setInterval(coverPosition, time);
-	}
-
-const loadpic = document.querySelector('.loadpic');
-const bar = document.querySelector('.bar');
-const hander = document.querySelector('.hander');
-let len = window.innerWidth / 2;
-Velocity(loadpic, { opacity:1 }, { duration: '3000' });
-Velocity(loadpic, { opacity:0 }, { duration: '3000', display: "none" });
-Velocity(bar, { translateY: '135px', backgroundColor: ['#666', '#fff']}, {easing: [1000, 15],duration: '1000'});
-Velocity(bar, { backgroundColor: ['#666', '#fff'] }, { duration: '2000', display: "none" });
-Velocity(hander,{translateY:'135px',backgroundColor:['#fff','#fff']},{easing:[1000,15],duration: '1000'});
-Velocity(hander, {width:len,backgroundColor: ['#fff', '#ffffe5'],}, {easing: "ease-in-out",display: "none",duration: '2000',});
-setTimeout(() =>{
-	Velocity(document.querySelector('.content'), {opacity:1}, {duration: '3000',});
-}, 4000)
-
-</script>
-
+    <script src="/js/velocity.js"></script>
+    <script src="/js/APlayer.min.js"></script>
+    <script src="/js/Meting.min.js"></script>
+    <script src="/js/other.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/typed.js"></script>
+    <script type="module" crossorigin src="/assets/index-DeF3LDTY.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-2R9VomIw.css">
+  </head>
+  <body style="background-image: url('/assets/background.webp');">
+  <script src="/live2d/lib/live2d_display/pixi.min.js"></script>
+  <script src="/live2d/lib/live2d_display/live2dcubismcore.min.js"></script>
+  <script src="/live2d/lib/live2d_display/live2d.min.js"></script>
+  <script src="/live2d/lib/live2d_display/index.min.js"></script>
+  <script src="/live2d/lib/pio/pio_sdk4.js"></script>
+  <script src="/live2d/lib/pio/pio.js"></script>
+  <script src="/live2d/lib/load.js"></script>
+  <div id="app"></div>
+  </body>
 </html>

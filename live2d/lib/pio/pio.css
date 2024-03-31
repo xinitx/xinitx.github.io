@@ -112,7 +112,7 @@
 }
 
 .pio-action .pio-skate {
-    background-image: url("../../assets/skate.png");
+    background-image: url("skate.png");
 }
 
 .pio-action .pio-info {
@@ -120,24 +120,24 @@
 }
 
 .pio-action .pio-ava {
-    background-image: url('../../assets/Ava.png');
+    background-image: url('Ava.png');
 }
 
 .pio-action .pio-diana {
-    background-image: url('../../assets/Diana.png');
+    background-image: url('Diana.png');
 }
 
 .pio-action .pio-eileen {
-    background-image: url('../../assets/Eileen.png');
+    background-image: url('Eileen.png');
 }
 
 /* 背景图图标是和eileen是一样的 */
 .pio-action .pio-background {
-    background-image: url('../../assets/Eileen.png');
+    background-image: url('Eileen.png');
 }
 
 .pio-action .pio-asoulfans {
-    background-image: url('../../assets/au.png');
+    background-image: url('au.png');
 }
 
 .normal-cycle {

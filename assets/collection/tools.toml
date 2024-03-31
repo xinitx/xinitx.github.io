@@ -1,0 +1,16 @@
+title = "工具"
+[[tool]]
+name = "阴影样式"
+url = "https://getcssscan.com/css-box-shadow-examples?ref=producthunt"
+[[tool]]
+name = "fontawesome图标"
+url = "https://fontawesome.com/search?o=r&m=free"
+[[tool]]
+name = "拾色器"
+url = 'https://www.w3cschool.cn/tools/index?name=cpicker'
+[[tool]]
+name = "图片格式转换"
+url = "https://www.sojson.com/image/format.html"
+[[tool]]
+name = "文件格式转换"
+url = "https://www.aconvert.com/cn/"
